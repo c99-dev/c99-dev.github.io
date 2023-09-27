@@ -1,4 +1,5 @@
 # 칼바람 내전 챔피언 랜덤 추첨 웹사이트
+https://칼바람랜덤픽.메인.한국
 
 ![image](https://github.com/c99-dev/c99-dev.github.io/assets/87958906/86f59540-aaa2-4a8c-8b7b-064128e75ce8)
 
