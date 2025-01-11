@@ -1,10 +1,10 @@
 {
   "type": "champion",
   "format": "standAloneComplex",
-  "version": "14.24.1",
+  "version": "15.1.1",
   "data": {
     "Aatrox": {
-      "version": "14.24.1",
+      "version": "15.1.1",
       "id": "Aatrox",
       "key": "266",
       "name": "아트록스",
@@ -53,7 +53,7 @@
       }
     },
     "Ahri": {
-      "version": "14.24.1",
+      "version": "15.1.1",
       "id": "Ahri",
       "key": "103",
       "name": "아리",
@@ -103,7 +103,7 @@
       }
     },
     "Akali": {
-      "version": "14.24.1",
+      "version": "15.1.1",
       "id": "Akali",
       "key": "84",
       "name": "아칼리",
@@ -152,7 +152,7 @@
       }
     },
     "Akshan": {
-      "version": "14.24.1",
+      "version": "15.1.1",
       "id": "Akshan",
       "key": "166",
       "name": "아크샨",
@@ -202,7 +202,7 @@
       }
     },
     "Alistar": {
-      "version": "14.24.1",
+      "version": "15.1.1",
       "id": "Alistar",
       "key": "12",
       "name": "알리스타",
@@ -252,7 +252,7 @@
       }
     },
     "Ambessa": {
-      "version": "14.24.1",
+      "version": "15.1.1",
       "id": "Ambessa",
       "key": "799",
       "name": "암베사",
@@ -302,7 +302,7 @@
       }
     },
     "Amumu": {
-      "version": "14.24.1",
+      "version": "15.1.1",
       "id": "Amumu",
       "key": "32",
       "name": "아무무",
@@ -352,7 +352,7 @@
       }
     },
     "Anivia": {
-      "version": "14.24.1",
+      "version": "15.1.1",
       "id": "Anivia",
       "key": "34",
       "name": "애니비아",
@@ -401,7 +401,7 @@
       }
     },
     "Annie": {
-      "version": "14.24.1",
+      "version": "15.1.1",
       "id": "Annie",
       "key": "1",
       "name": "애니",
@@ -451,7 +451,7 @@
       }
     },
     "Aphelios": {
-      "version": "14.24.1",
+      "version": "15.1.1",
       "id": "Aphelios",
       "key": "523",
       "name": "아펠리오스",
@@ -500,7 +500,7 @@
       }
     },
     "Ashe": {
-      "version": "14.24.1",
+      "version": "15.1.1",
       "id": "Ashe",
       "key": "22",
       "name": "애쉬",
@@ -550,7 +550,7 @@
       }
     },
     "AurelionSol": {
-      "version": "14.24.1",
+      "version": "15.1.1",
       "id": "AurelionSol",
       "key": "136",
       "name": "아우렐리온 솔",
@@ -599,7 +599,7 @@
       }
     },
     "Aurora": {
-      "version": "14.24.1",
+      "version": "15.1.1",
       "id": "Aurora",
       "key": "893",
       "name": "오로라",
@@ -649,7 +649,7 @@
       }
     },
     "Azir": {
-      "version": "14.24.1",
+      "version": "15.1.1",
       "id": "Azir",
       "key": "268",
       "name": "아지르",
@@ -699,7 +699,7 @@
       }
     },
     "Bard": {
-      "version": "14.24.1",
+      "version": "15.1.1",
       "id": "Bard",
       "key": "432",
       "name": "바드",
@@ -749,7 +749,7 @@
       }
     },
     "Belveth": {
-      "version": "14.24.1",
+      "version": "15.1.1",
       "id": "Belveth",
       "key": "200",
       "name": "벨베스",
@@ -798,7 +798,7 @@
       }
     },
     "Blitzcrank": {
-      "version": "14.24.1",
+      "version": "15.1.1",
       "id": "Blitzcrank",
       "key": "53",
       "name": "블리츠크랭크",
@@ -848,7 +848,7 @@
       }
     },
     "Brand": {
-      "version": "14.24.1",
+      "version": "15.1.1",
       "id": "Brand",
       "key": "63",
       "name": "브랜드",
@@ -898,7 +898,7 @@
       }
     },
     "Braum": {
-      "version": "14.24.1",
+      "version": "15.1.1",
       "id": "Braum",
       "key": "201",
       "name": "브라움",
@@ -948,7 +948,7 @@
       }
     },
     "Briar": {
-      "version": "14.24.1",
+      "version": "15.1.1",
       "id": "Briar",
       "key": "233",
       "name": "브라이어",
@@ -998,7 +998,7 @@
       }
     },
     "Caitlyn": {
-      "version": "14.24.1",
+      "version": "15.1.1",
       "id": "Caitlyn",
       "key": "51",
       "name": "케이틀린",
@@ -1047,7 +1047,7 @@
       }
     },
     "Camille": {
-      "version": "14.24.1",
+      "version": "15.1.1",
       "id": "Camille",
       "key": "164",
       "name": "카밀",
@@ -1097,7 +1097,7 @@
       }
     },
     "Cassiopeia": {
-      "version": "14.24.1",
+      "version": "15.1.1",
       "id": "Cassiopeia",
       "key": "69",
       "name": "카시오페아",
@@ -1146,7 +1146,7 @@
       }
     },
     "Chogath": {
-      "version": "14.24.1",
+      "version": "15.1.1",
       "id": "Chogath",
       "key": "31",
       "name": "초가스",
@@ -1196,7 +1196,7 @@
       }
     },
     "Corki": {
-      "version": "14.24.1",
+      "version": "15.1.1",
       "id": "Corki",
       "key": "42",
       "name": "코르키",
@@ -1246,7 +1246,7 @@
       }
     },
     "Darius": {
-      "version": "14.24.1",
+      "version": "15.1.1",
       "id": "Darius",
       "key": "122",
       "name": "다리우스",
@@ -1296,7 +1296,7 @@
       }
     },
     "Diana": {
-      "version": "14.24.1",
+      "version": "15.1.1",
       "id": "Diana",
       "key": "131",
       "name": "다이애나",
@@ -1346,7 +1346,7 @@
       }
     },
     "Draven": {
-      "version": "14.24.1",
+      "version": "15.1.1",
       "id": "Draven",
       "key": "119",
       "name": "드레이븐",
@@ -1395,7 +1395,7 @@
       }
     },
     "DrMundo": {
-      "version": "14.24.1",
+      "version": "15.1.1",
       "id": "DrMundo",
       "key": "36",
       "name": "문도 박사",
@@ -1445,7 +1445,7 @@
       }
     },
     "Ekko": {
-      "version": "14.24.1",
+      "version": "15.1.1",
       "id": "Ekko",
       "key": "245",
       "name": "에코",
@@ -1495,7 +1495,7 @@
       }
     },
     "Elise": {
-      "version": "14.24.1",
+      "version": "15.1.1",
       "id": "Elise",
       "key": "60",
       "name": "엘리스",
@@ -1545,7 +1545,7 @@
       }
     },
     "Evelynn": {
-      "version": "14.24.1",
+      "version": "15.1.1",
       "id": "Evelynn",
       "key": "28",
       "name": "이블린",
@@ -1595,7 +1595,7 @@
       }
     },
     "Ezreal": {
-      "version": "14.24.1",
+      "version": "15.1.1",
       "id": "Ezreal",
       "key": "81",
       "name": "이즈리얼",
@@ -1645,7 +1645,7 @@
       }
     },
     "Fiddlesticks": {
-      "version": "14.24.1",
+      "version": "15.1.1",
       "id": "Fiddlesticks",
       "key": "9",
       "name": "피들스틱",
@@ -1695,7 +1695,7 @@
       }
     },
     "Fiora": {
-      "version": "14.24.1",
+      "version": "15.1.1",
       "id": "Fiora",
       "key": "114",
       "name": "피오라",
@@ -1745,7 +1745,7 @@
       }
     },
     "Fizz": {
-      "version": "14.24.1",
+      "version": "15.1.1",
       "id": "Fizz",
       "key": "105",
       "name": "피즈",
@@ -1795,7 +1795,7 @@
       }
     },
     "Galio": {
-      "version": "14.24.1",
+      "version": "15.1.1",
       "id": "Galio",
       "key": "3",
       "name": "갈리오",
@@ -1845,7 +1845,7 @@
       }
     },
     "Gangplank": {
-      "version": "14.24.1",
+      "version": "15.1.1",
       "id": "Gangplank",
       "key": "41",
       "name": "갱플랭크",
@@ -1894,7 +1894,7 @@
       }
     },
     "Garen": {
-      "version": "14.24.1",
+      "version": "15.1.1",
       "id": "Garen",
       "key": "86",
       "name": "가렌",
@@ -1944,7 +1944,7 @@
       }
     },
     "Gnar": {
-      "version": "14.24.1",
+      "version": "15.1.1",
       "id": "Gnar",
       "key": "150",
       "name": "나르",
@@ -1994,7 +1994,7 @@
       }
     },
     "Gragas": {
-      "version": "14.24.1",
+      "version": "15.1.1",
       "id": "Gragas",
       "key": "79",
       "name": "그라가스",
@@ -2044,7 +2044,7 @@
       }
     },
     "Graves": {
-      "version": "14.24.1",
+      "version": "15.1.1",
       "id": "Graves",
       "key": "104",
       "name": "그레이브즈",
@@ -2093,7 +2093,7 @@
       }
     },
     "Gwen": {
-      "version": "14.24.1",
+      "version": "15.1.1",
       "id": "Gwen",
       "key": "887",
       "name": "그웬",
@@ -2142,7 +2142,7 @@
       }
     },
     "Hecarim": {
-      "version": "14.24.1",
+      "version": "15.1.1",
       "id": "Hecarim",
       "key": "120",
       "name": "헤카림",
@@ -2192,7 +2192,7 @@
       }
     },
     "Heimerdinger": {
-      "version": "14.24.1",
+      "version": "15.1.1",
       "id": "Heimerdinger",
       "key": "74",
       "name": "하이머딩거",
@@ -2242,7 +2242,7 @@
       }
     },
     "Hwei": {
-      "version": "14.24.1",
+      "version": "15.1.1",
       "id": "Hwei",
       "key": "910",
       "name": "흐웨이",
@@ -2292,7 +2292,7 @@
       }
     },
     "Illaoi": {
-      "version": "14.24.1",
+      "version": "15.1.1",
       "id": "Illaoi",
       "key": "420",
       "name": "일라오이",
@@ -2342,7 +2342,7 @@
       }
     },
     "Irelia": {
-      "version": "14.24.1",
+      "version": "15.1.1",
       "id": "Irelia",
       "key": "39",
       "name": "이렐리아",
@@ -2392,7 +2392,7 @@
       }
     },
     "Ivern": {
-      "version": "14.24.1",
+      "version": "15.1.1",
       "id": "Ivern",
       "key": "427",
       "name": "아이번",
@@ -2442,7 +2442,7 @@
       }
     },
     "Janna": {
-      "version": "14.24.1",
+      "version": "15.1.1",
       "id": "Janna",
       "key": "40",
       "name": "잔나",
@@ -2492,7 +2492,7 @@
       }
     },
     "JarvanIV": {
-      "version": "14.24.1",
+      "version": "15.1.1",
       "id": "JarvanIV",
       "key": "59",
       "name": "자르반 4세",
@@ -2542,7 +2542,7 @@
       }
     },
     "Jax": {
-      "version": "14.24.1",
+      "version": "15.1.1",
       "id": "Jax",
       "key": "24",
       "name": "잭스",
@@ -2591,7 +2591,7 @@
       }
     },
     "Jayce": {
-      "version": "14.24.1",
+      "version": "15.1.1",
       "id": "Jayce",
       "key": "126",
       "name": "제이스",
@@ -2641,7 +2641,7 @@
       }
     },
     "Jhin": {
-      "version": "14.24.1",
+      "version": "15.1.1",
       "id": "Jhin",
       "key": "202",
       "name": "진",
@@ -2691,7 +2691,7 @@
       }
     },
     "Jinx": {
-      "version": "14.24.1",
+      "version": "15.1.1",
       "id": "Jinx",
       "key": "222",
       "name": "징크스",
@@ -2740,7 +2740,7 @@
       }
     },
     "Kaisa": {
-      "version": "14.24.1",
+      "version": "15.1.1",
       "id": "Kaisa",
       "key": "145",
       "name": "카이사",
@@ -2790,7 +2790,7 @@
       }
     },
     "Kalista": {
-      "version": "14.24.1",
+      "version": "15.1.1",
       "id": "Kalista",
       "key": "429",
       "name": "칼리스타",
@@ -2829,7 +2829,7 @@
         "hpregen": 4,
         "hpregenperlevel": 0.75,
         "mpregen": 6.3,
-        "mpregenperlevel": 0.4,
+        "mpregenperlevel": 0.8,
         "crit": 0,
         "critperlevel": 0,
         "attackdamage": 59,
@@ -2839,7 +2839,7 @@
       }
     },
     "Karma": {
-      "version": "14.24.1",
+      "version": "15.1.1",
       "id": "Karma",
       "key": "43",
       "name": "카르마",
@@ -2889,7 +2889,7 @@
       }
     },
     "Karthus": {
-      "version": "14.24.1",
+      "version": "15.1.1",
       "id": "Karthus",
       "key": "30",
       "name": "카서스",
@@ -2938,7 +2938,7 @@
       }
     },
     "Kassadin": {
-      "version": "14.24.1",
+      "version": "15.1.1",
       "id": "Kassadin",
       "key": "38",
       "name": "카사딘",
@@ -2988,7 +2988,7 @@
       }
     },
     "Katarina": {
-      "version": "14.24.1",
+      "version": "15.1.1",
       "id": "Katarina",
       "key": "55",
       "name": "카타리나",
@@ -3038,7 +3038,7 @@
       }
     },
     "Kayle": {
-      "version": "14.24.1",
+      "version": "15.1.1",
       "id": "Kayle",
       "key": "10",
       "name": "케일",
@@ -3088,7 +3088,7 @@
       }
     },
     "Kayn": {
-      "version": "14.24.1",
+      "version": "15.1.1",
       "id": "Kayn",
       "key": "141",
       "name": "케인",
@@ -3138,7 +3138,7 @@
       }
     },
     "Kennen": {
-      "version": "14.24.1",
+      "version": "15.1.1",
       "id": "Kennen",
       "key": "85",
       "name": "케넨",
@@ -3187,7 +3187,7 @@
       }
     },
     "Khazix": {
-      "version": "14.24.1",
+      "version": "15.1.1",
       "id": "Khazix",
       "key": "121",
       "name": "카직스",
@@ -3236,7 +3236,7 @@
       }
     },
     "Kindred": {
-      "version": "14.24.1",
+      "version": "15.1.1",
       "id": "Kindred",
       "key": "203",
       "name": "킨드레드",
@@ -3285,7 +3285,7 @@
       }
     },
     "Kled": {
-      "version": "14.24.1",
+      "version": "15.1.1",
       "id": "Kled",
       "key": "240",
       "name": "클레드",
@@ -3334,7 +3334,7 @@
       }
     },
     "KogMaw": {
-      "version": "14.24.1",
+      "version": "15.1.1",
       "id": "KogMaw",
       "key": "96",
       "name": "코그모",
@@ -3384,7 +3384,7 @@
       }
     },
     "KSante": {
-      "version": "14.24.1",
+      "version": "15.1.1",
       "id": "KSante",
       "key": "897",
       "name": "크산테",
@@ -3434,7 +3434,7 @@
       }
     },
     "Leblanc": {
-      "version": "14.24.1",
+      "version": "15.1.1",
       "id": "Leblanc",
       "key": "7",
       "name": "르블랑",
@@ -3484,7 +3484,7 @@
       }
     },
     "LeeSin": {
-      "version": "14.24.1",
+      "version": "15.1.1",
       "id": "LeeSin",
       "key": "64",
       "name": "리 신",
@@ -3534,7 +3534,7 @@
       }
     },
     "Leona": {
-      "version": "14.24.1",
+      "version": "15.1.1",
       "id": "Leona",
       "key": "89",
       "name": "레오나",
@@ -3584,7 +3584,7 @@
       }
     },
     "Lillia": {
-      "version": "14.24.1",
+      "version": "15.1.1",
       "id": "Lillia",
       "key": "876",
       "name": "릴리아",
@@ -3634,7 +3634,7 @@
       }
     },
     "Lissandra": {
-      "version": "14.24.1",
+      "version": "15.1.1",
       "id": "Lissandra",
       "key": "127",
       "name": "리산드라",
@@ -3683,7 +3683,7 @@
       }
     },
     "Lucian": {
-      "version": "14.24.1",
+      "version": "15.1.1",
       "id": "Lucian",
       "key": "236",
       "name": "루시안",
@@ -3733,7 +3733,7 @@
       }
     },
     "Lulu": {
-      "version": "14.24.1",
+      "version": "15.1.1",
       "id": "Lulu",
       "key": "117",
       "name": "룰루",
@@ -3783,7 +3783,7 @@
       }
     },
     "Lux": {
-      "version": "14.24.1",
+      "version": "15.1.1",
       "id": "Lux",
       "key": "99",
       "name": "럭스",
@@ -3833,7 +3833,7 @@
       }
     },
     "Malphite": {
-      "version": "14.24.1",
+      "version": "15.1.1",
       "id": "Malphite",
       "key": "54",
       "name": "말파이트",
@@ -3883,7 +3883,7 @@
       }
     },
     "Malzahar": {
-      "version": "14.24.1",
+      "version": "15.1.1",
       "id": "Malzahar",
       "key": "90",
       "name": "말자하",
@@ -3932,7 +3932,7 @@
       }
     },
     "Maokai": {
-      "version": "14.24.1",
+      "version": "15.1.1",
       "id": "Maokai",
       "key": "57",
       "name": "마오카이",
@@ -3982,7 +3982,7 @@
       }
     },
     "MasterYi": {
-      "version": "14.24.1",
+      "version": "15.1.1",
       "id": "MasterYi",
       "key": "11",
       "name": "마스터 이",
@@ -4032,7 +4032,7 @@
       }
     },
     "Milio": {
-      "version": "14.24.1",
+      "version": "15.1.1",
       "id": "Milio",
       "key": "902",
       "name": "밀리오",
@@ -4082,7 +4082,7 @@
       }
     },
     "MissFortune": {
-      "version": "14.24.1",
+      "version": "15.1.1",
       "id": "MissFortune",
       "key": "21",
       "name": "미스 포츈",
@@ -4132,7 +4132,7 @@
       }
     },
     "MonkeyKing": {
-      "version": "14.24.1",
+      "version": "15.1.1",
       "id": "MonkeyKing",
       "key": "62",
       "name": "오공",
@@ -4182,7 +4182,7 @@
       }
     },
     "Mordekaiser": {
-      "version": "14.24.1",
+      "version": "15.1.1",
       "id": "Mordekaiser",
       "key": "82",
       "name": "모데카이저",
@@ -4232,7 +4232,7 @@
       }
     },
     "Morgana": {
-      "version": "14.24.1",
+      "version": "15.1.1",
       "id": "Morgana",
       "key": "25",
       "name": "모르가나",
@@ -4282,7 +4282,7 @@
       }
     },
     "Naafiri": {
-      "version": "14.24.1",
+      "version": "15.1.1",
       "id": "Naafiri",
       "key": "950",
       "name": "나피리",
@@ -4332,7 +4332,7 @@
       }
     },
     "Nami": {
-      "version": "14.24.1",
+      "version": "15.1.1",
       "id": "Nami",
       "key": "267",
       "name": "나미",
@@ -4382,7 +4382,7 @@
       }
     },
     "Nasus": {
-      "version": "14.24.1",
+      "version": "15.1.1",
       "id": "Nasus",
       "key": "75",
       "name": "나서스",
@@ -4432,7 +4432,7 @@
       }
     },
     "Nautilus": {
-      "version": "14.24.1",
+      "version": "15.1.1",
       "id": "Nautilus",
       "key": "111",
       "name": "노틸러스",
@@ -4482,7 +4482,7 @@
       }
     },
     "Neeko": {
-      "version": "14.24.1",
+      "version": "15.1.1",
       "id": "Neeko",
       "key": "518",
       "name": "니코",
@@ -4532,7 +4532,7 @@
       }
     },
     "Nidalee": {
-      "version": "14.24.1",
+      "version": "15.1.1",
       "id": "Nidalee",
       "key": "76",
       "name": "니달리",
@@ -4582,7 +4582,7 @@
       }
     },
     "Nilah": {
-      "version": "14.24.1",
+      "version": "15.1.1",
       "id": "Nilah",
       "key": "895",
       "name": "닐라",
@@ -4632,7 +4632,7 @@
       }
     },
     "Nocturne": {
-      "version": "14.24.1",
+      "version": "15.1.1",
       "id": "Nocturne",
       "key": "56",
       "name": "녹턴",
@@ -4682,7 +4682,7 @@
       }
     },
     "Nunu": {
-      "version": "14.24.1",
+      "version": "15.1.1",
       "id": "Nunu",
       "key": "20",
       "name": "누누와 윌럼프",
@@ -4732,7 +4732,7 @@
       }
     },
     "Olaf": {
-      "version": "14.24.1",
+      "version": "15.1.1",
       "id": "Olaf",
       "key": "2",
       "name": "올라프",
@@ -4782,7 +4782,7 @@
       }
     },
     "Orianna": {
-      "version": "14.24.1",
+      "version": "15.1.1",
       "id": "Orianna",
       "key": "61",
       "name": "오리아나",
@@ -4832,7 +4832,7 @@
       }
     },
     "Ornn": {
-      "version": "14.24.1",
+      "version": "15.1.1",
       "id": "Ornn",
       "key": "516",
       "name": "오른",
@@ -4881,7 +4881,7 @@
       }
     },
     "Pantheon": {
-      "version": "14.24.1",
+      "version": "15.1.1",
       "id": "Pantheon",
       "key": "80",
       "name": "판테온",
@@ -4931,7 +4931,7 @@
       }
     },
     "Poppy": {
-      "version": "14.24.1",
+      "version": "15.1.1",
       "id": "Poppy",
       "key": "78",
       "name": "뽀삐",
@@ -4981,7 +4981,7 @@
       }
     },
     "Pyke": {
-      "version": "14.24.1",
+      "version": "15.1.1",
       "id": "Pyke",
       "key": "555",
       "name": "파이크",
@@ -5031,7 +5031,7 @@
       }
     },
     "Qiyana": {
-      "version": "14.24.1",
+      "version": "15.1.1",
       "id": "Qiyana",
       "key": "246",
       "name": "키아나",
@@ -5080,7 +5080,7 @@
       }
     },
     "Quinn": {
-      "version": "14.24.1",
+      "version": "15.1.1",
       "id": "Quinn",
       "key": "133",
       "name": "퀸",
@@ -5130,7 +5130,7 @@
       }
     },
     "Rakan": {
-      "version": "14.24.1",
+      "version": "15.1.1",
       "id": "Rakan",
       "key": "497",
       "name": "라칸",
@@ -5179,7 +5179,7 @@
       }
     },
     "Rammus": {
-      "version": "14.24.1",
+      "version": "15.1.1",
       "id": "Rammus",
       "key": "33",
       "name": "람머스",
@@ -5228,7 +5228,7 @@
       }
     },
     "RekSai": {
-      "version": "14.24.1",
+      "version": "15.1.1",
       "id": "RekSai",
       "key": "421",
       "name": "렉사이",
@@ -5278,7 +5278,7 @@
       }
     },
     "Rell": {
-      "version": "14.24.1",
+      "version": "15.1.1",
       "id": "Rell",
       "key": "526",
       "name": "렐",
@@ -5328,7 +5328,7 @@
       }
     },
     "Renata": {
-      "version": "14.24.1",
+      "version": "15.1.1",
       "id": "Renata",
       "key": "888",
       "name": "레나타 글라스크",
@@ -5378,7 +5378,7 @@
       }
     },
     "Renekton": {
-      "version": "14.24.1",
+      "version": "15.1.1",
       "id": "Renekton",
       "key": "58",
       "name": "레넥톤",
@@ -5428,7 +5428,7 @@
       }
     },
     "Rengar": {
-      "version": "14.24.1",
+      "version": "15.1.1",
       "id": "Rengar",
       "key": "107",
       "name": "렝가",
@@ -5478,7 +5478,7 @@
       }
     },
     "Riven": {
-      "version": "14.24.1",
+      "version": "15.1.1",
       "id": "Riven",
       "key": "92",
       "name": "리븐",
@@ -5528,7 +5528,7 @@
       }
     },
     "Rumble": {
-      "version": "14.24.1",
+      "version": "15.1.1",
       "id": "Rumble",
       "key": "68",
       "name": "럼블",
@@ -5578,7 +5578,7 @@
       }
     },
     "Ryze": {
-      "version": "14.24.1",
+      "version": "15.1.1",
       "id": "Ryze",
       "key": "13",
       "name": "라이즈",
@@ -5627,7 +5627,7 @@
       }
     },
     "Samira": {
-      "version": "14.24.1",
+      "version": "15.1.1",
       "id": "Samira",
       "key": "360",
       "name": "사미라",
@@ -5677,7 +5677,7 @@
       }
     },
     "Sejuani": {
-      "version": "14.24.1",
+      "version": "15.1.1",
       "id": "Sejuani",
       "key": "113",
       "name": "세주아니",
@@ -5726,7 +5726,7 @@
       }
     },
     "Senna": {
-      "version": "14.24.1",
+      "version": "15.1.1",
       "id": "Senna",
       "key": "235",
       "name": "세나",
@@ -5776,7 +5776,7 @@
       }
     },
     "Seraphine": {
-      "version": "14.24.1",
+      "version": "15.1.1",
       "id": "Seraphine",
       "key": "147",
       "name": "세라핀",
@@ -5826,7 +5826,7 @@
       }
     },
     "Sett": {
-      "version": "14.24.1",
+      "version": "15.1.1",
       "id": "Sett",
       "key": "875",
       "name": "세트",
@@ -5876,7 +5876,7 @@
       }
     },
     "Shaco": {
-      "version": "14.24.1",
+      "version": "15.1.1",
       "id": "Shaco",
       "key": "35",
       "name": "샤코",
@@ -5925,7 +5925,7 @@
       }
     },
     "Shen": {
-      "version": "14.24.1",
+      "version": "15.1.1",
       "id": "Shen",
       "key": "98",
       "name": "쉔",
@@ -5974,7 +5974,7 @@
       }
     },
     "Shyvana": {
-      "version": "14.24.1",
+      "version": "15.1.1",
       "id": "Shyvana",
       "key": "102",
       "name": "쉬바나",
@@ -6024,7 +6024,7 @@
       }
     },
     "Singed": {
-      "version": "14.24.1",
+      "version": "15.1.1",
       "id": "Singed",
       "key": "27",
       "name": "신지드",
@@ -6074,7 +6074,7 @@
       }
     },
     "Sion": {
-      "version": "14.24.1",
+      "version": "15.1.1",
       "id": "Sion",
       "key": "14",
       "name": "사이온",
@@ -6124,7 +6124,7 @@
       }
     },
     "Sivir": {
-      "version": "14.24.1",
+      "version": "15.1.1",
       "id": "Sivir",
       "key": "15",
       "name": "시비르",
@@ -6173,7 +6173,7 @@
       }
     },
     "Skarner": {
-      "version": "14.24.1",
+      "version": "15.1.1",
       "id": "Skarner",
       "key": "72",
       "name": "스카너",
@@ -6223,7 +6223,7 @@
       }
     },
     "Smolder": {
-      "version": "14.24.1",
+      "version": "15.1.1",
       "id": "Smolder",
       "key": "901",
       "name": "스몰더",
@@ -6273,7 +6273,7 @@
       }
     },
     "Sona": {
-      "version": "14.24.1",
+      "version": "15.1.1",
       "id": "Sona",
       "key": "37",
       "name": "소나",
@@ -6323,7 +6323,7 @@
       }
     },
     "Soraka": {
-      "version": "14.24.1",
+      "version": "15.1.1",
       "id": "Soraka",
       "key": "16",
       "name": "소라카",
@@ -6373,7 +6373,7 @@
       }
     },
     "Swain": {
-      "version": "14.24.1",
+      "version": "15.1.1",
       "id": "Swain",
       "key": "50",
       "name": "스웨인",
@@ -6423,7 +6423,7 @@
       }
     },
     "Sylas": {
-      "version": "14.24.1",
+      "version": "15.1.1",
       "id": "Sylas",
       "key": "517",
       "name": "사일러스",
@@ -6473,7 +6473,7 @@
       }
     },
     "Syndra": {
-      "version": "14.24.1",
+      "version": "15.1.1",
       "id": "Syndra",
       "key": "134",
       "name": "신드라",
@@ -6522,7 +6522,7 @@
       }
     },
     "TahmKench": {
-      "version": "14.24.1",
+      "version": "15.1.1",
       "id": "TahmKench",
       "key": "223",
       "name": "탐 켄치",
@@ -6554,7 +6554,7 @@
         "mp": 325,
         "mpperlevel": 50,
         "movespeed": 335,
-        "armor": 42,
+        "armor": 39,
         "armorperlevel": 4.7,
         "spellblock": 32,
         "spellblockperlevel": 2.05,
@@ -6572,7 +6572,7 @@
       }
     },
     "Taliyah": {
-      "version": "14.24.1",
+      "version": "15.1.1",
       "id": "Taliyah",
       "key": "163",
       "name": "탈리야",
@@ -6622,7 +6622,7 @@
       }
     },
     "Talon": {
-      "version": "14.24.1",
+      "version": "15.1.1",
       "id": "Talon",
       "key": "91",
       "name": "탈론",
@@ -6671,7 +6671,7 @@
       }
     },
     "Taric": {
-      "version": "14.24.1",
+      "version": "15.1.1",
       "id": "Taric",
       "key": "44",
       "name": "타릭",
@@ -6721,7 +6721,7 @@
       }
     },
     "Teemo": {
-      "version": "14.24.1",
+      "version": "15.1.1",
       "id": "Teemo",
       "key": "17",
       "name": "티모",
@@ -6771,7 +6771,7 @@
       }
     },
     "Thresh": {
-      "version": "14.24.1",
+      "version": "15.1.1",
       "id": "Thresh",
       "key": "412",
       "name": "쓰레쉬",
@@ -6821,7 +6821,7 @@
       }
     },
     "Tristana": {
-      "version": "14.24.1",
+      "version": "15.1.1",
       "id": "Tristana",
       "key": "18",
       "name": "트리스타나",
@@ -6871,7 +6871,7 @@
       }
     },
     "Trundle": {
-      "version": "14.24.1",
+      "version": "15.1.1",
       "id": "Trundle",
       "key": "48",
       "name": "트런들",
@@ -6921,7 +6921,7 @@
       }
     },
     "Tryndamere": {
-      "version": "14.24.1",
+      "version": "15.1.1",
       "id": "Tryndamere",
       "key": "23",
       "name": "트린다미어",
@@ -6971,7 +6971,7 @@
       }
     },
     "TwistedFate": {
-      "version": "14.24.1",
+      "version": "15.1.1",
       "id": "TwistedFate",
       "key": "4",
       "name": "트위스티드 페이트",
@@ -7021,7 +7021,7 @@
       }
     },
     "Twitch": {
-      "version": "14.24.1",
+      "version": "15.1.1",
       "id": "Twitch",
       "key": "29",
       "name": "트위치",
@@ -7071,7 +7071,7 @@
       }
     },
     "Udyr": {
-      "version": "14.24.1",
+      "version": "15.1.1",
       "id": "Udyr",
       "key": "77",
       "name": "우디르",
@@ -7121,7 +7121,7 @@
       }
     },
     "Urgot": {
-      "version": "14.24.1",
+      "version": "15.1.1",
       "id": "Urgot",
       "key": "6",
       "name": "우르곳",
@@ -7171,7 +7171,7 @@
       }
     },
     "Varus": {
-      "version": "14.24.1",
+      "version": "15.1.1",
       "id": "Varus",
       "key": "110",
       "name": "바루스",
@@ -7200,7 +7200,7 @@
       "stats": {
         "hp": 600,
         "hpperlevel": 105,
-        "mp": 360,
+        "mp": 320,
         "mpperlevel": 40,
         "movespeed": 330,
         "armor": 27,
@@ -7221,7 +7221,7 @@
       }
     },
     "Vayne": {
-      "version": "14.24.1",
+      "version": "15.1.1",
       "id": "Vayne",
       "key": "67",
       "name": "베인",
@@ -7271,7 +7271,7 @@
       }
     },
     "Veigar": {
-      "version": "14.24.1",
+      "version": "15.1.1",
       "id": "Veigar",
       "key": "45",
       "name": "베이가",
@@ -7320,7 +7320,7 @@
       }
     },
     "Velkoz": {
-      "version": "14.24.1",
+      "version": "15.1.1",
       "id": "Velkoz",
       "key": "161",
       "name": "벨코즈",
@@ -7370,7 +7370,7 @@
       }
     },
     "Vex": {
-      "version": "14.24.1",
+      "version": "15.1.1",
       "id": "Vex",
       "key": "711",
       "name": "벡스",
@@ -7419,7 +7419,7 @@
       }
     },
     "Vi": {
-      "version": "14.24.1",
+      "version": "15.1.1",
       "id": "Vi",
       "key": "254",
       "name": "바이",
@@ -7469,7 +7469,7 @@
       }
     },
     "Viego": {
-      "version": "14.24.1",
+      "version": "15.1.1",
       "id": "Viego",
       "key": "234",
       "name": "비에고",
@@ -7519,7 +7519,7 @@
       }
     },
     "Viktor": {
-      "version": "14.24.1",
+      "version": "15.1.1",
       "id": "Viktor",
       "key": "112",
       "name": "빅토르",
@@ -7546,12 +7546,12 @@
       "partype": "마나",
       "stats": {
         "hp": 600,
-        "hpperlevel": 104,
+        "hpperlevel": 100,
         "mp": 405,
         "mpperlevel": 45,
         "movespeed": 335,
         "armor": 23,
-        "armorperlevel": 5.2,
+        "armorperlevel": 4.4,
         "spellblock": 30,
         "spellblockperlevel": 1.3,
         "attackrange": 525,
@@ -7568,7 +7568,7 @@
       }
     },
     "Vladimir": {
-      "version": "14.24.1",
+      "version": "15.1.1",
       "id": "Vladimir",
       "key": "8",
       "name": "블라디미르",
@@ -7618,7 +7618,7 @@
       }
     },
     "Volibear": {
-      "version": "14.24.1",
+      "version": "15.1.1",
       "id": "Volibear",
       "key": "106",
       "name": "볼리베어",
@@ -7668,7 +7668,7 @@
       }
     },
     "Warwick": {
-      "version": "14.24.1",
+      "version": "15.1.1",
       "id": "Warwick",
       "key": "19",
       "name": "워윅",
@@ -7711,14 +7711,14 @@
         "mpregenperlevel": 0.6,
         "crit": 0,
         "critperlevel": 0,
-        "attackdamage": 63,
-        "attackdamageperlevel": 3,
+        "attackdamage": 60,
+        "attackdamageperlevel": 2.75,
         "attackspeedperlevel": 2.3,
         "attackspeed": 0.638
       }
     },
     "Xayah": {
-      "version": "14.24.1",
+      "version": "15.1.1",
       "id": "Xayah",
       "key": "498",
       "name": "자야",
@@ -7767,7 +7767,7 @@
       }
     },
     "Xerath": {
-      "version": "14.24.1",
+      "version": "15.1.1",
       "id": "Xerath",
       "key": "101",
       "name": "제라스",
@@ -7817,7 +7817,7 @@
       }
     },
     "XinZhao": {
-      "version": "14.24.1",
+      "version": "15.1.1",
       "id": "XinZhao",
       "key": "5",
       "name": "신 짜오",
@@ -7867,7 +7867,7 @@
       }
     },
     "Yasuo": {
-      "version": "14.24.1",
+      "version": "15.1.1",
       "id": "Yasuo",
       "key": "157",
       "name": "야스오",
@@ -7917,7 +7917,7 @@
       }
     },
     "Yone": {
-      "version": "14.24.1",
+      "version": "15.1.1",
       "id": "Yone",
       "key": "777",
       "name": "요네",
@@ -7967,7 +7967,7 @@
       }
     },
     "Yorick": {
-      "version": "14.24.1",
+      "version": "15.1.1",
       "id": "Yorick",
       "key": "83",
       "name": "요릭",
@@ -8017,7 +8017,7 @@
       }
     },
     "Yuumi": {
-      "version": "14.24.1",
+      "version": "15.1.1",
       "id": "Yuumi",
       "key": "350",
       "name": "유미",
@@ -8067,7 +8067,7 @@
       }
     },
     "Zac": {
-      "version": "14.24.1",
+      "version": "15.1.1",
       "id": "Zac",
       "key": "154",
       "name": "자크",
@@ -8117,7 +8117,7 @@
       }
     },
     "Zed": {
-      "version": "14.24.1",
+      "version": "15.1.1",
       "id": "Zed",
       "key": "238",
       "name": "제드",
@@ -8166,7 +8166,7 @@
       }
     },
     "Zeri": {
-      "version": "14.24.1",
+      "version": "15.1.1",
       "id": "Zeri",
       "key": "221",
       "name": "제리",
@@ -8215,7 +8215,7 @@
       }
     },
     "Ziggs": {
-      "version": "14.24.1",
+      "version": "15.1.1",
       "id": "Ziggs",
       "key": "115",
       "name": "직스",
@@ -8264,7 +8264,7 @@
       }
     },
     "Zilean": {
-      "version": "14.24.1",
+      "version": "15.1.1",
       "id": "Zilean",
       "key": "26",
       "name": "질리언",
@@ -8314,7 +8314,7 @@
       }
     },
     "Zoe": {
-      "version": "14.24.1",
+      "version": "15.1.1",
       "id": "Zoe",
       "key": "142",
       "name": "조이",
@@ -8363,7 +8363,7 @@
       }
     },
     "Zyra": {
-      "version": "14.24.1",
+      "version": "15.1.1",
       "id": "Zyra",
       "key": "143",
       "name": "자이라",
