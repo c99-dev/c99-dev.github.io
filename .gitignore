@@ -25,3 +25,4 @@ yarn-error.log*
 /scripts
 /.env
 /.vscode
+/sequence-diagram.md
