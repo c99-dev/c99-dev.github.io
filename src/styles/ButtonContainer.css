@@ -1,0 +1,24 @@
+.button-container {
+  height: 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.button-container button {
+  padding: 10px 15px;
+  border: none;
+  margin: 10px 10px 0px 10px;
+  border-radius: 5px;
+  background-color: #4caf50;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.ban-button:hover,
+.option-button:hover,
+.copy-button:hover,
+.copy-text-button:hover {
+  background-color: #45a049;
+}

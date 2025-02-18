@@ -1,0 +1,94 @@
+.blue-team {
+  background-color: rgb(110, 110, 255);
+  padding: 5px 10px;
+}
+
+.red-team {
+  background-color: rgb(255, 110, 110);
+  padding: 5px 10px;
+}
+
+table {
+  border-collapse: collapse;
+  margin: 20px 0;
+  table-layout: auto;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+th,
+td {
+  border: 1px solid #ddd;
+  padding: 4px 8px;
+  font-size: 16px;
+  text-align: left;
+  white-space: nowrap;
+  vertical-align: middle;
+}
+
+th {
+  background-color: #4caf50;
+  color: white;
+  text-align: center;
+}
+
+tr:nth-child(even) {
+  background-color: #313131;
+}
+
+tr:hover {
+  background-color: #ddd;
+}
+
+.champion {
+  width: 180px;
+}
+
+.rank {
+  width: 32px;
+}
+
+.winrate {
+  width: 55px;
+}
+
+.tier {
+  width: 32px;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.hide-font {
+  font-size: 0;
+}
+
+.hide-rank .rank,
+.hide-winrate .winrate,
+.hide-tier .tier {
+  display: none;
+}
+
+.champion-name {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.champion-image-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.champion-portrait {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+}
+
+.tier-badge {
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  width: 18px;
+  height: 18px;
+}

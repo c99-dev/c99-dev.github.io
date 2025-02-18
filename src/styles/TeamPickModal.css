@@ -1,0 +1,118 @@
+.team-pick-modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #1a1a1a;
+  border-radius: 8px;
+  padding: 20px;
+  max-width: 800px;
+  width: 90%;
+  max-height: 80vh;
+  outline: none;
+}
+
+.team-pick-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.75);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.team-pick-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.team-pick-header h2 {
+  color: #ffffff;
+  text-align: center;
+  flex-grow: 1;
+}
+
+.team-selector {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.team-button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.team-button.active {
+  background-color: #4a90e2;
+  color: white;
+}
+
+.close-button {
+  position: absolute;
+  right: 0;
+  top: 0;
+  background: none;
+  border: none;
+  color: #ffffff;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.champions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+  gap: 10px;
+  overflow-y: auto;
+  max-height: calc(80vh - 100px);
+  padding: 10px;
+}
+
+.champion-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+}
+
+.champion-item:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.champion-portrait {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+
+.champion-name {
+  color: #ffffff;
+  font-size: 12px;
+  margin-top: 5px;
+  text-align: center;
+}
+
+.loading-indicator {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  color: #ffffff;
+  font-size: 12px;
+}

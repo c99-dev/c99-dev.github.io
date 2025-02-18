@@ -1,8 +1,8 @@
-import React, { useMemo } from "react";
-import ChampionTable from "./ChampionTable";
-import ImageLoader from "./ImageLoader";
-import BanModal from "./BanModal";
-import OptionModal from "./OptionModal";
+import React, { useMemo } from 'react';
+import ChampionTable from './ChampionTable';
+import ImageLoader from './ImageLoader';
+import BanModal from './BanModal';
+import OptionModal from './OptionModal';
 
 const MemoizedImageLoader = React.memo(ImageLoader);
 

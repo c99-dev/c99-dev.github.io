@@ -1,5 +1,6 @@
-import React, { useState, useEffect, useCallback } from "react";
-import Modal from "react-modal";
+import React, { useState, useEffect, useCallback } from 'react';
+import Modal from 'react-modal';
+import './../styles/OptionModal.css';
 
 function OptionModal({
   isOpen,
@@ -16,7 +17,7 @@ function OptionModal({
     (e) => {
       const value = e.target.value;
       if (
-        value === "" ||
+        value === '' ||
         (Number(value) >= 1 && Number(value) <= maxDisplayCount)
       ) {
         setInputValue(value);

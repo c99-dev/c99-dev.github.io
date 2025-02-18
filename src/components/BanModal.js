@@ -1,5 +1,6 @@
-import React, { useMemo, useCallback } from "react";
-import Modal from "react-modal";
+import React, { useMemo, useCallback } from 'react';
+import Modal from 'react-modal';
+import './../styles/BanModal.css';
 
 function BanModal({
   isOpen,
@@ -12,7 +13,7 @@ function BanModal({
 }) {
   const handleClearBans = useCallback(() => {
     setBannedChampions([]);
-    localStorage.removeItem("lolApp_bannedChampions");
+    localStorage.removeItem('lolApp_bannedChampions');
   }, [setBannedChampions]);
 
   const sortedChampions = useMemo(() => {
@@ -29,19 +30,19 @@ function BanModal({
       return (
         <div
           key={champion.id}
-          className={`champion-item ${isBanned ? "banned" : ""}`}
+          className={`champion-item ${isBanned ? 'banned' : ''}`}
           data-champion-id={champion.id}
         >
           {championImages[champion.id] ? (
             <img
               src={championImages[champion.id]}
               alt={champion.name}
-              className={isBanned ? "banned" : ""}
+              className={isBanned ? 'banned' : ''}
             />
           ) : (
             <div className="loading-indicator">로딩 중...</div>
           )}
-          <span className={isBanned ? "banned" : ""}>{champion.name}</span>
+          <span className={isBanned ? 'banned' : ''}>{champion.name}</span>
         </div>
       );
     },
@@ -50,7 +51,7 @@ function BanModal({
 
   const handleChampionClick = useCallback(
     (e) => {
-      const championId = e.target.closest(".champion-item")?.dataset.championId;
+      const championId = e.target.closest('.champion-item')?.dataset.championId;
       if (championId) {
         toggleBan(championId);
       }

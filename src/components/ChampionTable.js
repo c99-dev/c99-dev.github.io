@@ -1,4 +1,5 @@
-import React, { useMemo } from "react";
+import React, { useMemo } from 'react';
+import './../styles/ChampionTable.css';
 
 function ChampionTable({
   champions,
@@ -16,11 +17,11 @@ function ChampionTable({
 
     const getSortedChampions = () => {
       switch (sortOption) {
-        case "alphabetical":
+        case 'alphabetical':
           return championsCopy.sort((a, b) => a.name.localeCompare(b.name));
-        case "random":
+        case 'random':
           return champions;
-        case "tier":
+        case 'tier':
         default: // tier를 기본 정렬로 설정
           return championsCopy.sort((a, b) => {
             const rankA = championRanking[a.name]?.ranking || 999;
@@ -39,14 +40,14 @@ function ChampionTable({
 
   return (
     <table
-      className={`${!tableOptions.rank ? "hide-rank" : ""} ${
-        !tableOptions.winrate ? "hide-winrate" : ""
-      } ${!tableOptions.tier ? "hide-tier" : ""}`}
+      className={`${!tableOptions.rank ? 'hide-rank' : ''} ${
+        !tableOptions.winrate ? 'hide-winrate' : ''
+      } ${!tableOptions.tier ? 'hide-tier' : ''}`}
     >
       <thead>
         <tr>
           <th
-            className={`${teamName === "블루 팀" ? "blue-team" : "red-team"}`}
+            className={`${teamName === '블루 팀' ? 'blue-team' : 'red-team'}`}
             colSpan="4"
           >
             {teamName}
