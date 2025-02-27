@@ -1,6 +1,6 @@
-import { useState, useCallback, useMemo, useRef } from "react";
-import { shuffleArray } from "../utils/utils";
-import ReactGA from "react-ga4";
+import { useState, useCallback, useMemo, useRef } from 'react';
+import { shuffleArray } from '../utils/utils';
+import ReactGA from 'react-ga4';
 
 function useRandomChampions(gameData, bannedChampions, displayCount) {
   const [randomChampions, setRandomChampions] = useState({
@@ -25,9 +25,9 @@ function useRandomChampions(gameData, bannedChampions, displayCount) {
     resetCountRef.current += 1;
 
     ReactGA.event({
-      category: "Button",
-      action: "Click",
-      label: "Reset Champions",
+      category: 'Button',
+      action: 'Click',
+      label: 'Reset Champions',
     });
   }, [availableChampions, displayCount]);
 
@@ -50,7 +50,7 @@ function useRandomChampions(gameData, bannedChampions, displayCount) {
         );
 
         if (availableChampionsForReroll.length === 0) {
-          alert("사용 가능한 챔피언이 없습니다.");
+          alert('사용 가능한 챔피언이 없습니다.');
           return;
         }
 
