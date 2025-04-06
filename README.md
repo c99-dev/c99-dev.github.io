@@ -2,7 +2,7 @@
 
 https://칼바람랜덤픽.메인.한국
 
-![image](https://github.com/c99-dev/c99-dev.github.io/assets/87958906/86f59540-aaa2-4a8c-8b7b-064128e75ce8)
+![image](https://github.com/user-attachments/assets/a7d16d3d-57c3-4560-a6d2-cc5ccf86dbb9)
 
 - React 18
 - React Modal
