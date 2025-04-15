@@ -2,6 +2,10 @@
 
 https://칼바람랜덤픽.메인.한국
 
+![image](https://github.com/user-attachments/assets/b4cbbde8-f60d-44f7-a9eb-5a1d673632f7)
+
+![image](https://github.com/user-attachments/assets/e18b91d1-ee8a-4be3-9b85-f0b1e7a3060d)
+
 ![image](https://github.com/user-attachments/assets/a7d16d3d-57c3-4560-a6d2-cc5ccf86dbb9)
 
 - React 18
@@ -33,6 +37,6 @@ https://칼바람랜덤픽.메인.한국
 
 ## 🔄 데이터 업데이트
 
-- Python 스크립트로 챔피언/랭킹 데이터 자동 갱신
+- ~~Python 스크립트로 챔피언/랭킹 데이터 자동 갱신~~
 - 이미지 리소스 자동 다운로드
 - 배포 전 데이터 자동 동기화
