@@ -1,124 +1,194 @@
 {
-  "요릭": {
-    "ranking": 22,
-    "pickRate": "1.47",
-    "count": 311,
-    "winRate": "57.88",
+  "소나": {
+    "ranking": 11,
+    "pickRate": "5.21",
+    "count": 116756,
+    "winRate": "55.80",
     "duoChampionIds": [
-      17,
       18,
-      19
+      19,
+      20
+    ],
+    "opTier": 1,
+    "isHoney": true,
+    "isOp": false
+  },
+  "마오카이": {
+    "ranking": 7,
+    "pickRate": "7.25",
+    "count": 162517,
+    "winRate": "55.11",
+    "duoChampionIds": [
+      36,
+      37,
+      38
+    ],
+    "opTier": 1,
+    "isHoney": true,
+    "isOp": false
+  },
+  "사이온": {
+    "ranking": 14,
+    "pickRate": "5.50",
+    "count": 123320,
+    "winRate": "54.80",
+    "duoChampionIds": [
+      53,
+      54,
+      55
     ],
     "opTier": 2,
     "isHoney": false,
     "isOp": false
   },
-  "나르": {
+  "쉔": {
     "ranking": 15,
-    "pickRate": "3.43",
-    "count": 726,
-    "winRate": "56.61",
+    "pickRate": "5.97",
+    "count": 133848,
+    "winRate": "54.48",
     "duoChampionIds": [
-      30,
-      35,
+      38,
+      37,
       36
     ],
     "opTier": 2,
     "isHoney": false,
     "isOp": false
   },
+  "피들스틱": {
+    "ranking": 18,
+    "pickRate": "6.30",
+    "count": 141315,
+    "winRate": "54.10",
+    "duoChampionIds": [
+      81,
+      53,
+      14
+    ],
+    "opTier": 2,
+    "isHoney": false,
+    "isOp": false
+  },
+  "시비르": {
+    "ranking": 9,
+    "pickRate": "8.54",
+    "count": 191547,
+    "winRate": "54.01",
+    "duoChampionIds": [
+      94,
+      14,
+      95
+    ],
+    "opTier": 1,
+    "isHoney": true,
+    "isOp": false
+  },
+  "아이번": {
+    "ranking": 61,
+    "pickRate": "2.22",
+    "count": 49870,
+    "winRate": "53.85",
+    "duoChampionIds": [
+      64,
+      109,
+      110
+    ],
+    "opTier": 3,
+    "isHoney": false,
+    "isOp": false
+  },
   "바루스": {
     "ranking": 1,
-    "pickRate": "12.15",
-    "count": 2575,
-    "winRate": "55.53",
+    "pickRate": "12.20",
+    "count": 273635,
+    "winRate": "53.83",
     "duoChampionIds": [
-      51,
-      52,
-      53
+      33,
+      14,
+      66
     ],
     "opTier": 1,
     "isHoney": true,
     "isOp": true
   },
-  "마오카이": {
-    "ranking": 5,
-    "pickRate": "7.51",
-    "count": 1592,
-    "winRate": "55.28",
+  "갈리오": {
+    "ranking": 17,
+    "pickRate": "7.01",
+    "count": 157277,
+    "winRate": "53.74",
     "duoChampionIds": [
-      67,
-      68,
-      69
-    ],
-    "opTier": 2,
-    "isHoney": true,
-    "isOp": false
-  },
-  "쉔": {
-    "ranking": 11,
-    "pickRate": "6.02",
-    "count": 1275,
-    "winRate": "55.22",
-    "duoChampionIds": [
-      83,
-      84,
-      85
-    ],
-    "opTier": 2,
-    "isHoney": true,
-    "isOp": false
-  },
-  "오른": {
-    "ranking": 31,
-    "pickRate": "3.79",
-    "count": 803,
-    "winRate": "55.17",
-    "duoChampionIds": [
-      99,
-      11,
-      48
+      53,
+      135,
+      136
     ],
     "opTier": 2,
     "isHoney": false,
     "isOp": false
   },
-  "케넨": {
-    "ranking": 23,
-    "pickRate": "5.18",
-    "count": 1097,
-    "winRate": "54.79",
+  "세트": {
+    "ranking": 20,
+    "pickRate": "6.68",
+    "count": 149869,
+    "winRate": "53.73",
     "duoChampionIds": [
-      113,
-      114,
-      115
-    ],
-    "opTier": 2,
-    "isHoney": false,
-    "isOp": false
-  },
-  "리산드라": {
-    "ranking": 24,
-    "pickRate": "4.74",
-    "count": 1004,
-    "winRate": "54.78",
-    "duoChampionIds": [
-      130,
-      131,
+      18,
+      54,
       132
     ],
     "opTier": 2,
     "isHoney": false,
     "isOp": false
   },
-  "나미": {
-    "ranking": 28,
-    "pickRate": "4.50",
-    "count": 954,
-    "winRate": "54.72",
+  "제라스": {
+    "ranking": 5,
+    "pickRate": "10.22",
+    "count": 229226,
+    "winRate": "53.52",
     "duoChampionIds": [
-      146,
-      147,
+      164,
+      33,
+      81
+    ],
+    "opTier": 1,
+    "isHoney": true,
+    "isOp": false
+  },
+  "나미": {
+    "ranking": 40,
+    "pickRate": "4.52",
+    "count": 101434,
+    "winRate": "53.46",
+    "duoChampionIds": [
+      177,
+      105,
+      33
+    ],
+    "opTier": 2,
+    "isHoney": false,
+    "isOp": false
+  },
+  "징크스": {
+    "ranking": 2,
+    "pickRate": "11.93",
+    "count": 267645,
+    "winRate": "53.44",
+    "duoChampionIds": [
+      14,
+      33,
+      190
+    ],
+    "opTier": 1,
+    "isHoney": true,
+    "isOp": true
+  },
+  "케넨": {
+    "ranking": 35,
+    "pickRate": "5.32",
+    "count": 119441,
+    "winRate": "53.37",
+    "duoChampionIds": [
+      14,
+      53,
       148
     ],
     "opTier": 2,
@@ -126,2176 +196,2076 @@
     "isOp": false
   },
   "브라움": {
-    "ranking": 34,
-    "pickRate": "4.33",
-    "count": 917,
-    "winRate": "54.42",
-    "duoChampionIds": [
-      163,
-      46,
-      164
-    ],
-    "opTier": 2,
-    "isHoney": false,
-    "isOp": false
-  },
-  "시비르": {
-    "ranking": 8,
-    "pickRate": "8.41",
-    "count": 1782,
-    "winRate": "54.32",
-    "duoChampionIds": [
-      177,
-      178,
-      32
-    ],
-    "opTier": 2,
-    "isHoney": true,
-    "isOp": false
-  },
-  "갈리오": {
-    "ranking": 21,
-    "pickRate": "6.09",
-    "count": 1290,
-    "winRate": "54.19",
-    "duoChampionIds": [
-      48,
-      51,
-      96
-    ],
-    "opTier": 2,
-    "isHoney": false,
-    "isOp": false
-  },
-  "사이온": {
-    "ranking": 40,
-    "pickRate": "4.37",
-    "count": 926,
-    "winRate": "54.10",
-    "duoChampionIds": [
-      202,
-      148,
-      46
-    ],
-    "opTier": 2,
-    "isHoney": false,
-    "isOp": false
-  },
-  "말자하": {
-    "ranking": 26,
-    "pickRate": "5.80",
-    "count": 1229,
-    "winRate": "53.95",
-    "duoChampionIds": [
-      215,
-      115,
-      202
-    ],
-    "opTier": 2,
-    "isHoney": false,
-    "isOp": false
-  },
-  "진": {
-    "ranking": 2,
-    "pickRate": "12.59",
-    "count": 2668,
-    "winRate": "53.86",
-    "duoChampionIds": [
-      227,
-      228,
-      229
-    ],
-    "opTier": 1,
-    "isHoney": true,
-    "isOp": true
-  },
-  "세주아니": {
-    "ranking": 63,
-    "pickRate": "2.92",
-    "count": 619,
-    "winRate": "53.47",
-    "duoChampionIds": [
-      115,
-      244,
-      245
-    ],
-    "opTier": 3,
-    "isHoney": false,
-    "isOp": false
-  },
-  "잔나": {
     "ranking": 38,
-    "pickRate": "5.53",
-    "count": 1172,
-    "winRate": "53.41",
+    "pickRate": "4.96",
+    "count": 111217,
+    "winRate": "53.35",
     "duoChampionIds": [
-      178,
-      258,
-      259
-    ],
-    "opTier": 2,
-    "isHoney": false,
-    "isOp": false
-  },
-  "흐웨이": {
-    "ranking": 30,
-    "pickRate": "6.30",
-    "count": 1335,
-    "winRate": "53.33",
-    "duoChampionIds": [
-      273,
       64,
-      143
-    ],
-    "opTier": 2,
-    "isHoney": false,
-    "isOp": false
-  },
-  "제라스": {
-    "ranking": 7,
-    "pickRate": "10.30",
-    "count": 2182,
-    "winRate": "53.30",
-    "duoChampionIds": [
-      52,
-      127,
-      286
-    ],
-    "opTier": 2,
-    "isHoney": true,
-    "isOp": false
-  },
-  "징크스": {
-    "ranking": 3,
-    "pickRate": "11.93",
-    "count": 2528,
-    "winRate": "53.24",
-    "duoChampionIds": [
-      63,
-      228,
-      300
-    ],
-    "opTier": 1,
-    "isHoney": true,
-    "isOp": true
-  },
-  "럭스": {
-    "ranking": 4,
-    "pickRate": "11.04",
-    "count": 2339,
-    "winRate": "53.19",
-    "duoChampionIds": [
-      158,
-      110,
-      314
-    ],
-    "opTier": 2,
-    "isHoney": true,
-    "isOp": false
-  },
-  "직스": {
-    "ranking": 10,
-    "pickRate": "9.62",
-    "count": 2039,
-    "winRate": "52.92",
-    "duoChampionIds": [
-      227,
-      327,
-      328
-    ],
-    "opTier": 2,
-    "isHoney": false,
-    "isOp": false
-  },
-  "그라가스": {
-    "ranking": 35,
-    "pickRate": "6.37",
-    "count": 1350,
-    "winRate": "52.89",
-    "duoChampionIds": [
-      342,
-      343,
-      344
-    ],
-    "opTier": 2,
-    "isHoney": false,
-    "isOp": false
-  },
-  "아이번": {
-    "ranking": 78,
-    "pickRate": "2.28",
-    "count": 484,
-    "winRate": "52.89",
-    "duoChampionIds": [
-      357,
-      358,
-      259
-    ],
-    "opTier": 3,
-    "isHoney": false,
-    "isOp": false
-  },
-  "애니": {
-    "ranking": 33,
-    "pickRate": "6.69",
-    "count": 1417,
-    "winRate": "52.86",
-    "duoChampionIds": [
-      160,
-      48,
-      63
-    ],
-    "opTier": 2,
-    "isHoney": false,
-    "isOp": false
-  },
-  "벨코즈": {
-    "ranking": 14,
-    "pickRate": "8.77",
-    "count": 1859,
-    "winRate": "52.82",
-    "duoChampionIds": [
-      369,
-      113,
-      382
-    ],
-    "opTier": 2,
-    "isHoney": false,
-    "isOp": false
-  },
-  "칼리스타": {
-    "ranking": 59,
-    "pickRate": "4.45",
-    "count": 944,
-    "winRate": "52.75",
-    "duoChampionIds": [
-      395,
-      240,
-      396
-    ],
-    "opTier": 2,
-    "isHoney": false,
-    "isOp": false
-  },
-  "벡스": {
-    "ranking": 52,
-    "pickRate": "4.94",
-    "count": 1047,
-    "winRate": "52.72",
-    "duoChampionIds": [
-      411,
-      412,
-      413
-    ],
-    "opTier": 2,
-    "isHoney": false,
-    "isOp": false
-  },
-  "세트": {
-    "ranking": 39,
-    "pickRate": "6.28",
-    "count": 1332,
-    "winRate": "52.70",
-    "duoChampionIds": [
-      110,
-      11,
-      427
-    ],
-    "opTier": 2,
-    "isHoney": false,
-    "isOp": false
-  },
-  "소나": {
-    "ranking": 51,
-    "pickRate": "4.98",
-    "count": 1055,
-    "winRate": "52.70",
-    "duoChampionIds": [
-      439,
-      110,
-      132
+      38,
+      215
     ],
     "opTier": 2,
     "isHoney": false,
     "isOp": false
   },
   "야스오": {
-    "ranking": 32,
-    "pickRate": "7.24",
-    "count": 1535,
-    "winRate": "52.51",
+    "ranking": 23,
+    "pickRate": "7.27",
+    "count": 163036,
+    "winRate": "53.15",
     "duoChampionIds": [
-      454,
-      455,
-      67
+      14,
+      229,
+      37
     ],
     "opTier": 2,
     "isHoney": false,
     "isOp": false
   },
-  "코그모": {
+  "말자하": {
     "ranking": 37,
-    "pickRate": "6.86",
-    "count": 1453,
-    "winRate": "52.51",
+    "pickRate": "5.40",
+    "count": 121175,
+    "winRate": "53.12",
     "duoChampionIds": [
-      143,
-      454,
-      338
+      49,
+      241,
+      135
     ],
     "opTier": 2,
     "isHoney": false,
     "isOp": false
   },
   "케이틀린": {
-    "ranking": 6,
-    "pickRate": "11.96",
-    "count": 2535,
-    "winRate": "52.50",
+    "ranking": 3,
+    "pickRate": "12.24",
+    "count": 274489,
+    "winRate": "53.02",
     "duoChampionIds": [
-      328,
-      286,
-      31
+      14,
+      50,
+      200
     ],
-    "opTier": 2,
-    "isHoney": false,
-    "isOp": false
-  },
-  "알리스타": {
-    "ranking": 49,
-    "pickRate": "5.68",
-    "count": 1203,
-    "winRate": "52.37",
-    "duoChampionIds": [
-      18,
-      327,
-      48
-    ],
-    "opTier": 2,
-    "isHoney": false,
-    "isOp": false
-  },
-  "멜": {
-    "ranking": 20,
-    "pickRate": "8.85",
-    "count": 1876,
-    "winRate": "52.35",
-    "duoChampionIds": [
-      407,
-      502,
-      427
-    ],
-    "opTier": 2,
-    "isHoney": false,
-    "isOp": false
-  },
-  "자야": {
-    "ranking": 19,
-    "pickRate": "9.14",
-    "count": 1937,
-    "winRate": "52.25",
-    "duoChampionIds": [
-      35,
-      515,
-      115
-    ],
-    "opTier": 2,
-    "isHoney": false,
-    "isOp": false
-  },
-  "탐 켄치": {
-    "ranking": 66,
-    "pickRate": "4.33",
-    "count": 917,
-    "winRate": "52.24",
-    "duoChampionIds": [
-      19,
-      527,
-      35
-    ],
-    "opTier": 3,
-    "isHoney": false,
-    "isOp": false
-  },
-  "오로라": {
-    "ranking": 57,
-    "pickRate": "5.40",
-    "count": 1144,
-    "winRate": "52.19",
-    "duoChampionIds": [
-      539,
-      310,
-      540
-    ],
-    "opTier": 2,
-    "isHoney": false,
-    "isOp": false
-  },
-  "세나": {
-    "ranking": 18,
-    "pickRate": "9.74",
-    "count": 2064,
-    "winRate": "52.03",
-    "duoChampionIds": [
-      553,
-      554,
-      35
-    ],
-    "opTier": 2,
-    "isHoney": false,
-    "isOp": false
-  },
-  "스웨인": {
-    "ranking": 46,
-    "pickRate": "6.28",
-    "count": 1330,
-    "winRate": "52.03",
-    "duoChampionIds": [
-      160,
-      10,
-      564
-    ],
-    "opTier": 2,
-    "isHoney": false,
-    "isOp": false
-  },
-  "조이": {
-    "ranking": 54,
-    "pickRate": "5.88",
-    "count": 1247,
-    "winRate": "51.96",
-    "duoChampionIds": [
-      576,
-      573,
-      408
-    ],
-    "opTier": 2,
-    "isHoney": false,
-    "isOp": false
-  },
-  "모르가나": {
-    "ranking": 12,
-    "pickRate": "11.08",
-    "count": 2349,
-    "winRate": "51.94",
-    "duoChampionIds": [
-      354,
-      573,
-      52
-    ],
-    "opTier": 2,
-    "isHoney": false,
-    "isOp": false
-  },
-  "렐": {
-    "ranking": 73,
-    "pickRate": "3.89",
-    "count": 824,
-    "winRate": "51.94",
-    "duoChampionIds": [
-      550,
-      177,
-      599
-    ],
-    "opTier": 3,
-    "isHoney": false,
-    "isOp": false
-  },
-  "피들스틱": {
-    "ranking": 47,
-    "pickRate": "6.45",
-    "count": 1368,
-    "winRate": "51.90",
-    "duoChampionIds": [
-      465,
-      215,
-      310
-    ],
-    "opTier": 2,
-    "isHoney": false,
-    "isOp": false
-  },
-  "킨드레드": {
-    "ranking": 72,
-    "pickRate": "4.24",
-    "count": 898,
-    "winRate": "51.89",
-    "duoChampionIds": [
-      68,
-      439,
-      625
-    ],
-    "opTier": 3,
-    "isHoney": false,
-    "isOp": false
-  },
-  "쓰레쉬": {
-    "ranking": 17,
-    "pickRate": "10.10",
-    "count": 2140,
-    "winRate": "51.87",
-    "duoChampionIds": [
-      342,
-      84,
-      395
-    ],
-    "opTier": 2,
-    "isHoney": false,
-    "isOp": false
-  },
-  "빅토르": {
-    "ranking": 36,
-    "pickRate": "7.87",
-    "count": 1668,
-    "winRate": "51.86",
-    "duoChampionIds": [
-      228,
-      110,
-      412
-    ],
-    "opTier": 2,
-    "isHoney": false,
-    "isOp": false
-  },
-  "사미라": {
-    "ranking": 53,
-    "pickRate": "6.12",
-    "count": 1298,
-    "winRate": "51.85",
-    "duoChampionIds": [
-      412,
-      339,
-      177
-    ],
-    "opTier": 2,
-    "isHoney": false,
-    "isOp": false
-  },
-  "애쉬": {
-    "ranking": 9,
-    "pickRate": "12.28",
-    "count": 2603,
-    "winRate": "51.59",
-    "duoChampionIds": [
-      163,
-      673,
-      99
-    ],
-    "opTier": 2,
-    "isHoney": false,
-    "isOp": false
-  },
-  "리븐": {
-    "ranking": 91,
-    "pickRate": "3.19",
-    "count": 677,
-    "winRate": "51.55",
-    "duoChampionIds": [
-      327,
-      622,
-      673
-    ],
-    "opTier": 3,
-    "isHoney": false,
-    "isOp": false
-  },
-  "트위스티드 페이트": {
-    "ranking": 29,
-    "pickRate": "9.09",
-    "count": 1927,
-    "winRate": "51.53",
-    "duoChampionIds": [
-      113,
-      382,
-      314
-    ],
-    "opTier": 2,
-    "isHoney": false,
-    "isOp": false
-  },
-  "노틸러스": {
-    "ranking": 44,
-    "pickRate": "7.38",
-    "count": 1564,
-    "winRate": "51.47",
-    "duoChampionIds": [
-      53,
-      51,
-      327
-    ],
-    "opTier": 2,
-    "isHoney": false,
-    "isOp": false
-  },
-  "브랜드": {
-    "ranking": 25,
-    "pickRate": "9.62",
-    "count": 2038,
-    "winRate": "51.42",
-    "duoChampionIds": [
-      84,
-      413,
-      46
-    ],
-    "opTier": 2,
-    "isHoney": false,
-    "isOp": false
-  },
-  "카서스": {
-    "ranking": 58,
-    "pickRate": "6.39",
-    "count": 1355,
-    "winRate": "51.37",
-    "duoChampionIds": [
-      729,
-      80,
-      502
-    ],
-    "opTier": 2,
-    "isHoney": false,
-    "isOp": false
-  },
-  "신 짜오": {
-    "ranking": 92,
-    "pickRate": "3.29",
-    "count": 697,
-    "winRate": "51.36",
-    "duoChampionIds": [
-      297,
-      46,
-      110
-    ],
-    "opTier": 3,
-    "isHoney": false,
-    "isOp": false
-  },
-  "레넥톤": {
-    "ranking": 86,
-    "pickRate": "3.76",
-    "count": 797,
-    "winRate": "51.32",
-    "duoChampionIds": [
-      270,
-      259,
-      564
-    ],
-    "opTier": 3,
-    "isHoney": false,
-    "isOp": false
-  },
-  "자르반 4세": {
-    "ranking": 65,
-    "pickRate": "5.70",
-    "count": 1207,
-    "winRate": "51.28",
-    "duoChampionIds": [
-      392,
-      343,
-      411
-    ],
-    "opTier": 3,
-    "isHoney": false,
-    "isOp": false
-  },
-  "잭스": {
-    "ranking": 60,
-    "pickRate": "5.97",
-    "count": 1266,
-    "winRate": "51.26",
-    "duoChampionIds": [
-      564,
-      539,
-      99
-    ],
-    "opTier": 3,
-    "isHoney": false,
-    "isOp": false
-  },
-  "타릭": {
-    "ranking": 109,
-    "pickRate": "2.07",
-    "count": 439,
-    "winRate": "51.25",
-    "duoChampionIds": [
-      113,
-      259,
-      599
-    ],
-    "opTier": 3,
-    "isHoney": false,
-    "isOp": false
-  },
-  "하이머딩거": {
-    "ranking": 75,
-    "pickRate": "4.59",
-    "count": 972,
-    "winRate": "51.23",
-    "duoChampionIds": [
-      31,
-      796,
-      79
-    ],
-    "opTier": 3,
-    "isHoney": false,
-    "isOp": false
-  },
-  "스카너": {
-    "ranking": 111,
-    "pickRate": "2.11",
-    "count": 448,
-    "winRate": "51.12",
-    "duoChampionIds": [
-      147,
-      338,
-      48
-    ],
-    "opTier": 3,
-    "isHoney": false,
-    "isOp": false
-  },
-  "자이라": {
-    "ranking": 62,
-    "pickRate": "6.06",
-    "count": 1284,
-    "winRate": "51.09",
-    "duoChampionIds": [
-      67,
-      512,
-      68
-    ],
-    "opTier": 3,
-    "isHoney": false,
-    "isOp": false
-  },
-  "케일": {
-    "ranking": 56,
-    "pickRate": "7.01",
-    "count": 1486,
-    "winRate": "51.08",
-    "duoChampionIds": [
-      832,
-      622,
-      344
-    ],
-    "opTier": 2,
-    "isHoney": false,
-    "isOp": false
-  },
-  "니코": {
-    "ranking": 42,
-    "pickRate": "8.24",
-    "count": 1747,
-    "winRate": "51.06",
-    "duoChampionIds": [
-      327,
-      32,
-      553
-    ],
-    "opTier": 2,
-    "isHoney": false,
-    "isOp": false
-  },
-  "블리츠크랭크": {
-    "ranking": 16,
-    "pickRate": "11.56",
-    "count": 2449,
-    "winRate": "51.04",
-    "duoChampionIds": [
-      339,
-      382,
-      11
-    ],
-    "opTier": 2,
-    "isHoney": false,
-    "isOp": false
-  },
-  "미스 포츈": {
-    "ranking": 13,
-    "pickRate": "12.51",
-    "count": 2652,
-    "winRate": "50.94",
-    "duoChampionIds": [
-      110,
-      704,
-      865
-    ],
-    "opTier": 2,
-    "isHoney": false,
-    "isOp": false
-  },
-  "세라핀": {
-    "ranking": 71,
-    "pickRate": "5.64",
-    "count": 1195,
-    "winRate": "50.88",
-    "duoChampionIds": [
-      878,
-      64,
-      125
-    ],
-    "opTier": 3,
-    "isHoney": false,
-    "isOp": false
-  },
-  "아펠리오스": {
-    "ranking": 82,
-    "pickRate": "4.88",
-    "count": 1035,
-    "winRate": "50.63",
-    "duoChampionIds": [
-      113,
-      269,
-      465
-    ],
-    "opTier": 3,
-    "isHoney": false,
-    "isOp": false
-  },
-  "레오나": {
-    "ranking": 76,
-    "pickRate": "5.41",
-    "count": 1146,
-    "winRate": "50.61",
-    "duoChampionIds": [
-      622,
-      10,
-      599
-    ],
-    "opTier": 3,
-    "isHoney": false,
-    "isOp": false
-  },
-  "닐라": {
-    "ranking": 107,
-    "pickRate": "3.01",
-    "count": 638,
-    "winRate": "50.47",
-    "duoChampionIds": [
-      876,
-      427,
-      18
-    ],
-    "opTier": 3,
-    "isHoney": false,
-    "isOp": false
-  },
-  "릴리아": {
-    "ranking": 68,
-    "pickRate": "6.57",
-    "count": 1393,
-    "winRate": "50.39",
-    "duoChampionIds": [
-      64,
-      147,
-      17
-    ],
-    "opTier": 3,
-    "isHoney": false,
-    "isOp": false
-  },
-  "탈리야": {
-    "ranking": 61,
-    "pickRate": "7.31",
-    "count": 1549,
-    "winRate": "50.29",
-    "duoChampionIds": [
-      455,
-      67,
-      273
-    ],
-    "opTier": 3,
-    "isHoney": false,
-    "isOp": false
-  },
-  "레나타 글라스크": {
-    "ranking": 99,
-    "pickRate": "4.16",
-    "count": 881,
-    "winRate": "50.17",
-    "duoChampionIds": [
-      524,
-      454,
-      269
-    ],
-    "opTier": 3,
-    "isHoney": false,
-    "isOp": false
-  },
-  "브라이어": {
-    "ranking": 133,
-    "pickRate": "1.45",
-    "count": 307,
-    "winRate": "50.16",
-    "duoChampionIds": [
-      964,
-      10,
-      297
-    ],
-    "opTier": 4,
-    "isHoney": false,
-    "isOp": false
-  },
-  "베인": {
-    "ranking": 45,
-    "pickRate": "9.14",
-    "count": 1938,
-    "winRate": "50.15",
-    "duoChampionIds": [
-      310,
-      32,
-      228
-    ],
-    "opTier": 2,
-    "isHoney": false,
-    "isOp": false
-  },
-  "유미": {
-    "ranking": 83,
-    "pickRate": "5.51",
-    "count": 1168,
-    "winRate": "50.09",
-    "duoChampionIds": [
-      80,
-      310,
-      146
-    ],
-    "opTier": 3,
-    "isHoney": false,
-    "isOp": false
-  },
-  "카시오페아": {
-    "ranking": 112,
-    "pickRate": "3.31",
-    "count": 701,
-    "winRate": "50.07",
-    "duoChampionIds": [
-      68,
-      178,
-      396
-    ],
-    "opTier": 3,
-    "isHoney": false,
-    "isOp": false
-  },
-  "오리아나": {
-    "ranking": 69,
-    "pickRate": "7.06",
-    "count": 1497,
-    "winRate": "49.97",
-    "duoChampionIds": [
-      502,
-      454,
-      31
-    ],
-    "opTier": 3,
-    "isHoney": false,
-    "isOp": false
-  },
-  "사일러스": {
-    "ranking": 48,
-    "pickRate": "9.33",
-    "count": 1978,
-    "winRate": "49.95",
-    "duoChampionIds": [
-      69,
-      80,
-      1019
-    ],
-    "opTier": 2,
-    "isHoney": false,
-    "isOp": false
-  },
-  "룰루": {
-    "ranking": 67,
-    "pickRate": "7.37",
-    "count": 1561,
-    "winRate": "49.90",
-    "duoChampionIds": [
-      392,
-      130,
-      79
-    ],
-    "opTier": 3,
-    "isHoney": false,
-    "isOp": false
-  },
-  "다이애나": {
-    "ranking": 98,
-    "pickRate": "4.69",
-    "count": 994,
-    "winRate": "49.80",
-    "duoChampionIds": [
-      673,
-      435,
-      67
-    ],
-    "opTier": 3,
-    "isHoney": false,
-    "isOp": false
-  },
-  "아리": {
-    "ranking": 41,
-    "pickRate": "10.79",
-    "count": 2286,
-    "winRate": "49.78",
-    "duoChampionIds": [
-      328,
-      344,
-      413
-    ],
-    "opTier": 2,
-    "isHoney": false,
-    "isOp": false
-  },
-  "비에고": {
-    "ranking": 89,
-    "pickRate": "5.77",
-    "count": 1223,
-    "winRate": "49.71",
-    "duoChampionIds": [
-      69,
-      10,
-      1063
-    ],
-    "opTier": 3,
-    "isHoney": false,
-    "isOp": false
-  },
-  "오공": {
-    "ranking": 94,
-    "pickRate": "5.19",
-    "count": 1100,
-    "winRate": "49.64",
-    "duoChampionIds": [
-      925,
-      439,
-      10
-    ],
-    "opTier": 3,
-    "isHoney": false,
-    "isOp": false
-  },
-  "카르마": {
-    "ranking": 55,
-    "pickRate": "9.43",
-    "count": 1999,
-    "winRate": "49.57",
-    "duoChampionIds": [
-      69,
-      84,
-      465
-    ],
-    "opTier": 2,
-    "isHoney": false,
-    "isOp": false
-  },
-  "코르키": {
-    "ranking": 87,
-    "pickRate": "6.10",
-    "count": 1292,
-    "winRate": "49.54",
-    "duoChampionIds": [
-      241,
-      395,
-      64
-    ],
-    "opTier": 3,
-    "isHoney": false,
-    "isOp": false
-  },
-  "뽀삐": {
-    "ranking": 104,
-    "pickRate": "4.56",
-    "count": 967,
-    "winRate": "49.53",
-    "duoChampionIds": [
-      960,
-      11,
-      143
-    ],
-    "opTier": 3,
-    "isHoney": false,
-    "isOp": false
+    "opTier": 1,
+    "isHoney": true,
+    "isOp": true
   },
   "밀리오": {
-    "ranking": 116,
-    "pickRate": "3.76",
-    "count": 796,
-    "winRate": "49.37",
+    "ranking": 52,
+    "pickRate": "4.05",
+    "count": 90838,
+    "winRate": "52.90",
     "duoChampionIds": [
-      310,
-      625,
-      147
-    ],
-    "opTier": 4,
-    "isHoney": false,
-    "isOp": false
-  },
-  "아크샨": {
-    "ranking": 119,
-    "pickRate": "3.68",
-    "count": 780,
-    "winRate": "49.36",
-    "duoChampionIds": [
-      408,
-      259,
-      240
-    ],
-    "opTier": 4,
-    "isHoney": false,
-    "isOp": false
-  },
-  "나서스": {
-    "ranking": 124,
-    "pickRate": "3.23",
-    "count": 685,
-    "winRate": "49.34",
-    "duoChampionIds": [
-      244,
-      259,
-      451
-    ],
-    "opTier": 4,
-    "isHoney": false,
-    "isOp": false
-  },
-  "니달리": {
-    "ranking": 43,
-    "pickRate": "10.87",
-    "count": 2303,
-    "winRate": "49.33",
-    "duoChampionIds": [
-      114,
-      455,
-      286
-    ],
-    "opTier": 2,
-    "isHoney": false,
-    "isOp": false
-  },
-  "에코": {
-    "ranking": 100,
-    "pickRate": "5.16",
-    "count": 1093,
-    "winRate": "49.31",
-    "duoChampionIds": [
-      178,
-      573,
-      80
-    ],
-    "opTier": 3,
-    "isHoney": false,
-    "isOp": false
-  },
-  "이렐리아": {
-    "ranking": 110,
-    "pickRate": "4.35",
-    "count": 921,
-    "winRate": "49.29",
-    "duoChampionIds": [
-      449,
-      454,
-      344
-    ],
-    "opTier": 3,
-    "isHoney": false,
-    "isOp": false
-  },
-  "가렌": {
-    "ranking": 105,
-    "pickRate": "4.85",
-    "count": 1027,
-    "winRate": "49.27",
-    "duoChampionIds": [
-      435,
-      132,
-      396
-    ],
-    "opTier": 3,
-    "isHoney": false,
-    "isOp": false
-  },
-  "클레드": {
-    "ranking": 143,
-    "pickRate": "0.62",
-    "count": 132,
-    "winRate": "49.24",
-    "duoChampionIds": [],
-    "opTier": 5,
-    "isHoney": false,
-    "isOp": false
-  },
-  "갱플랭크": {
-    "ranking": 84,
-    "pickRate": "6.70",
-    "count": 1420,
-    "winRate": "49.23",
-    "duoChampionIds": [
-      35,
-      621,
-      382
-    ],
-    "opTier": 3,
-    "isHoney": false,
-    "isOp": false
-  },
-  "이즈리얼": {
-    "ranking": 27,
-    "pickRate": "13.15",
-    "count": 2788,
-    "winRate": "49.21",
-    "duoChampionIds": [
-      564,
-      465,
-      83
-    ],
-    "opTier": 2,
-    "isHoney": false,
-    "isOp": false
-  },
-  "문도 박사": {
-    "ranking": 113,
-    "pickRate": "4.41",
-    "count": 935,
-    "winRate": "49.09",
-    "duoChampionIds": [
-      113,
-      454,
+      37,
+      105,
       19
     ],
-    "opTier": 4,
-    "isHoney": false,
-    "isOp": false
-  },
-  "제이스": {
-    "ranking": 64,
-    "pickRate": "9.04",
-    "count": 1915,
-    "winRate": "49.03",
-    "duoChampionIds": [
-      64,
-      67,
-      368
-    ],
-    "opTier": 3,
-    "isHoney": false,
-    "isOp": false
-  },
-  "크산테": {
-    "ranking": 131,
-    "pickRate": "3.10",
-    "count": 656,
-    "winRate": "48.93",
-    "duoChampionIds": [
-      1255,
-      240,
-      339
-    ],
-    "opTier": 4,
-    "isHoney": false,
-    "isOp": false
-  },
-  "트위치": {
-    "ranking": 74,
-    "pickRate": "8.01",
-    "count": 1697,
-    "winRate": "48.85",
-    "duoChampionIds": [
-      67,
-      131,
-      146
-    ],
-    "opTier": 3,
-    "isHoney": false,
-    "isOp": false
-  },
-  "일라오이": {
-    "ranking": 127,
-    "pickRate": "3.44",
-    "count": 729,
-    "winRate": "48.83",
-    "duoChampionIds": [
-      314,
-      1255,
-      125
-    ],
-    "opTier": 4,
-    "isHoney": false,
-    "isOp": false
-  },
-  "제드": {
-    "ranking": 70,
-    "pickRate": "8.78",
-    "count": 1860,
-    "winRate": "48.82",
-    "duoChampionIds": [
-      423,
-      960,
-      527
-    ],
-    "opTier": 3,
-    "isHoney": false,
-    "isOp": false
-  },
-  "트런들": {
-    "ranking": 134,
-    "pickRate": "2.96",
-    "count": 627,
-    "winRate": "48.80",
-    "duoChampionIds": [
-      130,
-      435,
-      899
-    ],
-    "opTier": 4,
-    "isHoney": false,
-    "isOp": false
-  },
-  "라칸": {
-    "ranking": 135,
-    "pickRate": "2.90",
-    "count": 615,
-    "winRate": "48.78",
-    "duoChampionIds": [
-      80,
-      635,
-      622
-    ],
-    "opTier": 4,
-    "isHoney": false,
-    "isOp": false
-  },
-  "아트록스": {
-    "ranking": 97,
-    "pickRate": "6.42",
-    "count": 1360,
-    "winRate": "48.68",
-    "duoChampionIds": [
-      342,
-      160,
-      11
-    ],
-    "opTier": 3,
-    "isHoney": false,
-    "isOp": false
-  },
-  "다리우스": {
-    "ranking": 108,
-    "pickRate": "5.34",
-    "count": 1131,
-    "winRate": "48.63",
-    "duoChampionIds": [
-      342,
-      599,
-      1335
-    ],
-    "opTier": 3,
-    "isHoney": false,
-    "isOp": false
-  },
-  "루시안": {
-    "ranking": 50,
-    "pickRate": "11.59",
-    "count": 2456,
-    "winRate": "48.53",
-    "duoChampionIds": [
-      527,
-      109,
-      270
-    ],
     "opTier": 2,
     "isHoney": false,
     "isOp": false
   },
-  "엘리스": {
-    "ranking": 132,
-    "pickRate": "3.52",
-    "count": 745,
-    "winRate": "48.46",
-    "duoChampionIds": [
-      202,
-      99,
-      48
-    ],
-    "opTier": 4,
-    "isHoney": false,
-    "isOp": false
-  },
-  "샤코": {
+  "요릭": {
     "ranking": 90,
-    "pickRate": "7.54",
-    "count": 1597,
-    "winRate": "48.40",
+    "pickRate": "1.47",
+    "count": 32938,
+    "winRate": "52.90",
     "duoChampionIds": [
-      621,
-      865,
-      454
-    ],
-    "opTier": 3,
-    "isHoney": false,
-    "isOp": false
-  },
-  "신지드": {
-    "ranking": 129,
-    "pickRate": "3.84",
-    "count": 814,
-    "winRate": "48.40",
-    "duoChampionIds": [
-      30,
-      48,
-      80
-    ],
-    "opTier": 4,
-    "isHoney": false,
-    "isOp": false
-  },
-  "그레이브즈": {
-    "ranking": 88,
-    "pickRate": "7.73",
-    "count": 1639,
-    "winRate": "48.38",
-    "duoChampionIds": [
-      524,
-      48,
-      465
-    ],
-    "opTier": 3,
-    "isHoney": false,
-    "isOp": false
-  },
-  "라이즈": {
-    "ranking": 103,
-    "pickRate": "6.37",
-    "count": 1351,
-    "winRate": "48.26",
-    "duoChampionIds": [
-      499,
-      68,
-      131
+      277
     ],
     "opTier": 3,
     "isHoney": false,
     "isOp": false
   },
   "렉사이": {
-    "ranking": 148,
-    "pickRate": "1.18",
-    "count": 251,
-    "winRate": "48.21",
-    "duoChampionIds": [],
-    "opTier": 5,
-    "isHoney": false,
-    "isOp": false
-  },
-  "바이": {
-    "ranking": 126,
-    "pickRate": "4.33",
-    "count": 917,
-    "winRate": "48.20",
-    "duoChampionIds": [
-      258,
-      499,
-      18
-    ],
-    "opTier": 4,
-    "isHoney": false,
-    "isOp": false
-  },
-  "트리스타나": {
-    "ranking": 79,
-    "pickRate": "8.57",
-    "count": 1816,
-    "winRate": "48.18",
-    "duoChampionIds": [
-      439,
-      52,
-      35
-    ],
-    "opTier": 3,
-    "isHoney": false,
-    "isOp": false
-  },
-  "아무무": {
-    "ranking": 115,
-    "pickRate": "5.40",
-    "count": 1144,
-    "winRate": "48.16",
-    "duoChampionIds": [
-      423,
-      113,
-      888
-    ],
-    "opTier": 4,
-    "isHoney": false,
-    "isOp": false
-  },
-  "신드라": {
     "ranking": 95,
-    "pickRate": "7.29",
-    "count": 1544,
-    "winRate": "48.12",
-    "duoChampionIds": [
-      343,
-      539,
-      515
-    ],
+    "pickRate": "1.06",
+    "count": 23740,
+    "winRate": "52.86",
+    "duoChampionIds": [],
     "opTier": 3,
     "isHoney": false,
     "isOp": false
   },
-  "녹턴": {
-    "ranking": 140,
-    "pickRate": "2.34",
-    "count": 495,
-    "winRate": "48.08",
+  "모르가나": {
+    "ranking": 8,
+    "pickRate": "10.98",
+    "count": 246344,
+    "winRate": "52.85",
     "duoChampionIds": [
-      146,
-      10,
-      148
+      95,
+      14,
+      304
     ],
-    "opTier": 5,
+    "opTier": 1,
+    "isHoney": true,
+    "isOp": false
+  },
+  "럭스": {
+    "ranking": 6,
+    "pickRate": "11.32",
+    "count": 254002,
+    "winRate": "52.80",
+    "duoChampionIds": [
+      33,
+      164,
+      94
+    ],
+    "opTier": 1,
+    "isHoney": true,
+    "isOp": false
+  },
+  "잔나": {
+    "ranking": 39,
+    "pickRate": "5.81",
+    "count": 130232,
+    "winRate": "52.69",
+    "duoChampionIds": [
+      330,
+      187,
+      331
+    ],
+    "opTier": 2,
     "isHoney": false,
     "isOp": false
   },
-  "소라카": {
-    "ranking": 117,
-    "pickRate": "5.39",
-    "count": 1142,
-    "winRate": "48.07",
+  "자이라": {
+    "ranking": 32,
+    "pickRate": "6.86",
+    "count": 153834,
+    "winRate": "52.62",
     "duoChampionIds": [
-      1478,
-      48,
-      357
-    ],
-    "opTier": 4,
-    "isHoney": false,
-    "isOp": false
-  },
-  "요네": {
-    "ranking": 85,
-    "pickRate": "8.53",
-    "count": 1808,
-    "winRate": "47.95",
-    "duoChampionIds": [
-      35,
-      53,
-      31
-    ],
-    "opTier": 3,
-    "isHoney": false,
-    "isOp": false
-  },
-  "제리": {
-    "ranking": 118,
-    "pickRate": "5.52",
-    "count": 1170,
-    "winRate": "47.95",
-    "duoChampionIds": [
-      338,
-      342,
-      48
-    ],
-    "opTier": 4,
-    "isHoney": false,
-    "isOp": false
-  },
-  "판테온": {
-    "ranking": 102,
-    "pickRate": "6.99",
-    "count": 1481,
-    "winRate": "47.94",
-    "duoChampionIds": [
-      52,
-      11,
-      177
-    ],
-    "opTier": 3,
-    "isHoney": false,
-    "isOp": false
-  },
-  "블라디미르": {
-    "ranking": 120,
-    "pickRate": "5.33",
-    "count": 1129,
-    "winRate": "47.92",
-    "duoChampionIds": [
-      80,
-      925,
-      163
-    ],
-    "opTier": 4,
-    "isHoney": false,
-    "isOp": false
-  },
-  "티모": {
-    "ranking": 81,
-    "pickRate": "9.00",
-    "count": 1907,
-    "winRate": "47.88",
-    "duoChampionIds": [
-      328,
-      48,
-      878
-    ],
-    "opTier": 3,
-    "isHoney": false,
-    "isOp": false
-  },
-  "카밀": {
-    "ranking": 145,
-    "pickRate": "1.95",
-    "count": 414,
-    "winRate": "47.83",
-    "duoChampionIds": [
-      69,
       344,
-      369
+      14,
+      345
     ],
-    "opTier": 5,
+    "opTier": 2,
     "isHoney": false,
     "isOp": false
   },
-  "리 신": {
-    "ranking": 80,
-    "pickRate": "9.43",
-    "count": 1999,
-    "winRate": "47.62",
+  "직스": {
+    "ranking": 25,
+    "pickRate": "7.99",
+    "count": 179197,
+    "winRate": "52.61",
     "duoChampionIds": [
-      69,
-      328,
+      33,
+      94,
+      53
+    ],
+    "opTier": 2,
+    "isHoney": false,
+    "isOp": false
+  },
+  "진": {
+    "ranking": 4,
+    "pickRate": "12.70",
+    "count": 284916,
+    "winRate": "52.58",
+    "duoChampionIds": [
+      110,
+      33,
+      38
+    ],
+    "opTier": 1,
+    "isHoney": true,
+    "isOp": true
+  },
+  "흐웨이": {
+    "ranking": 36,
+    "pickRate": "6.38",
+    "count": 143137,
+    "winRate": "52.57",
+    "duoChampionIds": [
+      380,
+      229,
+      33
+    ],
+    "opTier": 2,
+    "isHoney": false,
+    "isOp": false
+  },
+  "오른": {
+    "ranking": 63,
+    "pickRate": "3.98",
+    "count": 89327,
+    "winRate": "52.44",
+    "duoChampionIds": [
+      377,
+      161,
       392
     ],
     "opTier": 3,
     "isHoney": false,
     "isOp": false
   },
-  "우르곳": {
-    "ranking": 142,
-    "pickRate": "2.65",
-    "count": 561,
-    "winRate": "47.59",
+  "브랜드": {
+    "ranking": 13,
+    "pickRate": "9.59",
+    "count": 215129,
+    "winRate": "52.33",
     "duoChampionIds": [
-      297,
-      69,
-      647
+      95,
+      14,
+      405
     ],
-    "opTier": 5,
+    "opTier": 2,
     "isHoney": false,
     "isOp": false
   },
-  "모데카이저": {
-    "ranking": 123,
-    "pickRate": "5.56",
-    "count": 1178,
-    "winRate": "47.54",
+  "노틸러스": {
+    "ranking": 29,
+    "pickRate": "7.85",
+    "count": 175997,
+    "winRate": "52.28",
     "duoChampionIds": [
-      8,
-      449,
-      11
+      177,
+      38,
+      36
     ],
-    "opTier": 4,
+    "opTier": 2,
     "isHoney": false,
     "isOp": false
   },
-  "피즈": {
-    "ranking": 122,
-    "pickRate": "5.62",
-    "count": 1191,
-    "winRate": "47.52",
+  "나르": {
+    "ranking": 58,
+    "pickRate": "4.40",
+    "count": 98648,
+    "winRate": "52.26",
     "duoChampionIds": [
-      339,
-      865,
-      67
-    ],
-    "opTier": 4,
-    "isHoney": false,
-    "isOp": false
-  },
-  "우디르": {
-    "ranking": 147,
-    "pickRate": "2.06",
-    "count": 436,
-    "winRate": "47.48",
-    "duoChampionIds": [
-      297,
-      69,
-      964
-    ],
-    "opTier": 5,
-    "isHoney": false,
-    "isOp": false
-  },
-  "애니비아": {
-    "ranking": 130,
-    "pickRate": "5.03",
-    "count": 1066,
-    "winRate": "47.47",
-    "duoChampionIds": [
-      311,
-      113,
-      99
-    ],
-    "opTier": 4,
-    "isHoney": false,
-    "isOp": false
-  },
-  "아지르": {
-    "ranking": 125,
-    "pickRate": "5.62",
-    "count": 1192,
-    "winRate": "47.40",
-    "duoChampionIds": [
-      35,
-      358,
-      258
-    ],
-    "opTier": 4,
-    "isHoney": false,
-    "isOp": false
-  },
-  "트린다미어": {
-    "ranking": 139,
-    "pickRate": "3.29",
-    "count": 698,
-    "winRate": "47.28",
-    "duoChampionIds": [
-      1086,
-      239,
-      83
-    ],
-    "opTier": 5,
-    "isHoney": false,
-    "isOp": false
-  },
-  "베이가": {
-    "ranking": 93,
-    "pickRate": "8.98",
-    "count": 1904,
-    "winRate": "47.27",
-    "duoChampionIds": [
-      327,
-      328,
-      127
+      105,
+      18,
+      161
     ],
     "opTier": 3,
+    "isHoney": false,
+    "isOp": false
+  },
+  "멜": {
+    "ranking": 21,
+    "pickRate": "8.97",
+    "count": 201156,
+    "winRate": "52.25",
+    "duoChampionIds": [
+      164,
+      405,
+      53
+    ],
+    "opTier": 2,
+    "isHoney": false,
+    "isOp": false
+  },
+  "벨코즈": {
+    "ranking": 26,
+    "pickRate": "8.57",
+    "count": 192336,
+    "winRate": "52.25",
+    "duoChampionIds": [
+      164,
+      135,
+      49
+    ],
+    "opTier": 2,
+    "isHoney": false,
+    "isOp": false
+  },
+  "렐": {
+    "ranking": 79,
+    "pickRate": "3.21",
+    "count": 72059,
+    "winRate": "52.18",
+    "duoChampionIds": [
+      392,
+      468,
+      177
+    ],
+    "opTier": 3,
+    "isHoney": false,
+    "isOp": false
+  },
+  "세나": {
+    "ranking": 12,
+    "pickRate": "10.15",
+    "count": 227632,
+    "winRate": "52.11",
+    "duoChampionIds": [
+      66,
+      345,
+      49
+    ],
+    "opTier": 2,
+    "isHoney": false,
+    "isOp": false
+  },
+  "레오나": {
+    "ranking": 47,
+    "pickRate": "5.55",
+    "count": 124429,
+    "winRate": "52.06",
+    "duoChampionIds": [
+      38,
+      64,
+      14
+    ],
+    "opTier": 2,
+    "isHoney": false,
+    "isOp": false
+  },
+  "빅토르": {
+    "ranking": 34,
+    "pickRate": "7.47",
+    "count": 167560,
+    "winRate": "52.00",
+    "duoChampionIds": [
+      345,
+      14,
+      380
+    ],
+    "opTier": 2,
+    "isHoney": false,
+    "isOp": false
+  },
+  "코그모": {
+    "ranking": 31,
+    "pickRate": "7.93",
+    "count": 177906,
+    "winRate": "51.98",
+    "duoChampionIds": [
+      33,
+      94,
+      416
+    ],
+    "opTier": 2,
+    "isHoney": false,
+    "isOp": false
+  },
+  "애쉬": {
+    "ranking": 10,
+    "pickRate": "12.03",
+    "count": 269757,
+    "winRate": "51.96",
+    "duoChampionIds": [
+      148,
+      33,
+      14
+    ],
+    "opTier": 1,
+    "isHoney": false,
+    "isOp": false
+  },
+  "알리스타": {
+    "ranking": 48,
+    "pickRate": "5.73",
+    "count": 128507,
+    "winRate": "51.93",
+    "duoChampionIds": [
+      330,
+      53,
+      38
+    ],
+    "opTier": 2,
+    "isHoney": false,
+    "isOp": false
+  },
+  "리산드라": {
+    "ranking": 62,
+    "pickRate": "4.72",
+    "count": 105785,
+    "winRate": "51.92",
+    "duoChampionIds": [
+      53,
+      14,
+      552
+    ],
+    "opTier": 3,
+    "isHoney": false,
+    "isOp": false
+  },
+  "사미라": {
+    "ranking": 43,
+    "pickRate": "6.20",
+    "count": 139045,
+    "winRate": "51.88",
+    "duoChampionIds": [
+      565,
+      478,
+      566
+    ],
+    "opTier": 2,
+    "isHoney": false,
+    "isOp": false
+  },
+  "쓰레쉬": {
+    "ranking": 19,
+    "pickRate": "10.03",
+    "count": 224950,
+    "winRate": "51.84",
+    "duoChampionIds": [
+      37,
+      177,
+      38
+    ],
+    "opTier": 2,
+    "isHoney": false,
+    "isOp": false
+  },
+  "자야": {
+    "ranking": 24,
+    "pickRate": "9.41",
+    "count": 211048,
+    "winRate": "51.80",
+    "duoChampionIds": [
+      136,
+      416,
+      33
+    ],
+    "opTier": 2,
+    "isHoney": false,
+    "isOp": false
+  },
+  "나서스": {
+    "ranking": 86,
+    "pickRate": "3.14",
+    "count": 70518,
+    "winRate": "51.80",
+    "duoChampionIds": [
+      20,
+      106,
+      109
+    ],
+    "opTier": 3,
+    "isHoney": false,
+    "isOp": false
+  },
+  "베인": {
+    "ranking": 27,
+    "pickRate": "9.30",
+    "count": 208684,
+    "winRate": "51.78",
+    "duoChampionIds": [
+      49,
+      33,
+      105
+    ],
+    "opTier": 2,
+    "isHoney": false,
+    "isOp": false
+  },
+  "하이머딩거": {
+    "ranking": 67,
+    "pickRate": "4.70",
+    "count": 105525,
+    "winRate": "51.77",
+    "duoChampionIds": [
+      94,
+      164,
+      345
+    ],
+    "opTier": 3,
+    "isHoney": false,
+    "isOp": false
+  },
+  "트런들": {
+    "ranking": 89,
+    "pickRate": "3.15",
+    "count": 70697,
+    "winRate": "51.68",
+    "duoChampionIds": [
+      109,
+      161,
+      110
+    ],
+    "opTier": 3,
+    "isHoney": false,
+    "isOp": false
+  },
+  "칼리스타": {
+    "ranking": 73,
+    "pickRate": "4.20",
+    "count": 94251,
+    "winRate": "51.59",
+    "duoChampionIds": [
+      33,
+      94,
+      49
+    ],
+    "opTier": 3,
+    "isHoney": false,
+    "isOp": false
+  },
+  "카서스": {
+    "ranking": 55,
+    "pickRate": "5.88",
+    "count": 131929,
+    "winRate": "51.53",
+    "duoChampionIds": [
+      164,
+      33,
+      465
+    ],
+    "opTier": 2,
+    "isHoney": false,
+    "isOp": false
+  },
+  "뽀삐": {
+    "ranking": 71,
+    "pickRate": "4.53",
+    "count": 101594,
+    "winRate": "51.53",
+    "duoChampionIds": [
+      377,
+      37,
+      36
+    ],
+    "opTier": 3,
+    "isHoney": false,
+    "isOp": false
+  },
+  "트위스티드 페이트": {
+    "ranking": 30,
+    "pickRate": "9.00",
+    "count": 201808,
+    "winRate": "51.49",
+    "duoChampionIds": [
+      14,
+      327,
+      148
+    ],
+    "opTier": 2,
+    "isHoney": false,
+    "isOp": false
+  },
+  "다이애나": {
+    "ranking": 70,
+    "pickRate": "4.66",
+    "count": 104475,
+    "winRate": "51.48",
+    "duoChampionIds": [
+      94,
+      54,
+      226
+    ],
+    "opTier": 3,
+    "isHoney": false,
+    "isOp": false
+  },
+  "오공": {
+    "ranking": 68,
+    "pickRate": "5.05",
+    "count": 113310,
+    "winRate": "51.46",
+    "duoChampionIds": [
+      38,
+      14,
+      55
+    ],
+    "opTier": 3,
+    "isHoney": false,
+    "isOp": false
+  },
+  "소라카": {
+    "ranking": 56,
+    "pickRate": "5.81",
+    "count": 130222,
+    "winRate": "51.44",
+    "duoChampionIds": [
+      81,
+      37,
+      177
+    ],
+    "opTier": 3,
+    "isHoney": false,
+    "isOp": false
+  },
+  "케일": {
+    "ranking": 50,
+    "pickRate": "6.70",
+    "count": 150295,
+    "winRate": "51.23",
+    "duoChampionIds": [
+      14,
+      33,
+      229
+    ],
+    "opTier": 2,
+    "isHoney": false,
+    "isOp": false
+  },
+  "유미": {
+    "ranking": 60,
+    "pickRate": "5.88",
+    "count": 131847,
+    "winRate": "51.20",
+    "duoChampionIds": [
+      64,
+      187,
+      177
+    ],
+    "opTier": 3,
+    "isHoney": false,
+    "isOp": false
+  },
+  "스웨인": {
+    "ranking": 46,
+    "pickRate": "7.28",
+    "count": 163329,
+    "winRate": "51.09",
+    "duoChampionIds": [
+      492,
+      229,
+      465
+    ],
+    "opTier": 2,
+    "isHoney": false,
+    "isOp": false
+  },
+  "벡스": {
+    "ranking": 72,
+    "pickRate": "5.03",
+    "count": 112858,
+    "winRate": "51.07",
+    "duoChampionIds": [
+      14,
+      229,
+      54
+    ],
+    "opTier": 3,
+    "isHoney": false,
+    "isOp": false
+  },
+  "신 짜오": {
+    "ranking": 96,
+    "pickRate": "3.15",
+    "count": 70706,
+    "winRate": "51.07",
+    "duoChampionIds": [
+      314,
+      64,
+      771
+    ],
+    "opTier": 3,
+    "isHoney": false,
+    "isOp": false
+  },
+  "세라핀": {
+    "ranking": 44,
+    "pickRate": "7.47",
+    "count": 167572,
+    "winRate": "51.06",
+    "duoChampionIds": [
+      66,
+      33,
+      345
+    ],
+    "opTier": 2,
+    "isHoney": false,
+    "isOp": false
+  },
+  "탈리야": {
+    "ranking": 66,
+    "pickRate": "5.73",
+    "count": 128611,
+    "winRate": "51.06",
+    "duoChampionIds": [
+      14,
+      135,
+      33
+    ],
+    "opTier": 3,
+    "isHoney": false,
+    "isOp": false
+  },
+  "조이": {
+    "ranking": 64,
+    "pickRate": "5.98",
+    "count": 134032,
+    "winRate": "50.97",
+    "duoChampionIds": [
+      135,
+      81,
+      187
+    ],
+    "opTier": 3,
+    "isHoney": false,
+    "isOp": false
+  },
+  "그라가스": {
+    "ranking": 53,
+    "pickRate": "6.87",
+    "count": 154214,
+    "winRate": "50.96",
+    "duoChampionIds": [
+      187,
+      64,
+      330
+    ],
+    "opTier": 2,
+    "isHoney": false,
+    "isOp": false
+  },
+  "문도 박사": {
+    "ranking": 80,
+    "pickRate": "4.81",
+    "count": 107958,
+    "winRate": "50.96",
+    "duoChampionIds": [
+      161,
+      132,
+      215
+    ],
+    "opTier": 3,
+    "isHoney": false,
+    "isOp": false
+  },
+  "미스 포츈": {
+    "ranking": 16,
+    "pickRate": "12.29",
+    "count": 275709,
+    "winRate": "50.77",
+    "duoChampionIds": [
+      33,
+      14,
+      416
+    ],
+    "opTier": 2,
+    "isHoney": false,
+    "isOp": false
+  },
+  "니코": {
+    "ranking": 51,
+    "pickRate": "7.38",
+    "count": 165468,
+    "winRate": "50.73",
+    "duoChampionIds": [
+      66,
+      14,
+      54
+    ],
+    "opTier": 2,
+    "isHoney": false,
+    "isOp": false
+  },
+  "탐 켄치": {
+    "ranking": 85,
+    "pickRate": "4.61",
+    "count": 103366,
+    "winRate": "50.72",
+    "duoChampionIds": [
+      36,
+      377,
+      314
+    ],
+    "opTier": 3,
+    "isHoney": false,
+    "isOp": false
+  },
+  "닐라": {
+    "ranking": 109,
+    "pickRate": "2.35",
+    "count": 52747,
+    "winRate": "50.70",
+    "duoChampionIds": [
+      416,
+      105,
+      50
+    ],
+    "opTier": 4,
+    "isHoney": false,
+    "isOp": false
+  },
+  "타릭": {
+    "ranking": 117,
+    "pickRate": "2.01",
+    "count": 45017,
+    "winRate": "50.66",
+    "duoChampionIds": [
+      330,
+      37,
+      64
+    ],
+    "opTier": 4,
+    "isHoney": false,
+    "isOp": false
+  },
+  "블리츠크랭크": {
+    "ranking": 28,
+    "pickRate": "11.07",
+    "count": 248281,
+    "winRate": "50.62",
+    "duoChampionIds": [
+      38,
+      14,
+      344
+    ],
+    "opTier": 2,
     "isHoney": false,
     "isOp": false
   },
   "초가스": {
-    "ranking": 101,
-    "pickRate": "8.04",
-    "count": 1703,
-    "winRate": "47.27",
+    "ranking": 45,
+    "pickRate": "8.13",
+    "count": 182386,
+    "winRate": "50.62",
     "duoChampionIds": [
-      80,
-      342,
-      832
+      37,
+      54,
+      187
     ],
-    "opTier": 3,
+    "opTier": 2,
     "isHoney": false,
     "isOp": false
   },
-  "스몰더": {
-    "ranking": 96,
-    "pickRate": "8.71",
-    "count": 1847,
-    "winRate": "47.16",
+  "티모": {
+    "ranking": 42,
+    "pickRate": "8.86",
+    "count": 198837,
+    "winRate": "50.55",
     "duoChampionIds": [
       64,
-      132,
-      342
+      164,
+      33
+    ],
+    "opTier": 2,
+    "isHoney": false,
+    "isOp": false
+  },
+  "레나타 글라스크": {
+    "ranking": 81,
+    "pickRate": "5.39",
+    "count": 120981,
+    "winRate": "50.47",
+    "duoChampionIds": [
+      330,
+      644,
+      326
     ],
     "opTier": 3,
     "isHoney": false,
     "isOp": false
   },
-  "카직스": {
-    "ranking": 128,
-    "pickRate": "5.63",
-    "count": 1194,
-    "winRate": "47.07",
+  "판테온": {
+    "ranking": 57,
+    "pickRate": "7.20",
+    "count": 161580,
+    "winRate": "50.44",
     "duoChampionIds": [
-      354,
-      515,
-      1618
+      14,
+      49,
+      64
+    ],
+    "opTier": 3,
+    "isHoney": false,
+    "isOp": false
+  },
+  "아리": {
+    "ranking": 33,
+    "pickRate": "10.78",
+    "count": 241807,
+    "winRate": "50.25",
+    "duoChampionIds": [
+      164,
+      187,
+      54
+    ],
+    "opTier": 2,
+    "isHoney": false,
+    "isOp": false
+  },
+  "잭스": {
+    "ranking": 82,
+    "pickRate": "5.71",
+    "count": 127995,
+    "winRate": "50.23",
+    "duoChampionIds": [
+      549,
+      64,
+      54
+    ],
+    "opTier": 3,
+    "isHoney": false,
+    "isOp": false
+  },
+  "오리아나": {
+    "ranking": 65,
+    "pickRate": "7.18",
+    "count": 161081,
+    "winRate": "50.19",
+    "duoChampionIds": [
+      344,
+      416,
+      14
+    ],
+    "opTier": 3,
+    "isHoney": false,
+    "isOp": false
+  },
+  "이즈리얼": {
+    "ranking": 22,
+    "pickRate": "12.81",
+    "count": 287277,
+    "winRate": "50.14",
+    "duoChampionIds": [
+      33,
+      55,
+      50
+    ],
+    "opTier": 2,
+    "isHoney": false,
+    "isOp": false
+  },
+  "애니": {
+    "ranking": 77,
+    "pickRate": "6.30",
+    "count": 141415,
+    "winRate": "50.06",
+    "duoChampionIds": [
+      226,
+      644,
+      37
+    ],
+    "opTier": 3,
+    "isHoney": false,
+    "isOp": false
+  },
+  "올라프": {
+    "ranking": 120,
+    "pickRate": "2.16",
+    "count": 48360,
+    "winRate": "50.03",
+    "duoChampionIds": [
+      215,
+      50,
+      131
     ],
     "opTier": 4,
     "isHoney": false,
     "isOp": false
   },
-  "워윅": {
-    "ranking": 150,
-    "pickRate": "2.03",
-    "count": 430,
-    "winRate": "46.98",
+  "일라오이": {
+    "ranking": 113,
+    "pickRate": "3.19",
+    "count": 71651,
+    "winRate": "49.96",
     "duoChampionIds": [
-      30,
-      435,
-      499
+      277,
+      377,
+      778
     ],
-    "opTier": 5,
+    "opTier": 4,
     "isHoney": false,
     "isOp": false
   },
-  "카이사": {
-    "ranking": 77,
-    "pickRate": "11.26",
-    "count": 2387,
-    "winRate": "46.80",
+  "갱플랭크": {
+    "ranking": 87,
+    "pickRate": "5.59",
+    "count": 125445,
+    "winRate": "49.93",
     "duoChampionIds": [
-      382,
-      48,
+      66,
+      33,
+      55
+    ],
+    "opTier": 3,
+    "isHoney": false,
+    "isOp": false
+  },
+  "리븐": {
+    "ranking": 111,
+    "pickRate": "3.33",
+    "count": 74728,
+    "winRate": "49.88",
+    "duoChampionIds": [
+      64,
+      215,
+      49
+    ],
+    "opTier": 4,
+    "isHoney": false,
+    "isOp": false
+  },
+  "제이스": {
+    "ranking": 49,
+    "pickRate": "9.07",
+    "count": 203482,
+    "winRate": "49.82",
+    "duoChampionIds": [
+      164,
+      33,
+      14
+    ],
+    "opTier": 2,
+    "isHoney": false,
+    "isOp": false
+  },
+  "이렐리아": {
+    "ranking": 101,
+    "pickRate": "4.51",
+    "count": 101137,
+    "winRate": "49.82",
+    "duoChampionIds": [
+      14,
+      565,
       18
     ],
     "opTier": 3,
     "isHoney": false,
     "isOp": false
   },
-  "자크": {
-    "ranking": 141,
-    "pickRate": "3.72",
-    "count": 789,
-    "winRate": "46.77",
+  "아무무": {
+    "ranking": 83,
+    "pickRate": "6.22",
+    "count": 139532,
+    "winRate": "49.71",
     "duoChampionIds": [
-      127,
-      407,
-      125
+      38,
+      330,
+      327
     ],
-    "opTier": 5,
+    "opTier": 3,
     "isHoney": false,
     "isOp": false
   },
-  "올라프": {
-    "ranking": 154,
-    "pickRate": "1.56",
-    "count": 330,
-    "winRate": "46.67",
+  "오로라": {
+    "ranking": 94,
+    "pickRate": "5.31",
+    "count": 119021,
+    "winRate": "49.68",
     "duoChampionIds": [
-      888,
-      239,
-      599
+      14,
+      734,
+      380
     ],
-    "opTier": 5,
+    "opTier": 3,
     "isHoney": false,
     "isOp": false
   },
-  "질리언": {
+  "니달리": {
+    "ranking": 41,
+    "pickRate": "10.58",
+    "count": 237268,
+    "winRate": "49.62",
+    "duoChampionIds": [
+      164,
+      64,
+      177
+    ],
+    "opTier": 2,
+    "isHoney": false,
+    "isOp": false
+  },
+  "럼블": {
+    "ranking": 91,
+    "pickRate": "5.85",
+    "count": 131281,
+    "winRate": "49.58",
+    "duoChampionIds": [
+      33,
+      229,
+      864
+    ],
+    "opTier": 3,
+    "isHoney": false,
+    "isOp": false
+  },
+  "릴리아": {
+    "ranking": 98,
+    "pickRate": "5.18",
+    "count": 116131,
+    "winRate": "49.55",
+    "duoChampionIds": [
+      33,
+      14,
+      478
+    ],
+    "opTier": 3,
+    "isHoney": false,
+    "isOp": false
+  },
+  "룰루": {
+    "ranking": 69,
+    "pickRate": "7.72",
+    "count": 173059,
+    "winRate": "49.46",
+    "duoChampionIds": [
+      36,
+      64,
+      187
+    ],
+    "opTier": 3,
+    "isHoney": false,
+    "isOp": false
+  },
+  "카르마": {
+    "ranking": 54,
+    "pickRate": "9.30",
+    "count": 208555,
+    "winRate": "49.43",
+    "duoChampionIds": [
+      14,
+      64,
+      81
+    ],
+    "opTier": 2,
+    "isHoney": false,
+    "isOp": false
+  },
+  "킨드레드": {
+    "ranking": 100,
+    "pickRate": "5.34",
+    "count": 119756,
+    "winRate": "49.37",
+    "duoChampionIds": [
+      49,
+      33,
+      345
+    ],
+    "opTier": 3,
+    "isHoney": false,
+    "isOp": false
+  },
+  "세주아니": {
+    "ranking": 122,
+    "pickRate": "3.04",
+    "count": 68208,
+    "winRate": "49.24",
+    "duoChampionIds": [
+      327,
+      161,
+      50
+    ],
+    "opTier": 4,
+    "isHoney": false,
+    "isOp": false
+  },
+  "라칸": {
+    "ranking": 119,
+    "pickRate": "3.20",
+    "count": 71855,
+    "winRate": "49.23",
+    "duoChampionIds": [
+      330,
+      177,
+      53
+    ],
+    "opTier": 4,
+    "isHoney": false,
+    "isOp": false
+  },
+  "아펠리오스": {
+    "ranking": 99,
+    "pickRate": "5.72",
+    "count": 128347,
+    "winRate": "49.15",
+    "duoChampionIds": [
+      345,
+      14,
+      478
+    ],
+    "opTier": 3,
+    "isHoney": false,
+    "isOp": false
+  },
+  "다리우스": {
+    "ranking": 103,
+    "pickRate": "5.30",
+    "count": 118927,
+    "winRate": "49.13",
+    "duoChampionIds": [
+      18,
+      36,
+      49
+    ],
+    "opTier": 3,
+    "isHoney": false,
+    "isOp": false
+  },
+  "트위치": {
+    "ranking": 76,
+    "pickRate": "7.93",
+    "count": 177785,
+    "winRate": "49.07",
+    "duoChampionIds": [
+      136,
+      135,
+      14
+    ],
+    "opTier": 3,
+    "isHoney": false,
+    "isOp": false
+  },
+  "볼리베어": {
+    "ranking": 128,
+    "pickRate": "2.60",
+    "count": 58246,
+    "winRate": "49.00",
+    "duoChampionIds": [
+      161,
+      54,
+      64
+    ],
+    "opTier": 4,
+    "isHoney": false,
+    "isOp": false
+  },
+  "아지르": {
+    "ranking": 104,
+    "pickRate": "5.44",
+    "count": 122043,
+    "winRate": "48.96",
+    "duoChampionIds": [
+      14,
+      345,
+      136
+    ],
+    "opTier": 3,
+    "isHoney": false,
+    "isOp": false
+  },
+  "라이즈": {
+    "ranking": 102,
+    "pickRate": "6.06",
+    "count": 135832,
+    "winRate": "48.71",
+    "duoChampionIds": [
+      49,
+      229,
+      14
+    ],
+    "opTier": 3,
+    "isHoney": false,
+    "isOp": false
+  },
+  "말파이트": {
+    "ranking": 59,
+    "pickRate": "10.01",
+    "count": 224618,
+    "winRate": "48.68",
+    "duoChampionIds": [
+      226,
+      53,
+      327
+    ],
+    "opTier": 3,
+    "isHoney": false,
+    "isOp": false
+  },
+  "레넥톤": {
+    "ranking": 121,
+    "pickRate": "3.80",
+    "count": 85278,
+    "winRate": "48.68",
+    "duoChampionIds": [
+      37,
+      341,
+      110
+    ],
+    "opTier": 4,
+    "isHoney": false,
+    "isOp": false
+  },
+  "트리스타나": {
+    "ranking": 75,
+    "pickRate": "8.65",
+    "count": 194021,
+    "winRate": "48.65",
+    "duoChampionIds": [
+      49,
+      33,
+      492
+    ],
+    "opTier": 3,
+    "isHoney": false,
+    "isOp": false
+  },
+  "스카너": {
+    "ranking": 137,
+    "pickRate": "2.08",
+    "count": 46693,
+    "winRate": "48.56",
+    "duoChampionIds": [
+      377,
+      330,
+      50
+    ],
+    "opTier": 4,
+    "isHoney": false,
+    "isOp": false
+  },
+  "모데카이저": {
+    "ranking": 106,
+    "pickRate": "5.66",
+    "count": 127018,
+    "winRate": "48.47",
+    "duoChampionIds": [
+      49,
+      314,
+      14
+    ],
+    "opTier": 3,
+    "isHoney": false,
+    "isOp": false
+  },
+  "애니비아": {
+    "ranking": 110,
+    "pickRate": "5.33",
+    "count": 119538,
+    "winRate": "48.47",
+    "duoChampionIds": [
+      14,
+      135,
+      345
+    ],
+    "opTier": 4,
+    "isHoney": false,
+    "isOp": false
+  },
+  "카밀": {
+    "ranking": 139,
+    "pickRate": "2.03",
+    "count": 45589,
+    "winRate": "48.43",
+    "duoChampionIds": [
+      37,
+      50,
+      277
+    ],
+    "opTier": 4,
+    "isHoney": false,
+    "isOp": false
+  },
+  "우르곳": {
     "ranking": 136,
-    "pickRate": "5.36",
-    "count": 1137,
-    "winRate": "46.61",
+    "pickRate": "2.51",
+    "count": 56302,
+    "winRate": "48.40",
     "duoChampionIds": [
-      344,
-      178,
-      310
+      131,
+      215,
+      479
+    ],
+    "opTier": 4,
+    "isHoney": false,
+    "isOp": false
+  },
+  "트린다미어": {
+    "ranking": 132,
+    "pickRate": "2.94",
+    "count": 66055,
+    "winRate": "48.35",
+    "duoChampionIds": [
+      377,
+      109,
+      161
     ],
     "opTier": 4,
     "isHoney": false,
     "isOp": false
   },
   "아우렐리온 솔": {
-    "ranking": 138,
-    "pickRate": "5.69",
-    "count": 1206,
-    "winRate": "46.10",
+    "ranking": 116,
+    "pickRate": "5.44",
+    "count": 121986,
+    "winRate": "48.11",
     "duoChampionIds": [
-      163,
-      125,
-      964
+      33,
+      14,
+      148
     ],
     "opTier": 4,
     "isHoney": false,
     "isOp": false
   },
-  "파이크": {
-    "ranking": 114,
-    "pickRate": "8.71",
-    "count": 1847,
-    "winRate": "45.97",
+  "자크": {
+    "ranking": 126,
+    "pickRate": "4.11",
+    "count": 92246,
+    "winRate": "48.07",
     "duoChampionIds": [
-      455,
-      241,
-      832
+      53,
+      177,
+      226
     ],
     "opTier": 4,
     "isHoney": false,
     "isOp": false
   },
-  "럼블": {
-    "ranking": 137,
-    "pickRate": "6.20",
-    "count": 1313,
-    "winRate": "45.93",
+  "자르반 4세": {
+    "ranking": 115,
+    "pickRate": "5.74",
+    "count": 128659,
+    "winRate": "48.02",
     "duoChampionIds": [
-      673,
-      48,
-      159
+      18,
+      54,
+      314
     ],
     "opTier": 4,
     "isHoney": false,
     "isOp": false
   },
-  "말파이트": {
-    "ranking": 106,
-    "pickRate": "9.61",
-    "count": 2036,
-    "winRate": "45.92",
+  "샤코": {
+    "ranking": 105,
+    "pickRate": "6.74",
+    "count": 151090,
+    "winRate": "48.01",
     "duoChampionIds": [
-      113,
-      357,
-      269
+      64,
+      36,
+      81
     ],
     "opTier": 3,
     "isHoney": false,
     "isOp": false
   },
-  "그웬": {
-    "ranking": 144,
-    "pickRate": "4.37",
-    "count": 926,
-    "winRate": "45.90",
+  "비에고": {
+    "ranking": 114,
+    "pickRate": "5.82",
+    "count": 130467,
+    "winRate": "48.00",
     "duoChampionIds": [
-      110,
-      241,
-      11
-    ],
-    "opTier": 5,
-    "isHoney": false,
-    "isOp": false
-  },
-  "볼리베어": {
-    "ranking": 155,
-    "pickRate": "2.35",
-    "count": 497,
-    "winRate": "45.88",
-    "duoChampionIds": [
-      212,
-      423,
-      48
-    ],
-    "opTier": 5,
-    "isHoney": false,
-    "isOp": false
-  },
-  "르블랑": {
-    "ranking": 121,
-    "pickRate": "8.49",
-    "count": 1799,
-    "winRate": "45.64",
-    "duoChampionIds": [
-      164,
-      343,
-      35
+      36,
+      18,
+      109
     ],
     "opTier": 4,
     "isHoney": false,
     "isOp": false
   },
-  "암베사": {
-    "ranking": 153,
-    "pickRate": "3.10",
-    "count": 657,
-    "winRate": "45.51",
+  "스몰더": {
+    "ranking": 74,
+    "pickRate": "9.81",
+    "count": 220079,
+    "winRate": "47.99",
     "duoChampionIds": [
-      239,
-      408,
-      53
+      14,
+      33,
+      345
     ],
-    "opTier": 5,
+    "opTier": 3,
     "isHoney": false,
     "isOp": false
   },
-  "헤카림": {
-    "ranking": 159,
-    "pickRate": "1.58",
-    "count": 334,
-    "winRate": "45.51",
+  "신지드": {
+    "ranking": 130,
+    "pickRate": "3.69",
+    "count": 82720,
+    "winRate": "47.96",
     "duoChampionIds": [
-      146,
-      357,
-      69
+      53,
+      1153,
+      187
     ],
-    "opTier": 5,
+    "opTier": 4,
+    "isHoney": false,
+    "isOp": false
+  },
+  "사일러스": {
+    "ranking": 88,
+    "pickRate": "8.72",
+    "count": 195630,
+    "winRate": "47.94",
+    "duoChampionIds": [
+      36,
+      14,
+      64
+    ],
+    "opTier": 3,
+    "isHoney": false,
+    "isOp": false
+  },
+  "신드라": {
+    "ranking": 112,
+    "pickRate": "6.03",
+    "count": 135189,
+    "winRate": "47.94",
+    "duoChampionIds": [
+      14,
+      174,
+      734
+    ],
+    "opTier": 4,
+    "isHoney": false,
+    "isOp": false
+  },
+  "엘리스": {
+    "ranking": 138,
+    "pickRate": "2.70",
+    "count": 60663,
+    "winRate": "47.90",
+    "duoChampionIds": [
+      37,
+      64,
+      187
+    ],
+    "opTier": 4,
+    "isHoney": false,
+    "isOp": false
+  },
+  "베이가": {
+    "ranking": 84,
+    "pickRate": "9.15",
+    "count": 205312,
+    "winRate": "47.87",
+    "duoChampionIds": [
+      14,
+      66,
+      380
+    ],
+    "opTier": 3,
+    "isHoney": false,
+    "isOp": false
+  },
+  "우디르": {
+    "ranking": 145,
+    "pickRate": "2.15",
+    "count": 48281,
+    "winRate": "47.80",
+    "duoChampionIds": [
+      187,
+      164,
+      81
+    ],
+    "opTier": 4,
+    "isHoney": false,
+    "isOp": false
+  },
+  "블라디미르": {
+    "ranking": 123,
+    "pickRate": "4.90",
+    "count": 109893,
+    "winRate": "47.78",
+    "duoChampionIds": [
+      37,
+      49,
+      215
+    ],
+    "opTier": 4,
+    "isHoney": false,
+    "isOp": false
+  },
+  "아트록스": {
+    "ranking": 108,
+    "pickRate": "6.66",
+    "count": 149298,
+    "winRate": "47.62",
+    "duoChampionIds": [
+      314,
+      37,
+      778
+    ],
+    "opTier": 4,
+    "isHoney": false,
+    "isOp": false
+  },
+  "제리": {
+    "ranking": 124,
+    "pickRate": "5.16",
+    "count": 115807,
+    "winRate": "47.56",
+    "duoChampionIds": [
+      734,
+      135,
+      18
+    ],
+    "opTier": 4,
+    "isHoney": false,
+    "isOp": false
+  },
+  "요네": {
+    "ranking": 93,
+    "pickRate": "8.97",
+    "count": 201292,
+    "winRate": "47.50",
+    "duoChampionIds": [
+      14,
+      229,
+      95
+    ],
+    "opTier": 3,
+    "isHoney": false,
+    "isOp": false
+  },
+  "코르키": {
+    "ranking": 118,
+    "pickRate": "6.07",
+    "count": 136133,
+    "winRate": "47.40",
+    "duoChampionIds": [
+      14,
+      33,
+      148
+    ],
+    "opTier": 4,
     "isHoney": false,
     "isOp": false
   },
   "람머스": {
-    "ranking": 157,
-    "pickRate": "2.24",
-    "count": 475,
-    "winRate": "45.47",
+    "ranking": 147,
+    "pickRate": "2.21",
+    "count": 49630,
+    "winRate": "47.35",
     "duoChampionIds": [
-      1241,
-      19,
-      68
+      327,
+      64,
+      468
+    ],
+    "opTier": 4,
+    "isHoney": false,
+    "isOp": false
+  },
+  "카시오페아": {
+    "ranking": 141,
+    "pickRate": "3.16",
+    "count": 70775,
+    "winRate": "47.33",
+    "duoChampionIds": [
+      415,
+      49,
+      33
+    ],
+    "opTier": 4,
+    "isHoney": false,
+    "isOp": false
+  },
+  "루시안": {
+    "ranking": 78,
+    "pickRate": "11.16",
+    "count": 250226,
+    "winRate": "47.15",
+    "duoChampionIds": [
+      14,
+      287,
+      734
+    ],
+    "opTier": 3,
+    "isHoney": false,
+    "isOp": false
+  },
+  "바이": {
+    "ranking": 134,
+    "pickRate": "4.21",
+    "count": 94494,
+    "winRate": "47.12",
+    "duoChampionIds": [
+      64,
+      49,
+      50
+    ],
+    "opTier": 4,
+    "isHoney": false,
+    "isOp": false
+  },
+  "리 신": {
+    "ranking": 97,
+    "pickRate": "9.26",
+    "count": 207749,
+    "winRate": "46.98",
+    "duoChampionIds": [
+      36,
+      50,
+      215
+    ],
+    "opTier": 3,
+    "isHoney": false,
+    "isOp": false
+  },
+  "에코": {
+    "ranking": 131,
+    "pickRate": "4.99",
+    "count": 112031,
+    "winRate": "46.89",
+    "duoChampionIds": [
+      53,
+      14,
+      621
+    ],
+    "opTier": 4,
+    "isHoney": false,
+    "isOp": false
+  },
+  "질리언": {
+    "ranking": 129,
+    "pickRate": "5.59",
+    "count": 125372,
+    "winRate": "46.80",
+    "duoChampionIds": [
+      376,
+      734,
+      66
+    ],
+    "opTier": 4,
+    "isHoney": false,
+    "isOp": false
+  },
+  "가렌": {
+    "ranking": 135,
+    "pickRate": "4.79",
+    "count": 107535,
+    "winRate": "46.70",
+    "duoChampionIds": [
+      161,
+      37,
+      132
+    ],
+    "opTier": 4,
+    "isHoney": false,
+    "isOp": false
+  },
+  "아크샨": {
+    "ranking": 144,
+    "pickRate": "3.60",
+    "count": 80695,
+    "winRate": "46.68",
+    "duoChampionIds": [
+      49,
+      110,
+      20
+    ],
+    "opTier": 4,
+    "isHoney": false,
+    "isOp": false
+  },
+  "클레드": {
+    "ranking": 160,
+    "pickRate": "0.70",
+    "count": 15602,
+    "winRate": "46.65",
+    "duoChampionIds": [],
+    "opTier": 5,
+    "isHoney": false,
+    "isOp": false
+  },
+  "제드": {
+    "ranking": 107,
+    "pickRate": "8.39",
+    "count": 188243,
+    "winRate": "46.55",
+    "duoChampionIds": [
+      135,
+      33,
+      14
+    ],
+    "opTier": 4,
+    "isHoney": false,
+    "isOp": false
+  },
+  "그웬": {
+    "ranking": 146,
+    "pickRate": "3.37",
+    "count": 75522,
+    "winRate": "46.55",
+    "duoChampionIds": [
+      64,
+      492,
+      377
+    ],
+    "opTier": 4,
+    "isHoney": false,
+    "isOp": false
+  },
+  "브라이어": {
+    "ranking": 155,
+    "pickRate": "1.50",
+    "count": 33648,
+    "winRate": "46.54",
+    "duoChampionIds": [
+      187,
+      164,
+      109
     ],
     "opTier": 5,
     "isHoney": false,
     "isOp": false
   },
-  "벨베스": {
-    "ranking": 158,
-    "pickRate": "1.93",
-    "count": 409,
-    "winRate": "45.23",
+  "피즈": {
+    "ranking": 133,
+    "pickRate": "5.28",
+    "count": 118505,
+    "winRate": "46.40",
+    "duoChampionIds": [
+      1235,
+      64,
+      327
+    ],
+    "opTier": 4,
+    "isHoney": false,
+    "isOp": false
+  },
+  "크산테": {
+    "ranking": 149,
+    "pickRate": "3.05",
+    "count": 68394,
+    "winRate": "46.39",
+    "duoChampionIds": [
+      37,
+      1121,
+      18
+    ],
+    "opTier": 5,
+    "isHoney": false,
+    "isOp": false
+  },
+  "카이사": {
+    "ranking": 92,
+    "pickRate": "11.45",
+    "count": 256940,
+    "winRate": "46.23",
+    "duoChampionIds": [
+      33,
+      14,
+      135
+    ],
+    "opTier": 3,
+    "isHoney": false,
+    "isOp": false
+  },
+  "퀸": {
+    "ranking": 140,
+    "pickRate": "4.85",
+    "count": 108732,
+    "winRate": "46.19",
+    "duoChampionIds": [
+      14,
+      50,
+      49
+    ],
+    "opTier": 4,
+    "isHoney": false,
+    "isOp": false
+  },
+  "워윅": {
+    "ranking": 154,
+    "pickRate": "2.24",
+    "count": 50158,
+    "winRate": "46.08",
     "duoChampionIds": [
       314,
-      396,
-      1241
+      187,
+      54
     ],
     "opTier": 5,
     "isHoney": false,
     "isOp": false
   },
   "마스터 이": {
-    "ranking": 151,
-    "pickRate": "4.89",
-    "count": 1037,
-    "winRate": "44.55",
+    "ranking": 142,
+    "pickRate": "4.79",
+    "count": 107429,
+    "winRate": "45.95",
     "duoChampionIds": [
-      178,
-      395,
-      258
+      36,
+      109,
+      94
+    ],
+    "opTier": 4,
+    "isHoney": false,
+    "isOp": false
+  },
+  "그레이브즈": {
+    "ranking": 127,
+    "pickRate": "7.27",
+    "count": 163169,
+    "winRate": "45.86",
+    "duoChampionIds": [
+      345,
+      135,
+      33
+    ],
+    "opTier": 4,
+    "isHoney": false,
+    "isOp": false
+  },
+  "케인": {
+    "ranking": 153,
+    "pickRate": "2.79",
+    "count": 62601,
+    "winRate": "45.82",
+    "duoChampionIds": [
+      132,
+      55,
+      19
     ],
     "opTier": 5,
     "isHoney": false,
     "isOp": false
   },
   "피오라": {
-    "ranking": 160,
-    "pickRate": "2.55",
-    "count": 540,
-    "winRate": "44.44",
-    "duoChampionIds": [
-      269,
-      876,
-      178
-    ],
-    "opTier": 5,
-    "isHoney": false,
-    "isOp": false
-  },
-  "아칼리": {
-    "ranking": 146,
-    "pickRate": "6.24",
-    "count": 1322,
-    "winRate": "44.33",
-    "duoChampionIds": [
-      465,
-      368,
-      163
-    ],
-    "opTier": 5,
-    "isHoney": false,
-    "isOp": false
-  },
-  "퀸": {
-    "ranking": 149,
-    "pickRate": "5.43",
-    "count": 1150,
-    "winRate": "44.26",
+    "ranking": 156,
+    "pickRate": "2.40",
+    "count": 53870,
+    "winRate": "45.57",
     "duoChampionIds": [
       215,
-      454,
-      328
+      109,
+      771
+    ],
+    "opTier": 5,
+    "isHoney": false,
+    "isOp": false
+  },
+  "파이크": {
+    "ranking": 125,
+    "pickRate": "8.43",
+    "count": 189046,
+    "winRate": "45.43",
+    "duoChampionIds": [
+      14,
+      50,
+      36
+    ],
+    "opTier": 4,
+    "isHoney": false,
+    "isOp": false
+  },
+  "바드": {
+    "ranking": 151,
+    "pickRate": "3.57",
+    "count": 80142,
+    "winRate": "45.38",
+    "duoChampionIds": [
+      416,
+      226,
+      187
+    ],
+    "opTier": 5,
+    "isHoney": false,
+    "isOp": false
+  },
+  "녹턴": {
+    "ranking": 161,
+    "pickRate": "2.28",
+    "count": 51081,
+    "winRate": "45.29",
+    "duoChampionIds": [
+      576,
+      187,
+      943
+    ],
+    "opTier": 5,
+    "isHoney": false,
+    "isOp": false
+  },
+  "암베사": {
+    "ranking": 152,
+    "pickRate": "3.72",
+    "count": 83457,
+    "winRate": "45.13",
+    "duoChampionIds": [
+      50,
+      49,
+      37
+    ],
+    "opTier": 5,
+    "isHoney": false,
+    "isOp": false
+  },
+  "카직스": {
+    "ranking": 148,
+    "pickRate": "5.28",
+    "count": 118453,
+    "winRate": "44.99",
+    "duoChampionIds": [
+      38,
+      565,
+      215
+    ],
+    "opTier": 4,
+    "isHoney": false,
+    "isOp": false
+  },
+  "나피리": {
+    "ranking": 159,
+    "pickRate": "2.76",
+    "count": 61893,
+    "winRate": "44.95",
+    "duoChampionIds": [
+      109,
+      161,
+      576
     ],
     "opTier": 5,
     "isHoney": false,
     "isOp": false
   },
   "이블린": {
-    "ranking": 166,
-    "pickRate": "1.01",
-    "count": 213,
-    "winRate": "44.13",
+    "ranking": 164,
+    "pickRate": "1.18",
+    "count": 26414,
+    "winRate": "44.92",
     "duoChampionIds": [
-      17,
-      964,
-      297
+      187,
+      81,
+      54
     ],
     "opTier": 5,
     "isHoney": false,
     "isOp": false
   },
-  "카타리나": {
-    "ranking": 152,
-    "pickRate": "5.30",
-    "count": 1124,
+  "카사딘": {
+    "ranking": 163,
+    "pickRate": "2.40",
+    "count": 53931,
     "winRate": "43.95",
     "duoChampionIds": [
-      423,
-      147,
-      673
+      64,
+      53,
+      81
     ],
     "opTier": 5,
     "isHoney": false,
     "isOp": false
   },
   "누누와 윌럼프": {
-    "ranking": 156,
+    "ranking": 158,
     "pickRate": "4.16",
-    "count": 881,
-    "winRate": "43.93",
+    "count": 93213,
+    "winRate": "43.91",
     "duoChampionIds": [
-      48,
-      925,
-      125
+      326,
+      1025,
+      1258
     ],
     "opTier": 5,
     "isHoney": false,
     "isOp": false
   },
-  "케인": {
-    "ranking": 161,
-    "pickRate": "3.02",
-    "count": 641,
-    "winRate": "43.84",
+  "아칼리": {
+    "ranking": 150,
+    "pickRate": "6.20",
+    "count": 139040,
+    "winRate": "43.58",
     "duoChampionIds": [
-      692,
-      96,
-      48
+      64,
+      36,
+      187
     ],
     "opTier": 5,
     "isHoney": false,
     "isOp": false
   },
-  "나피리": {
-    "ranking": 162,
-    "pickRate": "3.04",
-    "count": 645,
-    "winRate": "43.72",
+  "르블랑": {
+    "ranking": 143,
+    "pickRate": "8.32",
+    "count": 186627,
+    "winRate": "43.52",
     "duoChampionIds": [
-      130,
-      599,
-      158
+      14,
+      287,
+      64
     ],
-    "opTier": 5,
+    "opTier": 4,
     "isHoney": false,
     "isOp": false
   },
-  "쉬바나": {
-    "ranking": 167,
-    "pickRate": "2.00",
-    "count": 423,
-    "winRate": "43.03",
+  "드레이븐": {
+    "ranking": 157,
+    "pickRate": "4.82",
+    "count": 108191,
+    "winRate": "43.48",
     "duoChampionIds": [
-      524,
-      69,
-      499
-    ],
-    "opTier": 5,
-    "isHoney": false,
-    "isOp": false
-  },
-  "바드": {
-    "ranking": 163,
-    "pickRate": "3.43",
-    "count": 727,
-    "winRate": "42.92",
-    "duoChampionIds": [
-      227,
-      164,
-      30
+      229,
+      33,
+      465
     ],
     "opTier": 5,
     "isHoney": false,
@@ -2303,66 +2273,94 @@
   },
   "탈론": {
     "ranking": 165,
-    "pickRate": "2.94",
-    "count": 624,
-    "winRate": "42.79",
+    "pickRate": "3.19",
+    "count": 71465,
+    "winRate": "43.25",
     "duoChampionIds": [
-      147,
-      396,
-      148
+      820,
+      226,
+      1509
     ],
     "opTier": 5,
     "isHoney": false,
     "isOp": false
   },
-  "드레이븐": {
-    "ranking": 164,
-    "pickRate": "4.79",
-    "count": 1016,
-    "winRate": "41.83",
+  "카타리나": {
+    "ranking": 162,
+    "pickRate": "5.29",
+    "count": 118570,
+    "winRate": "42.97",
     "duoChampionIds": [
-      79,
-      125,
-      147
+      1025,
+      1258,
+      241
     ],
     "opTier": 5,
     "isHoney": false,
     "isOp": false
   },
   "키아나": {
-    "ranking": 168,
-    "pickRate": "3.15",
-    "count": 668,
-    "winRate": "41.47",
+    "ranking": 166,
+    "pickRate": "2.51",
+    "count": 56396,
+    "winRate": "42.94",
     "duoChampionIds": [
-      423,
-      396,
-      439
-    ],
-    "opTier": 5,
-    "isHoney": false,
-    "isOp": false
-  },
-  "카사딘": {
-    "ranking": 169,
-    "pickRate": "2.60",
-    "count": 552,
-    "winRate": "40.76",
-    "duoChampionIds": [
-      423,
-      147,
-      396
+      105,
+      33,
+      327
     ],
     "opTier": 5,
     "isHoney": false,
     "isOp": false
   },
   "렝가": {
-    "ranking": 170,
-    "pickRate": "2.14",
-    "count": 453,
-    "winRate": "39.74",
+    "ranking": 168,
+    "pickRate": "2.04",
+    "count": 45857,
+    "winRate": "42.62",
     "duoChampionIds": [],
+    "opTier": 5,
+    "isHoney": false,
+    "isOp": false
+  },
+  "헤카림": {
+    "ranking": 167,
+    "pickRate": "2.15",
+    "count": 48123,
+    "winRate": "42.60",
+    "duoChampionIds": [
+      1533,
+      78,
+      415
+    ],
+    "opTier": 5,
+    "isHoney": false,
+    "isOp": false
+  },
+  "쉬바나": {
+    "ranking": 169,
+    "pickRate": "1.91",
+    "count": 42853,
+    "winRate": "42.40",
+    "duoChampionIds": [
+      798,
+      1533,
+      64
+    ],
+    "opTier": 5,
+    "isHoney": false,
+    "isOp": false
+  },
+  "벨베스": {
+    "ranking": 170,
+    "pickRate": "1.70",
+    "count": 38164,
+    "winRate": "41.94",
+    "duoChampionIds": [
+      78,
+      54,
+      81
+    ],
     "opTier": 5,
     "isHoney": false,
     "isOp": false
