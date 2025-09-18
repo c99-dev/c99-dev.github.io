@@ -4,7 +4,7 @@ https://칼바람랜덤픽.메인.한국
 
 ![image](https://github.com/user-attachments/assets/b4cbbde8-f60d-44f7-a9eb-5a1d673632f7)
 
-![image](https://github.com/user-attachments/assets/e18b91d1-ee8a-4be3-9b85-f0b1e7a3060d)
+![image](https://github.com/user-attachments/assets/767b1c21-b110-4857-8b83-bb57d8a5916b)
 
 ![image](https://github.com/user-attachments/assets/a7d16d3d-57c3-4560-a6d2-cc5ccf86dbb9)
 
