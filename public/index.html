@@ -28,6 +28,14 @@
     <link rel="canonical" href="https://칼바람랜덤픽.메인.한국/" />
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/favicon.ico" />
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+
+    <!-- 성능 최적화: 이미지 리소스 preconnect -->
+    <link rel="preconnect" href="%PUBLIC_URL%/image" />
+    <link rel="dns-prefetch" href="%PUBLIC_URL%/image" />
+
+    <!-- 핵심 리소스 prefetch -->
+    <link rel="prefetch" href="%PUBLIC_URL%/json/championData.json" />
+    <link rel="prefetch" href="%PUBLIC_URL%/json/championRanking.json" />
     <title>칼바람 랜덤 픽 - 리그 오브 레전드 ARAM 챔피언 선택기</title>
     <script type="application/ld+json">
       {

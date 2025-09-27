@@ -1,13 +1,16 @@
 export const STORAGE_KEYS = {
-  BANNED_CHAMPIONS: "lolApp_bannedChampions",
-  TABLE_OPTIONS: "lolApp_tableOptions",
-  SORT_OPTION: "lolApp_sortOption",
+  BANNED_CHAMPIONS: 'lolApp_bannedChampions',
+  TABLE_OPTIONS: 'lolApp_tableOptions',
+  SORT_OPTION: 'lolApp_sortOption',
+  DISPLAY_COUNT: 'lolApp_displayCount',
+  TIER_DISPLAY: 'lolApp_tierDisplay',
 };
 
 export const DEFAULT_TABLE_OPTIONS = {
   rank: false,
   winrate: false,
   tier: true,
+  tierDisplay: true, // 티어표시 (티어, 꿀벌, OP) 기본값
 };
 
 export function getFromStorage(key, defaultValue) {

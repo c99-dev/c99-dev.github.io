@@ -1,0 +1,334 @@
+/* 스켈레톤 UI 베이스 애니메이션 */
+@keyframes skeleton-shimmer {
+  0% {
+    background-position: -200px 0;
+  }
+  100% {
+    background-position: calc(200px + 100%) 0;
+  }
+}
+
+@keyframes skeleton-pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.6;
+  }
+}
+
+.skeleton-loader {
+  width: 100%;
+}
+
+/* 기본 스켈레톤 요소 */
+.skeleton-default,
+.skeleton-champion-image,
+.skeleton-champion-name,
+.skeleton-champion-rank,
+.skeleton-champion-winrate,
+.skeleton-champion-tier,
+.skeleton-team-header,
+.skeleton-reroll-button,
+.skeleton-header {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.08) 25%,
+    rgba(255, 255, 255, 0.15) 50%,
+    rgba(255, 255, 255, 0.08) 75%
+  );
+  background-size: 200px 100%;
+  animation: skeleton-shimmer 1.8s ease-in-out infinite;
+  border-radius: 6px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* 다크 테마용 스켈레톤 (기본이 다크) */
+.skeleton-default::after,
+.skeleton-champion-image::after,
+.skeleton-champion-name::after,
+.skeleton-champion-rank::after,
+.skeleton-champion-winrate::after,
+.skeleton-champion-tier::after,
+.skeleton-team-header::after,
+.skeleton-reroll-button::after,
+.skeleton-header::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    90deg,
+    transparent 25%,
+    rgba(255, 255, 255, 0.05) 50%,
+    transparent 75%
+  );
+  animation: skeleton-pulse 2s ease-in-out infinite;
+}
+
+/* 개별 챔피언 스켈레톤 - ChampionTable용 */
+.skeleton-champion {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0px 4px;
+  width: 100%;
+  height: 36px;
+}
+
+.skeleton-champion .skeleton-champion-image {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.skeleton-champion .skeleton-champion-name {
+  width: 80px;
+  height: 14px;
+  border-radius: 4px;
+}
+
+/* 밴 모달용 개별 챔피언 스켈레톤 */
+.skeleton-champion-ban {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 6px;
+  width: 100%;
+  height: 100%;
+}
+
+.skeleton-champion-ban .skeleton-champion-image {
+  width: 40px;
+  height: 40px;
+  border-radius: 4px;
+  margin-bottom: 4px;
+  flex-shrink: 0;
+}
+
+.skeleton-champion-ban .skeleton-champion-name {
+  width: 60px;
+  height: 11px;
+  border-radius: 4px;
+}
+
+/* 챔피언 테이블 스켈레톤 */
+.skeleton-champion-table {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.skeleton-champion-row {
+  display: flex;
+  align-items: center;
+  padding: 3px 8px;
+  background: rgba(255, 255, 255, 0.02);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.skeleton-champion-cell {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 180px;
+}
+
+.skeleton-champion-row .skeleton-champion-image {
+  width: 40px;
+  height: 40px;
+  border-radius: 6px;
+}
+
+.skeleton-champion-info {
+  flex: 1;
+}
+
+.skeleton-champion-row .skeleton-champion-name {
+  width: 80px;
+  height: 14px;
+}
+
+.skeleton-champion-rank {
+  width: 32px;
+  height: 14px;
+}
+
+.skeleton-champion-winrate {
+  width: 55px;
+  height: 14px;
+}
+
+.skeleton-champion-tier {
+  width: 32px;
+  height: 32px;
+  border-radius: 4px;
+}
+
+/* 챔피언 그리드 스켈레톤 (밴 모달용) */
+.skeleton-champion-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 100px));
+  grid-auto-rows: 85px;
+  gap: 15px;
+  justify-content: center;
+  align-content: start;
+  padding: 10px;
+  height: 50vh;
+  min-height: 400px;
+  max-height: 50vh;
+  overflow-y: auto;
+}
+
+.skeleton-champion-grid-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 6px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 6px;
+  height: 85px;
+  max-height: 85px;
+  border: 2px solid transparent;
+  transition: all 0.2s ease;
+}
+
+.skeleton-champion-grid-item .skeleton-champion-image {
+  width: 40px;
+  height: 40px;
+  border-radius: 4px;
+  margin-bottom: 4px;
+  flex-shrink: 0;
+}
+
+.skeleton-champion-grid-item .skeleton-champion-name {
+  width: 60px;
+  height: 11px;
+  border-radius: 4px;
+}
+
+/* 앱 로딩 스켈레톤 */
+.skeleton-app-loading {
+  width: 100%;
+  min-height: 100vh;
+  background: #282c34;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.skeleton-header {
+  width: 300px;
+  height: 60px;
+  margin-bottom: 40px;
+  border-radius: 12px;
+}
+
+.skeleton-content {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 20px;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.skeleton-team {
+  flex: 1;
+  max-width: 400px;
+}
+
+.skeleton-team-header {
+  width: 100%;
+  height: 40px;
+  margin-bottom: 10px;
+  border-radius: 12px 12px 0 0;
+}
+
+.skeleton-team-table {
+  background: rgba(40, 44, 52, 0.95);
+  border-radius: 0 0 16px 16px;
+  padding: 10px;
+}
+
+.skeleton-reroll-button {
+  width: 140px;
+  height: 80px;
+  border-radius: 16px;
+  align-self: center;
+  margin-top: 20px;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+  .skeleton-champion-grid {
+    grid-template-columns: repeat(auto-fill, minmax(80px, 80px));
+    grid-auto-rows: 75px;
+    gap: 10px;
+    height: 45vh;
+    min-height: 350px;
+    max-height: 45vh;
+  }
+
+  .skeleton-champion-grid-item {
+    height: 75px;
+    max-height: 75px;
+    padding: 4px;
+  }
+
+  .skeleton-champion-grid-item .skeleton-champion-image {
+    width: 35px;
+    height: 35px;
+  }
+
+  .skeleton-champion-grid-item .skeleton-champion-name {
+    width: 50px;
+    height: 10px;
+  }
+
+  .skeleton-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .skeleton-reroll-button {
+    margin: 20px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .skeleton-champion-grid {
+    grid-template-columns: repeat(auto-fill, minmax(65px, 65px));
+    grid-auto-rows: 65px;
+    gap: 6px;
+    height: 40vh;
+    min-height: 300px;
+    max-height: 40vh;
+  }
+
+  .skeleton-champion-grid-item {
+    height: 65px;
+    max-height: 65px;
+    padding: 4px;
+  }
+
+  .skeleton-champion-grid-item .skeleton-champion-image {
+    width: 30px;
+    height: 30px;
+  }
+
+  .skeleton-champion-grid-item .skeleton-champion-name {
+    width: 40px;
+    height: 9px;
+  }
+}

@@ -22,19 +22,19 @@ body {
 }
 
 .App {
+  display: flex;
   flex-direction: column;
-  height: 100%;
+  min-height: 100vh;
   overflow: hidden;
 }
 
 .container {
   background-color: #282c34;
   margin-top: 10px;
-  height: 92vh;
+  flex: 1;
   min-height: 600px;
   min-width: 1000px;
   display: flex;
-  flex-grow: 1;
   flex-direction: row;
   flex-wrap: wrap;
   align-items: center;
@@ -65,4 +65,137 @@ button:hover {
 button span {
   display: block;
   margin-top: 5px;
+}
+
+.tables-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+}
+
+.teams-layout {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  gap: 20px;
+  width: 100%;
+  max-width: 1400px;
+}
+
+.team-column {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.button-column {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 120px;
+  align-self: center;
+}
+
+/* 다시 뽑기 버튼 스타일 - 테이블과 조화로운 디자인 */
+.reroll-button {
+  margin: 0;
+  white-space: nowrap;
+  background: rgba(40, 44, 52, 0.95);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  padding: 18px 12px;
+  font-size: 18px;
+  font-weight: 700;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  letter-spacing: 0.5px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  min-width: 140px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+}
+
+.reroll-button:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transition: left 0.6s;
+}
+
+.reroll-button:hover {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 16px 40px rgba(16, 185, 129, 0.4);
+  border-color: rgba(16, 185, 129, 0.6);
+  color: white;
+}
+
+.reroll-button:hover:before {
+  left: 100%;
+}
+
+.reroll-button:active {
+  transform: translateY(-2px) scale(1.02);
+  transition: all 0.1s ease;
+}
+
+.reroll-button span {
+  display: block;
+  margin-top: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  opacity: 0.8;
+  letter-spacing: 0.3px;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.reroll-button:hover span {
+  opacity: 1;
+  color: white;
+}
+
+/* 팀 리롤링 상태 스타일 */
+.reroll-button.team-rerolling {
+  transform: scale(0.95);
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+/* 이미지 로딩 중 비활성화 스타일 */
+.reroll-button.loading-disabled {
+  background: rgba(40, 44, 52, 0.6);
+  color: rgba(255, 255, 255, 0.5);
+  cursor: not-allowed;
+  pointer-events: none;
+  border-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+.reroll-button.loading-disabled span {
+  opacity: 0.4;
+}
+
+.reroll-button.loading-disabled:hover {
+  transform: none;
+  background: rgba(40, 44, 52, 0.6);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+.button-column button {
+  margin: 0;
+  white-space: nowrap;
 }

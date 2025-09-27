@@ -1,0 +1,212 @@
+.patch-notes-modal {
+  background: rgba(32, 35, 42, 0.98);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.patch-notes-content {
+  padding: 0;
+  max-height: 60vh;
+  overflow-y: auto;
+}
+
+.patch-notes-loading,
+.patch-notes-error,
+.patch-notes-empty {
+  text-align: center;
+  padding: 40px 20px;
+  color: #999;
+  font-size: 16px;
+}
+
+.patch-notes-error {
+  color: #f44336;
+}
+
+.patch-item {
+  margin-bottom: 30px;
+  padding-bottom: 25px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.patch-item:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+}
+
+.patch-header {
+  margin-bottom: 20px;
+}
+
+.patch-header h3 {
+  color: #fff;
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0 0 8px 0;
+  line-height: 1.3;
+}
+
+.patch-meta {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.patch-version {
+  background: rgba(102, 126, 234, 0.2);
+  color: #667eea;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 600;
+  border: 1px solid rgba(102, 126, 234, 0.3);
+}
+
+.patch-date {
+  color: #999;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.changes-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.change-group {
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 8px;
+  padding: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.change-category {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0 0 12px 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.change-category::before {
+  content: '▶';
+  font-size: 12px;
+  opacity: 0.7;
+}
+
+.change-items {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.change-item {
+  color: #e0e0e0;
+  font-size: 14px;
+  line-height: 1.5;
+  padding: 6px 0 6px 16px;
+  position: relative;
+  border-left: 2px solid rgba(255, 255, 255, 0.1);
+  /* transition: all 0.2s ease; */
+}
+
+.change-item::before {
+  content: '•';
+  position: absolute;
+  left: -6px;
+  top: 6px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  width: 12px;
+  height: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 8px;
+  color: #fff;
+}
+
+.change-item:hover {
+  background: rgba(255, 255, 255, 0.02);
+  border-left-color: rgba(255, 255, 255, 0.2);
+}
+
+/* 스크롤바 스타일링 */
+.patch-notes-content::-webkit-scrollbar {
+  width: 6px;
+}
+
+.patch-notes-content::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 3px;
+}
+
+.patch-notes-content::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 3px;
+}
+
+.patch-notes-content::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+  .patch-notes-content {
+    max-height: 50vh;
+  }
+
+  .patch-header h3 {
+    font-size: 18px;
+  }
+
+  .patch-meta {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+
+  .change-group {
+    padding: 12px;
+  }
+
+  .change-category {
+    font-size: 15px;
+  }
+
+  .change-item {
+    font-size: 13px;
+    padding: 4px 0 4px 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .patch-notes-content {
+    max-height: 45vh;
+  }
+
+  .patch-item {
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+  }
+
+  .patch-header h3 {
+    font-size: 16px;
+  }
+
+  .change-group {
+    padding: 10px;
+  }
+
+  .change-category {
+    font-size: 14px;
+  }
+
+  .change-item {
+    font-size: 12px;
+  }
+}

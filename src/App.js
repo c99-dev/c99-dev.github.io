@@ -1,4 +1,10 @@
-import React, { useState, useEffect, useCallback, useRef } from 'react';
+import React, {
+  useState,
+  useEffect,
+  useCallback,
+  useRef,
+  useMemo,
+} from 'react';
 import Modal from 'react-modal';
 import ReactGA from 'react-ga4';
 
@@ -10,6 +16,10 @@ import './App.css';
 import ButtonContainer from './components/ButtonContainer';
 import MainContent from './components/MainContent';
 import Footer from './components/Footer';
+import PatchNotesModal from './components/PatchNotesModal';
+import AnnouncementModal from './components/AnnouncementModal';
+import AlertModal from './components/AlertModal';
+import SkeletonLoader from './components/SkeletonLoader';
 
 // Hooks
 import useRandomChampions from './hooks/useRandomChampions';
@@ -17,6 +27,7 @@ import useClipboard from './hooks/useClipboard';
 import { useChampionData } from './hooks/useChampionData';
 import useChampionRanking from './hooks/useChampionRanking';
 import useModal from './hooks/useModal';
+import useAlert from './hooks/useAlert';
 
 // Utils
 import {
@@ -43,39 +54,122 @@ function App() {
   const loggedRef = useRef(false);
 
   const [bannedChampions, setBannedChampions] = useState(() =>
-    getFromStorage(STORAGE_KEYS.BANNED_CHAMPIONS, [])
+    getFromStorage(STORAGE_KEYS.BANNED_CHAMPIONS, []),
   );
-  const [displayCount, setDisplayCount] = useState(15);
+  const [displayCount, setDisplayCount] = useState(() =>
+    getFromStorage(STORAGE_KEYS.DISPLAY_COUNT, 15),
+  );
   const [tableOptions, setTableOptions] = useState(() =>
-    getFromStorage(STORAGE_KEYS.TABLE_OPTIONS, DEFAULT_TABLE_OPTIONS)
+    getFromStorage(STORAGE_KEYS.TABLE_OPTIONS, DEFAULT_TABLE_OPTIONS),
   );
   const [sortOption, setSortOption] = useState(() =>
-    getFromStorage(STORAGE_KEYS.SORT_OPTION, 'tier')
+    getFromStorage(STORAGE_KEYS.SORT_OPTION, 'tier'),
+  );
+  const [tierDisplay, setTierDisplay] = useState(() =>
+    getFromStorage(STORAGE_KEYS.TIER_DISPLAY, true),
   );
   const [dataLoaded, setDataLoaded] = useState(false);
   const [championImages, setChampionImages] = useState({});
   const [tierImages, setTierImages] = useState({});
+
+  // 이미지 업데이트 최적화 - 배치 처리로 리렌더링 최소화
+  const updateChampionImages = useCallback(newImages => {
+    // 빈 객체는 무시
+    if (!newImages || Object.keys(newImages).length === 0) return;
+
+    setChampionImages(prev => {
+      const hasChanges = Object.keys(newImages).some(
+        key => prev[key] !== newImages[key],
+      );
+      if (hasChanges) {
+        console.log(
+          `🖼️ Updating ${Object.keys(newImages).length} champion images`,
+        );
+        return { ...prev, ...newImages };
+      }
+      return prev;
+    });
+  }, []);
+
+  const updateTierImages = useCallback(newTierImages => {
+    // 빈 객체는 무시
+    if (!newTierImages || Object.keys(newTierImages).length === 0) return;
+
+    setTierImages(prev => {
+      const hasChanges = Object.keys(newTierImages).some(
+        key => prev[key] !== newTierImages[key],
+      );
+      if (hasChanges) {
+        console.log(
+          `🏆 Updating ${Object.keys(newTierImages).length} tier images`,
+        );
+        return { ...prev, ...newTierImages };
+      }
+      return prev;
+    });
+  }, []);
   const [isInitialized, setIsInitialized] = useState(false);
+
+  // 먼저 alert 훅을 초기화
+  const {
+    alertState,
+    showAlert,
+    showConfirm,
+    showConfirmWithContent,
+    showInfoWithContent,
+    showSuccess,
+    showError,
+    showWarning,
+    showInfo,
+    closeAlert,
+  } = useAlert();
 
   const {
     randomChampions,
     resetCount,
     resetRandomChampions: originalResetRandomChampions,
     handleReRollChampion,
-  } = useRandomChampions(gameData, bannedChampions, displayCount);
+  } = useRandomChampions(
+    gameData,
+    bannedChampions,
+    displayCount,
+    {
+      showConfirm,
+      showConfirmWithContent,
+      showInfoWithContent,
+      showError,
+      showInfo,
+    },
+    championImages,
+  );
 
   const resetRandomChampions = useCallback(() => {
     originalResetRandomChampions();
-  }, [gameData, bannedChampions, displayCount]);
+  }, [originalResetRandomChampions]);
+
+  // 현재 화면에 보이는 챔피언들의 이미지 로딩 완료 여부 확인
+  const areDisplayedImagesLoaded = useMemo(() => {
+    if (!randomChampions?.table1 || !randomChampions?.table2) return false;
+
+    const displayedChampionIds = [
+      ...randomChampions.table1.map(champ => champ?.id).filter(Boolean),
+      ...randomChampions.table2.map(champ => champ?.id).filter(Boolean),
+    ];
+
+    return displayedChampionIds.every(id => championImages[id]);
+  }, [randomChampions, championImages]);
 
   const { copyImageToClipboard, copyTextToClipboard } = useClipboard(
     captureRef,
     displayCount,
-    randomChampions
+    randomChampions,
+    { showSuccess, showError },
   );
 
   const banModal = useModal();
   const optionModal = useModal();
+  const patchNotesModal = useModal();
+  const announcementModal = useModal();
 
   useEffect(() => {
     if (gameData.championData && !loggedRef.current) {
@@ -99,12 +193,18 @@ function App() {
     }
   }, [gameDataError, rankingError]);
 
-  const handleToggleBan = useCallback((championId) => {
-    setBannedChampions((prevBans) => {
-      const newBans = prevBans.includes(championId)
-        ? prevBans.filter((id) => id !== championId)
+  const handleToggleBan = useCallback(championId => {
+    setBannedChampions(prevBans => {
+      const isCurrentlyBanned = prevBans.includes(championId);
+      const newBans = isCurrentlyBanned
+        ? prevBans.filter(id => id !== championId)
         : [...prevBans, championId];
-      setToStorage(STORAGE_KEYS.BANNED_CHAMPIONS, newBans);
+
+      // 비동기로 저장하여 UI 블로킹 방지
+      requestIdleCallback(() => {
+        setToStorage(STORAGE_KEYS.BANNED_CHAMPIONS, newBans);
+      });
+
       return newBans;
     });
   }, []);
@@ -117,6 +217,14 @@ function App() {
   useEffect(() => {
     setToStorage(STORAGE_KEYS.BANNED_CHAMPIONS, bannedChampions);
   }, [bannedChampions]);
+
+  useEffect(() => {
+    setToStorage(STORAGE_KEYS.DISPLAY_COUNT, displayCount);
+  }, [displayCount]);
+
+  useEffect(() => {
+    setToStorage(STORAGE_KEYS.TIER_DISPLAY, tierDisplay);
+  }, [tierDisplay]);
 
   useEffect(() => {
     if (gameData.championData && !isInitialized) {
@@ -132,7 +240,8 @@ function App() {
     ReactGA.send('pageview');
   }, []);
 
-  if (isLoadingGameData || isLoadingRanking) return <div>로딩 중...</div>;
+  if (isLoadingGameData || isLoadingRanking)
+    return <SkeletonLoader type="app-loading" />;
   if (gameDataError || rankingError)
     return (
       <div>에러 발생: {gameDataError.message || rankingError.message}</div>
@@ -143,8 +252,11 @@ function App() {
       <div className="App">
         <ButtonContainer
           bannedChampionsCount={bannedChampions.length}
+          displayCount={displayCount}
           openBanModal={banModal.openModal}
           openOptionModal={optionModal.openModal}
+          openReleaseNotesModal={patchNotesModal.openModal}
+          openAnnouncementModal={announcementModal.openModal}
           copyImageToClipboard={copyImageToClipboard}
           copyTextToClipboard={copyTextToClipboard}
         />
@@ -166,13 +278,34 @@ function App() {
           toggleBan={handleToggleBan}
           displayCount={displayCount}
           setDisplayCount={setDisplayCount}
+          tierDisplay={tierDisplay}
+          setTierDisplay={setTierDisplay}
           setTableOptions={setTableOptions}
           setSortOption={setSortOption}
           championImages={championImages}
-          setChampionImages={setChampionImages}
+          setChampionImages={updateChampionImages}
           tierImages={tierImages}
-          setTierImages={setTierImages}
+          setTierImages={updateTierImages}
           championRanking={championRanking}
+          alerts={{ showError }}
+          areDisplayedImagesLoaded={areDisplayedImagesLoaded}
+        />
+        <PatchNotesModal
+          isOpen={patchNotesModal.isOpen}
+          closeModal={patchNotesModal.closeModal}
+        />
+        <AnnouncementModal
+          isOpen={announcementModal.isOpen}
+          closeModal={announcementModal.closeModal}
+        />
+        <AlertModal
+          isOpen={alertState.isOpen}
+          closeModal={closeAlert}
+          title={alertState.title}
+          message={alertState.message}
+          type={alertState.type}
+          onConfirm={alertState.onConfirm}
+          customContent={alertState.customContent}
         />
         <Footer version={gameData.version} />
       </div>

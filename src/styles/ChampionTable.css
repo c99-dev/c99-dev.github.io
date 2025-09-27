@@ -1,43 +1,77 @@
 .blue-team {
-  background-color: rgb(110, 110, 255);
+  background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
   padding: 5px 10px;
+  border-radius: 12px 12px 0 0;
+  color: white;
+  font-weight: 600;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
 }
 
 .red-team {
-  background-color: rgb(255, 110, 110);
+  background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
   padding: 5px 10px;
+  border-radius: 12px 12px 0 0;
+  color: white;
+  font-weight: 600;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
 }
 
 table {
-  border-collapse: collapse;
+  border-collapse: separate;
+  border-spacing: 0;
   margin: 20px 0;
   table-layout: auto;
-  border-radius: 5px;
+  border-radius: 0 0 16px 16px;
   overflow: hidden;
+  background: rgba(40, 44, 52, 0.95);
+  backdrop-filter: blur(20px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: none;
 }
 
 th,
 td {
-  border: 1px solid #ddd;
-  padding: 4px 8px;
-  font-size: 16px;
+  border: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 3px 8px;
+  font-size: 14px;
   text-align: left;
   white-space: nowrap;
   vertical-align: middle;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 th {
-  background-color: #4caf50;
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
   color: white;
   text-align: center;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  padding: 4px 8px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
 }
 
 tr:nth-child(even) {
-  background-color: #313131;
+  background-color: rgba(55, 65, 81, 0.3);
 }
 
 tr:hover {
-  background-color: #ddd;
+  background: rgba(99, 102, 241, 0.15);
+  transform: scale(1.02);
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.2);
+}
+
+tr:hover td {
+  color: #e5e7eb;
 }
 
 .champion {
@@ -73,23 +107,116 @@ tr:hover {
   align-items: center;
   gap: 8px;
   cursor: pointer;
+  padding: 0px 4px;
+  border-radius: 8px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+}
+
+.champion-name:hover {
+  background: rgba(99, 102, 241, 0.2);
+  transform: translateX(4px);
+  box-shadow: 0 2px 8px rgba(99, 102, 241, 0.3);
+}
+
+.champion-name:active {
+  transform: translateX(2px) scale(0.98);
+  transition: all 0.1s ease;
 }
 
 .champion-image-wrapper {
   position: relative;
   display: inline-block;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.champion-image-wrapper:hover {
+  transform: scale(1.1);
+  filter: brightness(1.2);
 }
 
 .champion-portrait {
   width: 36px;
   height: 36px;
   border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.champion-portrait:hover {
+  border-color: rgba(99, 102, 241, 0.6);
+  box-shadow: 0 6px 20px rgba(99, 102, 241, 0.4);
 }
 
 .tier-badge {
   position: absolute;
-  top: -4px;
+  top: -3px;
+  left: -3px;
+  width: 16px;
+  height: 16px;
+}
+
+.honey-badge {
+  position: absolute;
+  bottom: -4px;
   left: -4px;
   width: 18px;
   height: 18px;
+}
+
+.op-badge {
+  position: absolute;
+  top: -3px;
+  right: -3px;
+  width: 18px;
+  height: 12px;
+}
+
+/* 리롤 애니메이션 */
+tr.rerolling {
+  opacity: 0;
+  transform: scale(0.95);
+  transition: opacity 0.05s ease-out, transform 0.05s ease-out;
+}
+
+tr:not(.rerolling) {
+  opacity: 1;
+  transform: scale(1);
+  transition: opacity 0.08s ease-in, transform 0.08s ease-in;
+}
+
+/* 팀 전체 리롤 애니메이션 */
+table.team-rerolling {
+  opacity: 0;
+  transform: translateY(-10px) scale(0.98);
+  transition: opacity 0.08s ease-out, transform 0.08s ease-out;
+}
+
+table:not(.team-rerolling) {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  transition: opacity 0.12s ease-in, transform 0.12s ease-in;
+}
+
+/* 이미지 로딩 중 비활성화 스타일 */
+tr.loading-disabled {
+  pointer-events: none;
+}
+
+tr.loading-disabled:hover {
+  background: rgba(55, 65, 81, 0.3);
+  transform: none;
+  box-shadow: none;
+}
+
+tr.loading-disabled .champion-name:hover {
+  background: transparent;
+  transform: none;
+  box-shadow: none;
+}
+
+tr.loading-disabled .champion-image-wrapper:hover {
+  transform: none;
+  filter: none;
 }

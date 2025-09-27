@@ -1,24 +1,233 @@
 .button-container {
-  height: 0px;
+  position: fixed;
+  top: 20px;
+  left: 20px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  z-index: 1000;
+  gap: 12px;
+  padding: 15px;
+  background: rgba(32, 35, 42, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
 }
 
 .button-container button {
-  padding: 10px 15px;
+  padding: 10px 16px;
   border: none;
-  margin: 10px 10px 0px 10px;
-  border-radius: 5px;
-  background-color: #4caf50;
+  margin: 0;
+  border-radius: 8px;
   color: white;
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  font-size: 14px;
+  font-weight: 600;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  min-width: 140px;
+  white-space: nowrap;
+  position: relative;
+  overflow: hidden;
+  text-transform: none;
+  letter-spacing: 0.3px;
 }
 
-.ban-button:hover,
-.option-button:hover,
-.copy-button:hover,
+/* 버튼별 개별 스타일 */
+.ban-button {
+  background: #ff6b6b;
+  border: 1px solid rgba(255, 107, 107, 0.3);
+}
+
+.ban-button:hover {
+  background: #ff5252;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(255, 107, 107, 0.4);
+}
+
+/* 챔피언 밴이 0개일 때 스타일 */
+.ban-button-empty {
+  background: #9e9e9e !important;
+  border: 1px solid rgba(158, 158, 158, 0.3) !important;
+}
+
+.ban-button-empty:hover {
+  background: #757575 !important;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(158, 158, 158, 0.4) !important;
+}
+
+.copy-button {
+  background: #4ecdc4;
+  border: 1px solid rgba(78, 205, 196, 0.3);
+}
+
+.copy-button:hover {
+  background: #26d0ce;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(78, 205, 196, 0.4);
+}
+
+.copy-text-button {
+  background: #45b7d1;
+  border: 1px solid rgba(69, 183, 209, 0.3);
+}
+
 .copy-text-button:hover {
-  background-color: #45a049;
+  background: #2196f3;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(69, 183, 209, 0.4);
+}
+
+.option-button {
+  background: #ff9800;
+  border: 1px solid rgba(255, 152, 0, 0.3);
+}
+
+.option-button:hover {
+  background: #f57c00;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(255, 152, 0, 0.4);
+}
+
+.announcement-button {
+  background: #4caf50;
+  border: 1px solid rgba(76, 175, 80, 0.3);
+}
+
+.announcement-button:hover {
+  background: #45a049;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(76, 175, 80, 0.4);
+}
+
+.patch-notes-button {
+  background: #667eea;
+  border: 1px solid rgba(102, 126, 234, 0.3);
+}
+
+.patch-notes-button:hover {
+  background: #5a6fd8;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+}
+
+/* 공통 클릭 효과 */
+.button-container button:active {
+  transform: translateY(0);
+  transition: all 0.1s ease;
+}
+
+/* 버튼 내부 광택 효과 */
+.button-container button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transition: left 0.5s ease;
+}
+
+.button-container button:hover::before {
+  left: 100%;
+}
+
+/* 포커스 상태 스타일 */
+.button-container button:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.3);
+}
+
+/* 버튼이 비활성화될 때 */
+.button-container button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.button-container button:disabled:hover {
+  transform: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* 반응형 디자인 */
+@media (max-width: 1200px) {
+  .button-container {
+    top: 15px;
+    left: 15px;
+    padding: 12px;
+    gap: 6px;
+  }
+
+  .button-container button {
+    padding: 8px 14px;
+    font-size: 13px;
+    min-width: 130px;
+  }
+}
+
+@media (max-width: 768px) {
+  .button-container {
+    top: 10px;
+    left: 10px;
+    padding: 10px;
+    gap: 5px;
+    border-radius: 10px;
+  }
+
+  .button-container button {
+    padding: 7px 12px;
+    font-size: 12px;
+    min-width: 120px;
+    border-radius: 6px;
+  }
+}
+
+@media (max-width: 480px) {
+  .button-container {
+    top: 5px;
+    left: 5px;
+    padding: 8px;
+    gap: 4px;
+  }
+
+  .button-container button {
+    padding: 6px 10px;
+    font-size: 11px;
+    min-width: 110px;
+    font-weight: 500;
+  }
+}
+
+/* 비활성화 스타일 */
+.button-container button.disabled {
+  background: #666666 !important;
+  color: #999999 !important;
+  cursor: not-allowed !important;
+  transform: none !important;
+  box-shadow: none !important;
+  opacity: 0.6;
+}
+
+.button-container button.disabled:hover {
+  background: #666666 !important;
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+/* 다크 테마 최적화 */
+@media (prefers-color-scheme: dark) {
+  .button-container {
+    background: rgba(20, 23, 30, 0.98);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+  }
 }

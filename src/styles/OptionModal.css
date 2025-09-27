@@ -1,70 +1,115 @@
-.modal-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.5);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.modal-wrapper {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background: white;
-  width: 70%;
-  max-width: 800px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-  border-radius: 8px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 0 0 10px 5px;
-}
-
-.option-modal-title {
-  font-size: 20px;
-  margin: 20px;
-}
+/* OptionModal specific styles - BaseModal compatible */
 
 .option-section {
+  margin-bottom: 20px;
   padding: 15px;
-  border: 1px solid #ddd;
-  margin-bottom: 15px;
-  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .option-label {
   display: block;
-  margin-bottom: 10px;
-  font-size: 16px;
+  margin-bottom: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #ffffff;
 }
 
 .option-input {
-  width: auto;
-  padding: 8px 10px;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px 12px;
   font-size: 14px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 6px;
+  color: #ffffff;
+  /* transition: all 0.2s ease; */
+  text-align: left;
+}
+
+.option-input:focus {
+  outline: none;
+  border-color: #4caf50;
+  box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.2);
 }
 
 .option-select {
-  width: auto;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px 12px;
   font-size: 14px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 6px;
+  color: #ffffff;
+  /* transition: all 0.2s ease; */
 }
 
-.option-save-button {
-  margin: 10px;
-  border: none;
-  padding: 5px 10px;
-  border-radius: 5px;
-  color: white;
-  background-color: #4caf50;
+.option-select option {
+  background: #2a2a2a;
+  color: #ffffff;
+  padding: 8px;
+  text-align: left;
+}
+
+.option-select option:hover {
+  background: #3a3a3a;
+}
+
+.option-select:focus {
+  outline: none;
+  border-color: #4caf50;
+  box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.2);
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+  .option-section {
+    padding: 12px;
+    margin-bottom: 15px;
+  }
+
+  .option-input {
+    padding: 8px 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .option-section {
+    padding: 10px;
+    margin-bottom: 12px;
+  }
+
+  .option-input {
+    padding: 8px;
+    font-size: 13px;
+  }
+
+  .option-label {
+    font-size: 13px;
+  }
+}
+
+.option-help-text {
+  margin-top: 5px;
+  font-size: 12px;
+  color: #ffeb3b;
+  font-style: italic;
+}
+
+.checkbox-label {
+  display: flex !important;
+  align-items: center;
+  gap: 8px;
   cursor: pointer;
+  margin-bottom: 0 !important;
+}
+
+.option-checkbox {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+  accent-color: #4caf50;
 }

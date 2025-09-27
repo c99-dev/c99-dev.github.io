@@ -1,8 +1,20 @@
-import { useState, useCallback, useMemo, useRef } from 'react';
+import React, {
+  useState,
+  useCallback,
+  useMemo,
+  useRef,
+  useEffect,
+} from 'react';
 import { shuffleArray } from '../utils/utils';
 import ReactGA from 'react-ga4';
 
-function useRandomChampions(gameData, bannedChampions, displayCount) {
+function useRandomChampions(
+  gameData,
+  bannedChampions,
+  displayCount,
+  alerts = {},
+  championImages = {},
+) {
   const [randomChampions, setRandomChampions] = useState({
     table1: [],
     table2: [],
@@ -12,7 +24,7 @@ function useRandomChampions(gameData, bannedChampions, displayCount) {
   const availableChampions = useMemo(() => {
     if (!gameData.championData) return [];
     return Object.values(gameData.championData.data).filter(
-      (champion) => !bannedChampions.includes(champion.id)
+      champion => !bannedChampions.includes(champion.id),
     );
   }, [gameData.championData, bannedChampions]);
 
@@ -31,47 +43,298 @@ function useRandomChampions(gameData, bannedChampions, displayCount) {
     });
   }, [availableChampions, displayCount]);
 
+  // displayCount가 변경될 때 자동으로 챔피언 수 업데이트
+  useEffect(() => {
+    if (availableChampions.length > 0 && randomChampions.table1.length > 0) {
+      const currentTotal =
+        randomChampions.table1.length + randomChampions.table2.length;
+      const expectedTotal = displayCount * 2;
+
+      if (currentTotal !== expectedTotal) {
+        console.log(
+          `🔄 Display count changed: ${currentTotal / 2} → ${displayCount}`,
+        );
+        resetRandomChampions();
+      }
+    }
+  }, [
+    displayCount,
+    availableChampions.length,
+    randomChampions.table1.length,
+    randomChampions.table2.length,
+    resetRandomChampions,
+  ]);
+
   const handleReRollChampion = useCallback(
     (table, index) => {
       const selectedChampion = randomChampions[table][index].name;
 
-      if (
-        window.confirm(
-          `"${selectedChampion}"을(를) 다시 랜덤하게 돌리시겠습니까?`
-        )
-      ) {
+      const confirmReRoll = async () => {
+        // 1단계: 현재 챔피언 이미지와 함께 확인 요청
+        if (alerts.showConfirmWithContent) {
+          const currentChampion = randomChampions[table][index];
+
+          const confirmContent = React.createElement(
+            'div',
+            {
+              style: {
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+                gap: '12px',
+                margin: '20px 0',
+              },
+            },
+            [
+              championImages[currentChampion.id]
+                ? React.createElement('img', {
+                    key: 'current-img',
+                    src: championImages[currentChampion.id],
+                    alt: currentChampion.name,
+                    style: {
+                      width: '80px',
+                      height: '80px',
+                      borderRadius: '12px',
+                    },
+                  })
+                : React.createElement(
+                    'div',
+                    {
+                      key: 'current-placeholder',
+                      style: {
+                        width: '80px',
+                        height: '80px',
+                        backgroundColor: '#333',
+                        borderRadius: '12px',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        color: '#fff',
+                        fontSize: '24px',
+                      },
+                    },
+                    '?',
+                  ),
+              React.createElement(
+                'div',
+                {
+                  key: 'current-name',
+                  style: {
+                    fontSize: '16px',
+                    fontWeight: 'bold',
+                    textAlign: 'center',
+                  },
+                },
+                currentChampion.name,
+              ),
+            ],
+          );
+
+          const confirmed = await alerts.showConfirmWithContent(
+            `"${selectedChampion}"을(를) 다시 랜덤하게 돌리시겠습니까?`,
+            '챔피언 리롤',
+            confirmContent,
+          );
+
+          if (!confirmed) return;
+        }
+
+        // 2단계: 리롤 실행
         const currentTableChampions = new Set([
-          ...randomChampions.table1.map((champ) => champ.id),
-          ...randomChampions.table2.map((champ) => champ.id),
+          ...randomChampions.table1.map(champ => champ.id),
+          ...randomChampions.table2.map(champ => champ.id),
         ]);
 
         const availableChampionsForReroll = availableChampions.filter(
-          (champion) => !currentTableChampions.has(champion.id)
+          champion => !currentTableChampions.has(champion.id),
         );
 
         if (availableChampionsForReroll.length === 0) {
-          alert('사용 가능한 챔피언이 없습니다.');
+          if (alerts.showError) {
+            alerts.showError('사용 가능한 챔피언이 없습니다.');
+          }
           return;
         }
 
-        const randomChampion =
+        const newChampion =
           availableChampionsForReroll[
             Math.floor(Math.random() * availableChampionsForReroll.length)
           ];
 
-        setRandomChampions((prevChampions) => ({
+        const oldChampion = randomChampions[table][index];
+
+        // 3단계: 상태 업데이트
+        setRandomChampions(prevChampions => ({
           ...prevChampions,
           [table]: prevChampions[table].map((champ, idx) =>
-            idx === index ? randomChampion : champ
+            idx === index ? newChampion : champ,
           ),
         }));
 
-        alert(
-          `"${selectedChampion}"을(를) 돌려서 "${randomChampion.name}"이(가) 나왔습니다.`
-        );
-      }
+        // 4단계: 결과 표시 (이전 챔피언 → 새 챔피언)
+        if (alerts.showConfirmWithContent) {
+          const resultContent = React.createElement(
+            'div',
+            {
+              style: {
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                gap: '20px',
+                margin: '20px 0',
+              },
+            },
+            [
+              React.createElement(
+                'div',
+                {
+                  key: 'old',
+                  style: { textAlign: 'center' },
+                },
+                [
+                  React.createElement(
+                    'div',
+                    {
+                      key: 'old-label',
+                      style: {
+                        fontSize: '14px',
+                        marginBottom: '8px',
+                        color: '#666',
+                      },
+                    },
+                    '이전 챔피언',
+                  ),
+                  championImages[oldChampion.id]
+                    ? React.createElement('img', {
+                        key: 'old-img',
+                        src: championImages[oldChampion.id],
+                        alt: oldChampion.name,
+                        style: {
+                          width: '64px',
+                          height: '64px',
+                          borderRadius: '8px',
+                          opacity: '0.7',
+                        },
+                      })
+                    : React.createElement(
+                        'div',
+                        {
+                          key: 'old-placeholder',
+                          style: {
+                            width: '64px',
+                            height: '64px',
+                            backgroundColor: '#333',
+                            borderRadius: '8px',
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            color: '#fff',
+                            opacity: '0.7',
+                          },
+                        },
+                        '?',
+                      ),
+                  React.createElement(
+                    'div',
+                    {
+                      key: 'old-name',
+                      style: {
+                        fontSize: '12px',
+                        marginTop: '4px',
+                        fontWeight: 'bold',
+                        opacity: '0.7',
+                      },
+                    },
+                    oldChampion.name,
+                  ),
+                ],
+              ),
+              React.createElement(
+                'div',
+                {
+                  key: 'arrow',
+                  style: { fontSize: '24px', color: '#10b981' },
+                },
+                '→',
+              ),
+              React.createElement(
+                'div',
+                {
+                  key: 'new',
+                  style: { textAlign: 'center' },
+                },
+                [
+                  React.createElement(
+                    'div',
+                    {
+                      key: 'new-label',
+                      style: {
+                        fontSize: '14px',
+                        marginBottom: '8px',
+                        color: '#10b981',
+                      },
+                    },
+                    '새로운 챔피언',
+                  ),
+                  championImages[newChampion.id]
+                    ? React.createElement('img', {
+                        key: 'new-img',
+                        src: championImages[newChampion.id],
+                        alt: newChampion.name,
+                        style: {
+                          width: '64px',
+                          height: '64px',
+                          borderRadius: '8px',
+                        },
+                      })
+                    : React.createElement(
+                        'div',
+                        {
+                          key: 'new-placeholder',
+                          style: {
+                            width: '64px',
+                            height: '64px',
+                            backgroundColor: '#333',
+                            borderRadius: '8px',
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            color: '#fff',
+                          },
+                        },
+                        '?',
+                      ),
+                  React.createElement(
+                    'div',
+                    {
+                      key: 'new-name',
+                      style: {
+                        fontSize: '12px',
+                        marginTop: '4px',
+                        fontWeight: 'bold',
+                        color: '#10b981',
+                      },
+                    },
+                    newChampion.name,
+                  ),
+                ],
+              ),
+            ],
+          );
+
+          setTimeout(() => {
+            alerts.showInfoWithContent(
+              `리롤 완료! "${oldChampion.name}"이(가) "${newChampion.name}"으로 변경되었습니다.`,
+              '리롤 결과',
+              resultContent,
+            );
+          }, 100);
+        }
+      };
+
+      confirmReRoll();
     },
-    [randomChampions, availableChampions]
+    [randomChampions, availableChampions, alerts, championImages],
   );
 
   return {

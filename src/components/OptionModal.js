@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import Modal from 'react-modal';
+import BaseModal from './BaseModal';
 import './../styles/OptionModal.css';
 
 function OptionModal({
@@ -8,13 +8,18 @@ function OptionModal({
   setDisplayCount,
   sortOption,
   setSortOption,
+  tierDisplay,
+  setTierDisplay,
   closeModal,
   maxDisplayCount,
+  alerts,
 }) {
   const [inputValue, setInputValue] = useState(String(displayCount));
+  const [sortValue, setSortValue] = useState(sortOption);
+  const [tierDisplayValue, setTierDisplayValue] = useState(tierDisplay);
 
   const handleInputChange = useCallback(
-    (e) => {
+    e => {
       const value = e.target.value;
       if (
         value === '' ||
@@ -23,74 +28,119 @@ function OptionModal({
         setInputValue(value);
       }
     },
-    [maxDisplayCount]
+    [maxDisplayCount],
   );
+
+  const handleSortChange = useCallback(e => {
+    setSortValue(e.target.value);
+  }, []);
+
+  const handleTierDisplayChange = useCallback(e => {
+    setTierDisplayValue(e.target.checked);
+  }, []);
 
   const handleSave = useCallback(() => {
     const numValue = Number(inputValue);
     if (numValue >= 1 && numValue <= maxDisplayCount) {
       setDisplayCount(numValue);
+      setSortOption(sortValue);
+      setTierDisplay(tierDisplayValue);
       closeModal();
     } else {
-      alert(`챔피언 수는 1에서 ${maxDisplayCount} 사이의 값이어야 합니다.`);
+      if (alerts && alerts.showError) {
+        alerts.showError(
+          `챔피언 수는 1에서 ${maxDisplayCount} 사이의 값이어야 합니다.`,
+        );
+      }
     }
-  }, [inputValue, maxDisplayCount, setDisplayCount, closeModal]);
+  }, [
+    inputValue,
+    sortValue,
+    tierDisplayValue,
+    maxDisplayCount,
+    setDisplayCount,
+    setSortOption,
+    setTierDisplay,
+    closeModal,
+    alerts,
+  ]);
 
   useEffect(() => {
     setInputValue(String(displayCount));
-  }, [displayCount]);
+    setSortValue(sortOption);
+    setTierDisplayValue(tierDisplay);
+  }, [displayCount, sortOption, tierDisplay]);
 
   return (
-    <Modal
+    <BaseModal
       isOpen={isOpen}
-      onRequestClose={closeModal}
-      className="modal-overlay"
-      ariaHideApp={false}
+      onClose={closeModal}
+      title="⚙️ 옵션 설정"
+      maxWidth="500px"
+      className="option-modal"
     >
-      <div className="modal-wrapper">
-        <h2 className="option-modal-title">옵션 설정</h2>
-
-        <div className="option-section">
-          <label className="option-label" htmlFor="displayCount">
-            챔피언 수:
-          </label>
-          <input
-            type="number"
-            id="displayCount"
-            value={inputValue}
-            onChange={handleInputChange}
-            className="option-input"
-            min="1"
-            max={maxDisplayCount}
-          />
-        </div>
-
-        <div className="option-section">
-          <label className="option-label" htmlFor="sortOption">
-            정렬 옵션:
-          </label>
-          <select
-            id="sortOption"
-            className="option-select"
-            value={sortOption}
-            onChange={(e) => setSortOption(e.target.value)}
-          >
-            <option value="tier">티어순</option>
-            <option value="alphabetical">이름순</option>
-            <option value="random">무작위</option>
-          </select>
-        </div>
-
-        <div className="option-buttons">
-          <button className="option-save-button" onClick={handleSave}>
-            저장
-          </button>
-          <button onClick={closeModal} className="close-button">
-            닫기
-          </button>
+      <div className="option-section">
+        <label className="option-label" htmlFor="displayCount">
+          챔피언 수:
+        </label>
+        <input
+          type="number"
+          id="displayCount"
+          value={inputValue}
+          onChange={handleInputChange}
+          className="option-input"
+          min="1"
+          max={maxDisplayCount}
+        />
+        <div className="option-help-text">
+          ※ 이미지 캡처는 15명까지만 지원됩니다 (16명 이상 선택 시 캡처 불가)
         </div>
       </div>
-    </Modal>
+
+      <div className="option-section">
+        <label className="option-label" htmlFor="sortOption">
+          정렬 옵션:
+        </label>
+        <select
+          id="sortOption"
+          className="option-select"
+          value={sortValue}
+          onChange={handleSortChange}
+        >
+          <option value="tier">티어순</option>
+          <option value="alphabetical">이름순</option>
+          <option value="random">무작위</option>
+        </select>
+      </div>
+
+      <div className="option-section">
+        <label className="option-label checkbox-label">
+          <input
+            type="checkbox"
+            id="tierDisplay"
+            checked={tierDisplayValue}
+            onChange={handleTierDisplayChange}
+            className="option-checkbox"
+          />
+          티어표시 (티어, 꿀벌, OP 표시)
+        </label>
+      </div>
+
+      <div className="base-modal-footer">
+        <button
+          className="base-modal-button base-modal-button-primary"
+          onClick={handleSave}
+        >
+          저장
+        </button>
+        <button
+          onClick={closeModal}
+          className="base-modal-button base-modal-button-secondary"
+        >
+          닫기
+        </button>
+      </div>
+    </BaseModal>
   );
 }
 

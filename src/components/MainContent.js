@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import React, { useMemo, useState, useCallback } from 'react';
 import ChampionTable from './ChampionTable';
 import ImageLoader from './ImageLoader';
 import BanModal from './BanModal';
@@ -24,6 +24,8 @@ function MainContent({
   toggleBan,
   displayCount,
   setDisplayCount,
+  tierDisplay,
+  setTierDisplay,
   setTableOptions,
   setSortOption,
   championImages,
@@ -31,12 +33,28 @@ function MainContent({
   tierImages,
   setTierImages,
   championRanking,
+  alerts,
+  areDisplayedImagesLoaded,
 }) {
+  const [isTeamRerolling, setIsTeamRerolling] = useState(false);
+
   const champions = useMemo(() => {
     return gameData.championData
       ? Object.values(gameData.championData.data)
       : [];
   }, [gameData.championData]);
+
+  const handleTeamReroll = useCallback(async () => {
+    setIsTeamRerolling(true);
+
+    // 애니메이션을 위한 지연
+    setTimeout(() => {
+      resetRandomChampions();
+      setTimeout(() => {
+        setIsTeamRerolling(false);
+      }, 120); // 페이드 인 완료 후 상태 리셋
+    }, 80); // 페이드 아웃 시간
+  }, [resetRandomChampions]);
 
   return (
     <div className="container" ref={captureRef}>
@@ -47,38 +65,63 @@ function MainContent({
         setTierImages={setTierImages}
         randomChampions={randomChampions}
       />
-      <ChampionTable
-        champions={randomChampions.table1}
-        teamName="블루 팀"
-        reRoll={handleReRollChampion}
-        table="table1"
-        version={gameData.version}
-        tableOptions={tableOptions}
-        sortOption={sortOption}
-        championImages={championImages}
-        setChampionImages={setChampionImages}
-        championRanking={championRanking}
-        setTierImages={setTierImages}
-        tierImages={tierImages}
-      />
-      <button onClick={resetRandomChampions}>
-        다시 뽑기
-        <span>({resetCount})</span>
-      </button>
-      <ChampionTable
-        champions={randomChampions.table2}
-        teamName="레드 팀"
-        reRoll={handleReRollChampion}
-        table="table2"
-        version={gameData.version}
-        tableOptions={tableOptions}
-        sortOption={sortOption}
-        championImages={championImages}
-        setChampionImages={setChampionImages}
-        tierImages={tierImages}
-        setTierImages={setTierImages}
-        championRanking={championRanking}
-      />
+      <div className="tables-container">
+        <div className="teams-layout">
+          <div className="team-column">
+            <ChampionTable
+              champions={randomChampions.table1}
+              teamName="블루 팀"
+              reRoll={handleReRollChampion}
+              table="table1"
+              version={gameData.version}
+              tableOptions={tableOptions}
+              sortOption={sortOption}
+              tierDisplay={tierDisplay}
+              championImages={championImages}
+              setChampionImages={setChampionImages}
+              championRanking={championRanking}
+              setTierImages={setTierImages}
+              tierImages={tierImages}
+              isTeamRerolling={isTeamRerolling}
+              areDisplayedImagesLoaded={areDisplayedImagesLoaded}
+            />
+          </div>
+          <div className="button-column">
+            <button
+              className={`reroll-button ${
+                isTeamRerolling ? 'team-rerolling' : ''
+              } ${!areDisplayedImagesLoaded ? 'loading-disabled' : ''}`}
+              onClick={handleTeamReroll}
+              disabled={!areDisplayedImagesLoaded || isTeamRerolling}
+              title={
+                !areDisplayedImagesLoaded ? '챔피언 이미지 로딩 중...' : ''
+              }
+            >
+              🎲 다시 뽑기
+              <span>({resetCount})</span>
+            </button>
+          </div>
+          <div className="team-column">
+            <ChampionTable
+              champions={randomChampions.table2}
+              teamName="레드 팀"
+              reRoll={handleReRollChampion}
+              table="table2"
+              version={gameData.version}
+              tableOptions={tableOptions}
+              sortOption={sortOption}
+              tierDisplay={tierDisplay}
+              championImages={championImages}
+              setChampionImages={setChampionImages}
+              tierImages={tierImages}
+              isTeamRerolling={isTeamRerolling}
+              setTierImages={setTierImages}
+              championRanking={championRanking}
+              areDisplayedImagesLoaded={areDisplayedImagesLoaded}
+            />
+          </div>
+        </div>
+      </div>
       <BanModal
         isOpen={isBanModalOpen}
         champions={gameData.championData}
@@ -92,6 +135,8 @@ function MainContent({
         isOpen={isOptionModalOpen}
         displayCount={displayCount}
         setDisplayCount={setDisplayCount}
+        tierDisplay={tierDisplay}
+        setTierDisplay={setTierDisplay}
         closeModal={closeOptionModal}
         tableOptions={tableOptions}
         setTableOptions={setTableOptions}
@@ -100,11 +145,12 @@ function MainContent({
         maxDisplayCount={Math.floor(
           (Object.keys(gameData.championData.data || {}).length -
             bannedChampions.length) /
-            2
+            2,
         )}
+        alerts={alerts}
       />
     </div>
   );
 }
 
-export default MainContent;
+export default React.memo(MainContent);
