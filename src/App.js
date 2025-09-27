@@ -71,6 +71,7 @@ function App() {
   const [dataLoaded, setDataLoaded] = useState(false);
   const [championImages, setChampionImages] = useState({});
   const [tierImages, setTierImages] = useState({});
+  const [imagesReadyForCapture, setImagesReadyForCapture] = useState(false);
 
   // 이미지 업데이트 최적화 - 배치 처리로 리렌더링 최소화
   const updateChampionImages = useCallback(newImages => {
@@ -128,7 +129,7 @@ function App() {
     randomChampions,
     resetCount,
     resetRandomChampions: originalResetRandomChampions,
-    handleReRollChampion,
+    handleReRollChampion: originalHandleReRollChampion,
   } = useRandomChampions(
     gameData,
     bannedChampions,
@@ -145,7 +146,16 @@ function App() {
 
   const resetRandomChampions = useCallback(() => {
     originalResetRandomChampions();
+    setImagesReadyForCapture(false); // 새로운 챔피언이 뽑히면 캡처 준비 상태를 리셋
   }, [originalResetRandomChampions]);
+
+  const handleReRollChampion = useCallback(
+    (table, index) => {
+      originalHandleReRollChampion(table, index);
+      setImagesReadyForCapture(false); // 개별 챔피언 리롤 시에도 캡처 준비 상태를 리셋
+    },
+    [originalHandleReRollChampion],
+  );
 
   // 현재 화면에 보이는 챔피언들의 이미지 로딩 완료 여부 확인
   const areDisplayedImagesLoaded = useMemo(() => {
@@ -259,6 +269,7 @@ function App() {
           openAnnouncementModal={announcementModal.openModal}
           copyImageToClipboard={copyImageToClipboard}
           copyTextToClipboard={copyTextToClipboard}
+          imagesReadyForCapture={imagesReadyForCapture}
         />
         <MainContent
           captureRef={captureRef}
@@ -289,6 +300,8 @@ function App() {
           championRanking={championRanking}
           alerts={{ showError }}
           areDisplayedImagesLoaded={areDisplayedImagesLoaded}
+          imagesReadyForCapture={imagesReadyForCapture}
+          setImagesReadyForCapture={setImagesReadyForCapture}
         />
         <PatchNotesModal
           isOpen={patchNotesModal.isOpen}

@@ -35,6 +35,8 @@ function MainContent({
   championRanking,
   alerts,
   areDisplayedImagesLoaded,
+  imagesReadyForCapture,
+  setImagesReadyForCapture,
 }) {
   const [isTeamRerolling, setIsTeamRerolling] = useState(false);
 
@@ -59,11 +61,10 @@ function MainContent({
   return (
     <div className="container" ref={captureRef}>
       <MemoizedImageLoader
-        version={gameData.version}
         champions={champions}
         setChampionImages={setChampionImages}
         setTierImages={setTierImages}
-        randomChampions={randomChampions}
+        setImagesReadyForCapture={setImagesReadyForCapture}
       />
       <div className="tables-container">
         <div className="teams-layout">
