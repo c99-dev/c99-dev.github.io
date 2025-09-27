@@ -111,14 +111,11 @@ function ChampionTable({
             >
               <td className="champion">
                 <div className="champion-name">
-                  {championImages[champion.id] ? (
+                  {championImages[champion.id]?.url ? (
                     <>
                       <div className="champion-image-wrapper">
                         <img
-                          src={
-                            championImages[champion.id]?.url ||
-                            championImages[champion.id]
-                          }
+                          src={championImages[champion.id].url}
                           alt={champion.name}
                           className="champion-portrait"
                           data-champion-id={champion.id}

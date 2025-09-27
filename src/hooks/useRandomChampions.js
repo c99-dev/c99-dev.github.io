@@ -86,10 +86,10 @@ function useRandomChampions(
               },
             },
             [
-              championImages[currentChampion.id]
+              championImages[currentChampion.id]?.url
                 ? React.createElement('img', {
                     key: 'current-img',
-                    src: championImages[currentChampion.id],
+                    src: championImages[currentChampion.id].url,
                     alt: currentChampion.name,
                     style: {
                       width: '80px',
@@ -204,10 +204,10 @@ function useRandomChampions(
                     },
                     '이전 챔피언',
                   ),
-                  championImages[oldChampion.id]
+                  championImages[oldChampion.id]?.url
                     ? React.createElement('img', {
                         key: 'old-img',
-                        src: championImages[oldChampion.id],
+                        src: championImages[oldChampion.id].url,
                         alt: oldChampion.name,
                         style: {
                           width: '64px',
@@ -276,10 +276,10 @@ function useRandomChampions(
                     },
                     '새로운 챔피언',
                   ),
-                  championImages[newChampion.id]
+                  championImages[newChampion.id]?.url
                     ? React.createElement('img', {
                         key: 'new-img',
-                        src: championImages[newChampion.id],
+                        src: championImages[newChampion.id].url,
                         alt: newChampion.name,
                         style: {
                           width: '64px',

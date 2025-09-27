@@ -60,9 +60,9 @@ function BanModal({
           className={`champion-item ${isBanned ? 'banned' : ''}`}
           data-champion-id={champion.id}
         >
-          {championImages[champion.id] ? (
+          {championImages[champion.id]?.url ? (
             <img
-              src={championImages[champion.id]}
+              src={championImages[champion.id].url}
               alt={champion.name}
               className={isBanned ? 'banned' : ''}
             />
