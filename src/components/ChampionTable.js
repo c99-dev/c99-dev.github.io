@@ -65,8 +65,7 @@ function ChampionTable({
   // 디버깅: championImages 상태 확인
   React.useEffect(() => {
     const championIds = champions.map(c => c?.id).filter(Boolean);
-    const loadedImageIds = Object.keys(championImages);
-    const missingImages = championIds.filter(id => !championImages[id]);
+    const missingImages = championIds.filter(id => !championImages[id]?.url);
 
     if (missingImages.length > 0) {
       console.log(
@@ -130,9 +129,13 @@ function ChampionTable({
                     <>
                       <div className="champion-image-wrapper">
                         <img
-                          src={championImages[champion.id]}
+                          src={
+                            championImages[champion.id]?.url ||
+                            championImages[champion.id]
+                          }
                           alt={champion.name}
                           className="champion-portrait"
+                          data-champion-id={champion.id}
                         />
                         {tierDisplay &&
                           rankData &&

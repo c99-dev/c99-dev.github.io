@@ -46,6 +46,14 @@ function MainContent({
       : [];
   }, [gameData.championData]);
 
+  // 현재 화면에 보이는 챔피언들
+  const displayedChampions = useMemo(() => {
+    if (!randomChampions?.table1 || !randomChampions?.table2) return [];
+    return [...randomChampions.table1, ...randomChampions.table2].filter(
+      Boolean,
+    );
+  }, [randomChampions]);
+
   const handleTeamReroll = useCallback(async () => {
     setIsTeamRerolling(true);
 
@@ -62,6 +70,8 @@ function MainContent({
     <div className="container" ref={captureRef}>
       <MemoizedImageLoader
         champions={champions}
+        championImages={championImages}
+        displayedChampions={displayedChampions}
         setChampionImages={setChampionImages}
         setTierImages={setTierImages}
         setImagesReadyForCapture={setImagesReadyForCapture}

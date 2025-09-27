@@ -70,23 +70,124 @@ function App() {
   );
   const [dataLoaded, setDataLoaded] = useState(false);
   const [championImages, setChampionImages] = useState({});
+
+  // championImages 상태 변경 추적
+  useEffect(() => {
+    const base64Count = Object.values(championImages).filter(img =>
+      img?.url?.startsWith('data:'),
+    ).length;
+    console.log(
+      `🎯 [APP] championImages 상태 변경됨: 총 ${
+        Object.keys(championImages).length
+      }개, base64 ${base64Count}개`,
+    );
+  }, [championImages]);
   const [tierImages, setTierImages] = useState({});
+
+  // tierImages 상태 변경 추적
+  useEffect(() => {
+    const base64Count = Object.values(tierImages).filter(
+      img => typeof img === 'string' && img.startsWith('data:'),
+    ).length;
+    console.log(
+      `🎯 [APP] tierImages 상태 변경됨: 총 ${
+        Object.keys(tierImages).length
+      }개, base64 ${base64Count}개`,
+    );
+  }, [tierImages]);
+
   const [imagesReadyForCapture, setImagesReadyForCapture] = useState(false);
+
+  // 캡처 준비 상태 변화 로깅
+  useEffect(() => {
+    console.log(
+      `🎯 [APP] imagesReadyForCapture 상태 변경: ${imagesReadyForCapture}`,
+    );
+  }, [imagesReadyForCapture]);
 
   // 이미지 업데이트 최적화 - 배치 처리로 리렌더링 최소화
   const updateChampionImages = useCallback(newImages => {
     // 빈 객체는 무시
     if (!newImages || Object.keys(newImages).length === 0) return;
 
+    console.log(
+      `🔄 [APP] updateChampionImages 호출됨, 새 이미지 수: ${
+        Object.keys(newImages).length
+      }`,
+    );
+
+    // 🔍 전달받은 newImages 샘플 확인
+    const newImageSamples = Object.entries(newImages)
+      .slice(0, 3)
+      .map(([id, img]) => ({
+        id,
+        hasUrl: !!img?.url,
+        hasDataUrl: !!img?.dataUrl,
+        urlType: img?.url?.startsWith('data:')
+          ? 'base64'
+          : img?.url?.startsWith('/')
+          ? 'path'
+          : 'unknown',
+        urlStart: img?.url?.substring(0, 30) + '...',
+      }));
+    console.log(`🔍 [APP] 받은 newImages 샘플:`, newImageSamples);
+
     setChampionImages(prev => {
+      console.log(
+        `🔥 [APP] setChampionImages 콜백 진입, prev: ${
+          Object.keys(prev).length
+        }개, newImages: ${Object.keys(newImages).length}개`,
+      );
+
       const hasChanges = Object.keys(newImages).some(
         key => prev[key] !== newImages[key],
       );
+
+      console.log(`🔍 [APP] hasChanges: ${hasChanges}`);
+
       if (hasChanges) {
+        // 챔피언 이미지 업데이트
+        const updated = { ...prev, ...newImages };
+
+        // base64 이미지 개수 확인
+        const base64Count = Object.values(updated).filter(img =>
+          img?.url?.startsWith('data:'),
+        ).length;
+
         console.log(
-          `🖼️ Updating ${Object.keys(newImages).length} champion images`,
+          `✅ [APP] championImages 업데이트됨, 총 ${
+            Object.keys(updated).length
+          }개, base64 ${base64Count}개`,
         );
-        return { ...prev, ...newImages };
+
+        // 🔍 실제 객체 구조 확인
+        const sampleEntries = Object.entries(updated).slice(0, 3);
+        console.log(
+          `🔍 [APP] championImages 구조 샘플:`,
+          sampleEntries.map(([id, img]) => ({
+            id,
+            hasUrl: !!img?.url,
+            hasDataUrl: !!img?.dataUrl,
+            urlType: img?.url?.startsWith('data:')
+              ? 'base64'
+              : img?.url?.startsWith('/')
+              ? 'path'
+              : 'unknown',
+            urlStart: img?.url?.substring(0, 30) + '...',
+          })),
+        );
+
+        // base64 데이터 샘플 확인
+        const base64Samples = Object.entries(updated)
+          .filter(([_, img]) => img?.url?.startsWith('data:'))
+          .slice(0, 3)
+          .map(([id, img]) => `${id}: ${img.url?.substring(0, 30)}...`);
+
+        if (base64Samples.length > 0) {
+          console.log(`🔍 [APP] base64 샘플:`, base64Samples);
+        }
+
+        return updated;
       }
       return prev;
     });
@@ -101,9 +202,7 @@ function App() {
         key => prev[key] !== newTierImages[key],
       );
       if (hasChanges) {
-        console.log(
-          `🏆 Updating ${Object.keys(newTierImages).length} tier images`,
-        );
+        // 티어 이미지 업데이트
         return { ...prev, ...newTierImages };
       }
       return prev;
@@ -166,7 +265,7 @@ function App() {
       ...randomChampions.table2.map(champ => champ?.id).filter(Boolean),
     ];
 
-    return displayedChampionIds.every(id => championImages[id]);
+    return displayedChampionIds.every(id => championImages[id]?.url);
   }, [randomChampions, championImages]);
 
   const { copyImageToClipboard, copyTextToClipboard } = useClipboard(
@@ -174,6 +273,8 @@ function App() {
     displayCount,
     randomChampions,
     { showSuccess, showError },
+    championImages,
+    tierImages,
   );
 
   const banModal = useModal();
