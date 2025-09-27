@@ -12,13 +12,6 @@ function ButtonContainer({
   copyTextToClipboard,
   imagesReadyForCapture,
 }) {
-  // 캡처 버튼 상태가 변경될 때만 로깅
-  React.useEffect(() => {
-    const isDisabled = displayCount > 15 || !imagesReadyForCapture;
-    if (!isDisabled) {
-      console.log('🔘 [BUTTON] 캡처 준비 완료');
-    }
-  }, [displayCount, imagesReadyForCapture]);
   return (
     <div className="button-container">
       <button

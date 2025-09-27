@@ -5,8 +5,7 @@
   color: white;
   font-weight: 600;
   text-align: center;
-  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 2px 8px rgba(99, 102, 241, 0.2);
   backdrop-filter: blur(10px);
 }
 
@@ -17,8 +16,7 @@
   color: white;
   font-weight: 600;
   text-align: center;
-  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 2px 8px rgba(239, 68, 68, 0.2);
   backdrop-filter: blur(10px);
 }
 
@@ -31,9 +29,7 @@ table {
   overflow: hidden;
   background: rgba(40, 44, 52, 0.95);
   backdrop-filter: blur(20px);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-top: none;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
 }
 
 th,
@@ -49,7 +45,6 @@ td {
 }
 
 th {
-  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
   color: white;
   text-align: center;
   font-weight: 600;
@@ -58,6 +53,7 @@ th {
   position: sticky;
   top: 0;
   z-index: 10;
+  background: none; /* blue-team, red-team 클래스의 배경을 방해하지 않도록 */
 }
 
 tr:nth-child(even) {

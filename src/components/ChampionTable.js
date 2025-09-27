@@ -62,20 +62,6 @@ function ChampionTable({
     [champions, sortedChampions, reRoll, areDisplayedImagesLoaded],
   );
 
-  // 디버깅: championImages 상태 확인
-  React.useEffect(() => {
-    const championIds = champions.map(c => c?.id).filter(Boolean);
-    const missingImages = championIds.filter(id => !championImages[id]?.url);
-
-    if (missingImages.length > 0) {
-      console.log(
-        `🔍 ${teamName} - Missing images for: ${missingImages.join(', ')}`,
-      );
-    } else if (championIds.length > 0) {
-      console.log(`✅ ${teamName} - All ${championIds.length} images loaded`);
-    }
-  }, [championImages, champions, teamName]);
-
   if (!champions || champions.length === 0) {
     return null;
   }
