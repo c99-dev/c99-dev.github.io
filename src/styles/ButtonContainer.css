@@ -3,68 +3,45 @@
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
-  gap: 12px;
-  border: 1px solid var(--line);
-  border-radius: 10px;
-  padding: 12px;
-  background: var(--surface);
+  gap: 8px;
 }
 .toolbar-group {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
 }
 .button-container button {
-  min-height: 39px;
-  font-size: 12px;
-  font-weight: 550;
-  padding: 8px 12px;
+  min-height: 32px;
+  font-size: 11px;
+  padding: 6px 9px;
 }
 .button-container button svg {
-  color: #a6b2c2;
+  width: 14px;
+  height: 14px;
+  color: #b4becc;
 }
 .button-count {
-  display: inline-flex;
-  justify-content: center;
-  min-width: 20px;
-  padding: 1px 5px;
-  border-radius: 4px;
-  background: #2b3543;
+  min-width: 16px;
+  text-align: center;
   font-size: 10px;
-  color: #c2ccda;
+  color: var(--muted);
 }
 .has-bans .button-count {
   color: #ffb3bd;
-  background: #4d2935;
 }
 .toolbar-detail {
-  margin-left: 4px;
+  margin-left: 2px;
   font-size: 10px;
   color: var(--muted);
 }
-.toolbar-label {
-  color: var(--muted);
-  font-size: 11px;
-  margin-right: 6px;
-}
-@media (max-width: 900px) {
-  .toolbar-label {
-    display: none;
-  }
-}
-@media (max-width: 740px) {
-  .button-container {
-    gap: 10px;
-    padding: 10px;
-  }
+@media (max-width: 600px) {
   .toolbar-group {
     width: 100%;
   }
   .toolbar-group button {
     flex: 1;
   }
-  .share-tools {
-    border-top: 1px solid var(--line);
-    padding-top: 10px;
+  .button-container {
+    gap: 6px;
   }
 }

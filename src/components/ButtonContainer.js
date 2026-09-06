@@ -3,6 +3,8 @@ import Icon from './Icon';
 import '../styles/ButtonContainer.css';
 
 function ButtonContainer({
+  resetRandomChampions,
+  canReroll,
   bannedChampionsCount,
   displayCount,
   openBanModal,
@@ -14,6 +16,14 @@ function ButtonContainer({
   return (
     <nav className="button-container" aria-label="추첨 도구">
       <div className="toolbar-group">
+        <button
+          className="reroll-button"
+          onClick={resetRandomChampions}
+          disabled={!canReroll}
+        >
+          <Icon name="dice" size={16} />
+          다시 뽑기
+        </button>
         <button
           className={
             bannedChampionsCount ? 'ban-button has-bans' : 'ban-button'
@@ -29,7 +39,6 @@ function ButtonContainer({
         </button>
       </div>
       <div className="toolbar-group share-tools">
-        <span className="toolbar-label">결과 공유</span>
         <button onClick={copyTextToClipboard}>
           <Icon name="copy" />
           텍스트 복사

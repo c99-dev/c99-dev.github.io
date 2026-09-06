@@ -1,7 +1,7 @@
 .team-panel {
   min-width: 0;
   border: 1px solid var(--line);
-  border-radius: 12px;
+  border-radius: 6px;
   overflow: hidden;
   background: var(--surface);
   --team: var(--blue);
@@ -13,49 +13,36 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 19px 20px;
-  border-top: 2px solid var(--team);
+  padding: 6px 10px;
   border-bottom: 1px solid var(--line);
-  background: #171f2a;
+  background: #253346;
 }
 .red-team .team-heading {
-  background: #231d28;
+  background: #3a2c37;
 }
 .team-heading > div {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 7px;
 }
 .team-indicator {
-  width: 8px;
-  height: 8px;
-  border-radius: 2px;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
   background: var(--team);
-  transform: rotate(45deg);
 }
 .team-heading h2 {
-  font-size: 17px;
-  font-weight: 700;
-  letter-spacing: -0.4px;
-}
-.team-heading h2 small {
-  display: inline-block;
-  margin-left: 10px;
-  font-size: 9px;
-  letter-spacing: 1.6px;
+  font-size: 12px;
+  font-weight: 650;
   color: var(--team);
-  font-weight: 500;
 }
 .team-count {
-  color: var(--team);
-  font-size: 16px;
+  color: var(--muted);
+  font-size: 10px;
   font-variant-numeric: tabular-nums;
 }
 .team-count small {
-  font-size: 8px;
-  letter-spacing: 1px;
-  color: var(--muted);
-  margin-left: 4px;
+  margin-left: 2px;
 }
 .champion-table {
   width: 100%;
@@ -63,56 +50,58 @@
 }
 .champion-table th {
   color: var(--muted);
-  font-size: 10px;
+  font-size: 9px;
   font-weight: 500;
   text-align: right;
-  padding: 11px 16px 10px 0;
+  padding: 4px 9px 4px 0;
   border-bottom: 1px solid var(--line);
 }
 .champion-table th:first-child {
   text-align: left;
-  padding-left: 20px;
+  padding-left: 10px;
 }
 .champion-table td {
-  border-bottom: 1px solid #232b37;
+  border-bottom: 1px solid #2c3440;
   vertical-align: middle;
 }
 .champion-table tbody tr:last-child td {
   border: 0;
 }
+.champion-table tbody tr:nth-child(even) {
+  background: #222934;
+}
 .champion-table tbody tr:hover {
-  background: #1d2734;
+  background: #2c3747;
 }
 .champion-pick {
   display: flex;
   width: 100%;
-  padding: 8px 8px 8px 18px;
-  gap: 12px;
+  padding: 3px 5px 3px 8px;
+  gap: 8px;
   text-align: left;
   border: 0;
   border-radius: 0;
   background: transparent;
-  min-height: 53px;
+  min-height: 32px;
 }
 .champion-pick:hover {
   background: transparent;
 }
 .champion-pick:focus-visible {
-  outline-offset: -3px;
+  outline-offset: -2px;
 }
 .pick-number {
-  font-size: 10px;
-  color: #8996a8;
+  font-size: 9px;
+  color: #96a3b5;
   font-variant-numeric: tabular-nums;
-  width: 15px;
+  width: 12px;
   flex-shrink: 0;
 }
 .champion-portrait {
   display: block;
-  width: 36px;
-  height: 36px;
-  border: 1px solid #475268;
-  border-radius: 7px;
+  width: 26px;
+  height: 26px;
+  border-radius: 3px;
   object-fit: cover;
   flex-shrink: 0;
 }
@@ -120,102 +109,84 @@
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  gap: 6px;
+  gap: 4px;
   flex: 1;
-  font-size: 13px;
-  font-weight: 550;
+  font-size: 12px;
+  font-weight: 500;
   letter-spacing: -0.3px;
 }
 .pick-refresh {
-  color: #8c9bb1;
-  opacity: 0.35;
+  color: #a5b1c3;
+  opacity: 0;
   display: flex;
   margin-left: auto;
 }
 .champion-pick:hover .pick-refresh,
 .champion-pick:focus-visible .pick-refresh {
-  color: var(--team);
   opacity: 1;
 }
 .honey-badge {
-  height: 15px;
-  width: 15px;
+  height: 13px;
+  width: 13px;
   object-fit: contain;
 }
 .op-label {
   font-size: 8px;
   font-weight: 700;
   color: #e9c888;
-  border: 1px solid #685637;
-  border-radius: 3px;
-  padding: 0 3px;
 }
 .tier-cell,
 .stat-cell {
   text-align: right;
-  padding-right: 16px;
+  padding-right: 9px;
   white-space: nowrap;
   width: 1%;
 }
 .stat-cell {
-  font-size: 11px;
+  font-size: 10px;
   color: var(--muted);
   font-variant-numeric: tabular-nums;
 }
 .tier-pill {
   display: inline-block;
-  min-width: 48px;
+  min-width: 33px;
   text-align: center;
-  font-size: 10px;
-  border-radius: 4px;
-  padding: 3px 6px;
-  background: #252e3c;
+  font-size: 9px;
+  border-radius: 3px;
+  padding: 1px 4px;
+  background: #303a49;
   color: #a9b6c9;
 }
 .tier-1 {
   color: #edb886;
-  background: #3a2c22;
+  background: #44352a;
 }
 .tier-2 {
-  color: #c0b4ee;
-  background: #302940;
+  color: #d0c4f4;
+  background: #3a314c;
 }
 .tier-3 {
-  color: #8cc1ec;
-  background: #223248;
+  color: #9dcbef;
+  background: #293e55;
 }
 .tier-4 {
-  color: #8fc8af;
-  background: #203b33;
+  color: #a1d4be;
+  background: #29453c;
 }
 .tier-5 {
-  color: #aab5c5;
-  background: #2b323e;
+  color: #bec8d6;
+  background: #343e4b;
 }
 .empty-team {
-  padding: 36px 20px;
+  padding: 24px 12px;
   color: var(--muted);
   text-align: center;
 }
-@media (max-width: 740px) {
-  .team-heading {
-    padding: 16px;
-  }
+@media (max-width: 600px) {
   .champion-pick {
-    padding-left: 12px;
-    gap: 8px;
-  }
-  .champion-label {
-    font-size: 12px;
-  }
-  .tier-cell,
-  .stat-cell {
-    padding-right: 10px;
+    min-height: 38px;
   }
   .pick-refresh {
     display: none;
-  }
-  .team-heading h2 small {
-    margin-left: 8px;
   }
 }

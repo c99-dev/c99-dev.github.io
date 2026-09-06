@@ -28,14 +28,11 @@ function ChampionTable({
       <div className="team-heading">
         <div>
           <span className="team-indicator" />
-          <h2>
-            {teamName}
-            <small>{blue ? 'BLUE SIDE' : 'RED SIDE'}</small>
-          </h2>
+          <h2>{teamName}</h2>
         </div>
         <span className="team-count">
           {champions.length}
-          <small> CHAMPIONS</small>
+          <small>명</small>
         </span>
       </div>
       <table className="champion-table" aria-label={`${teamName} 챔피언`}>
@@ -73,8 +70,8 @@ function ChampionTable({
                         `/image/champion/${champion.id}.png`
                       }
                       alt=""
-                      width="36"
-                      height="36"
+                      width="26"
+                      height="26"
                     />
                     <span className="champion-label">
                       {champion.name}

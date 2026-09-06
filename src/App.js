@@ -130,12 +130,11 @@ function App() {
       <header className="site-header">
         <a className="brand" href="/" aria-label="칼바람 랜덤 픽 홈">
           <span className="brand-mark">
-            <Icon name="dice" size={23} />
+            <Icon name="dice" size={19} />
           </span>
-          <span>
+          <h1>
             칼바람 <strong>랜덤 픽</strong>
-            <small>ARAM RANDOM PICK</small>
-          </span>
+          </h1>
         </a>
         <div className="header-meta">
           <span className="status-dot" />
@@ -145,28 +144,9 @@ function App() {
         </div>
       </header>
       <main className="workspace">
-        <section className="intro">
-          <div>
-            <p className="eyebrow">HOWLING ABYSS · CUSTOM GAME</p>
-            <h1>
-              오늘의 조합, <span>운에 맡겨보세요.</span>
-            </h1>
-            <p className="intro-description">
-              친구들과 함께하는 칼바람 내전. 두 팀의 챔피언을 한 번에
-              뽑아보세요.
-            </p>
-          </div>
-          <button
-            className="reroll-button"
-            onClick={resetRandomChampions}
-            disabled={availableCount < 2}
-          >
-            <Icon name="dice" size={21} />
-            전체 다시 뽑기
-            <Icon name="arrow" size={18} />
-          </button>
-        </section>
         <ButtonContainer
+          resetRandomChampions={resetRandomChampions}
+          canReroll={availableCount >= 2}
           bannedChampionsCount={bannedChampions.length}
           displayCount={displayCount}
           openBanModal={banModal.openModal}
@@ -187,11 +167,7 @@ function App() {
           </p>
         )}
         <div className="draft-caption">
-          <span>
-            <strong>팀별 챔피언 풀</strong>
-            <span className="caption-divider">/</span>각 {actualCount}명 · 두 팀
-            중복 없음
-          </span>
+          <span>팀당 {actualCount}명 · 중복 없이 추첨</span>
           <span aria-live="polite">{Math.max(1, resetCount)}번째 추첨</span>
         </div>
         <MainContent

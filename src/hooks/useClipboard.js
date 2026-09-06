@@ -26,14 +26,14 @@ function useClipboard(
         throw new Error('복사할 챔피언이 없습니다.');
       // 복사 요청을 클릭 이벤트 안에서 시작해 Safari의 사용자 동작 조건을 지킵니다.
       const blobPromise = html2canvas(capture, {
-        backgroundColor: '#0d1118',
-        scale: 2,
+        backgroundColor: '#161a21',
+        scale: 1,
         logging: false,
         useCORS: true,
         windowWidth: 1200,
         onclone: (_document, element) => {
-          element.style.width = '1000px';
-          element.style.padding = '16px';
+          element.style.width = '640px';
+          element.style.padding = '8px';
           element.querySelector('.teams-layout').style.gridTemplateColumns =
             'repeat(2, minmax(0, 1fr))';
         },
