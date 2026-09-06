@@ -1,192 +1,218 @@
-.team-panel {
-  min-width: 0;
-  border: 1px solid var(--line);
-  border-radius: 6px;
+.blue-team {
+  background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
+  padding: 5px 10px;
+  border-radius: 12px 12px 0 0;
+  color: white;
+  font-weight: 600;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(99, 102, 241, 0.2);
+  backdrop-filter: blur(10px);
+}
+
+.red-team {
+  background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+  padding: 5px 10px;
+  border-radius: 12px 12px 0 0;
+  color: white;
+  font-weight: 600;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(239, 68, 68, 0.2);
+  backdrop-filter: blur(10px);
+}
+
+table {
+  border-collapse: separate;
+  border-spacing: 0;
+  margin: 20px 0;
+  table-layout: auto;
+  border-radius: 0 0 16px 16px;
   overflow: hidden;
-  background: var(--surface);
-  --team: var(--blue);
+  background: rgba(40, 44, 52, 0.95);
+  backdrop-filter: blur(20px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
 }
-.team-panel.red-team {
-  --team: var(--red);
-}
-.team-heading {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 6px 10px;
-  border-bottom: 1px solid var(--line);
-  background: #253346;
-}
-.red-team .team-heading {
-  background: #3a2c37;
-}
-.team-heading > div {
-  display: flex;
-  align-items: center;
-  gap: 7px;
-}
-.team-indicator {
-  width: 5px;
-  height: 5px;
-  border-radius: 50%;
-  background: var(--team);
-}
-.team-heading h2 {
-  font-size: 12px;
-  font-weight: 650;
-  color: var(--team);
-}
-.team-count {
-  color: var(--muted);
-  font-size: 10px;
-  font-variant-numeric: tabular-nums;
-}
-.team-count small {
-  margin-left: 2px;
-}
-.champion-table {
-  width: 100%;
-  border-collapse: collapse;
-}
-.champion-table th {
-  color: var(--muted);
-  font-size: 9px;
-  font-weight: 500;
-  text-align: right;
-  padding: 4px 9px 4px 0;
-  border-bottom: 1px solid var(--line);
-}
-.champion-table th:first-child {
+
+th,
+td {
+  border: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 3px 8px;
+  font-size: 14px;
   text-align: left;
-  padding-left: 10px;
-}
-.champion-table td {
-  border-bottom: 1px solid #2c3440;
-  vertical-align: middle;
-}
-.champion-table tbody tr:last-child td {
-  border: 0;
-}
-.champion-table tbody tr:nth-child(even) {
-  background: #222934;
-}
-.champion-table tbody tr:hover {
-  background: #2c3747;
-}
-.champion-pick {
-  display: flex;
-  width: 100%;
-  padding: 3px 5px 3px 8px;
-  gap: 8px;
-  text-align: left;
-  border: 0;
-  border-radius: 0;
-  background: transparent;
-  min-height: 32px;
-}
-.champion-pick:hover {
-  background: transparent;
-}
-.champion-pick:focus-visible {
-  outline-offset: -2px;
-}
-.pick-number {
-  font-size: 9px;
-  color: #96a3b5;
-  font-variant-numeric: tabular-nums;
-  width: 12px;
-  flex-shrink: 0;
-}
-.champion-portrait {
-  display: block;
-  width: 26px;
-  height: 26px;
-  border-radius: 3px;
-  object-fit: cover;
-  flex-shrink: 0;
-}
-.champion-label {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 4px;
-  flex: 1;
-  font-size: 12px;
-  font-weight: 500;
-  letter-spacing: -0.3px;
-}
-.pick-refresh {
-  color: #a5b1c3;
-  opacity: 0;
-  display: flex;
-  margin-left: auto;
-}
-.champion-pick:hover .pick-refresh,
-.champion-pick:focus-visible .pick-refresh {
-  opacity: 1;
-}
-.honey-badge {
-  height: 13px;
-  width: 13px;
-  object-fit: contain;
-}
-.op-label {
-  font-size: 8px;
-  font-weight: 700;
-  color: #e9c888;
-}
-.tier-cell,
-.stat-cell {
-  text-align: right;
-  padding-right: 9px;
   white-space: nowrap;
-  width: 1%;
+  vertical-align: middle;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
-.stat-cell {
-  font-size: 10px;
-  color: var(--muted);
-  font-variant-numeric: tabular-nums;
+
+th {
+  color: white;
+  text-align: center;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  padding: 4px 8px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: none; /* blue-team, red-team 클래스의 배경을 방해하지 않도록 */
 }
-.tier-pill {
+
+tr:nth-child(even) {
+  background-color: rgba(55, 65, 81, 0.3);
+}
+
+tr:hover {
+  background: rgba(99, 102, 241, 0.15);
+  transform: scale(1.02);
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.2);
+}
+
+tr:hover td {
+  color: #e5e7eb;
+}
+
+.champion {
+  width: 180px;
+}
+
+.rank {
+  width: 32px;
+}
+
+.winrate {
+  width: 55px;
+}
+
+.tier {
+  width: 32px;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.hide-font {
+  font-size: 0;
+}
+
+.hide-rank .rank,
+.hide-winrate .winrate,
+.hide-tier .tier {
+  display: none;
+}
+
+.champion-name {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  padding: 0px 4px;
+  border-radius: 8px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+}
+
+.champion-name:hover {
+  background: rgba(99, 102, 241, 0.2);
+  transform: translateX(4px);
+  box-shadow: 0 2px 8px rgba(99, 102, 241, 0.3);
+}
+
+.champion-name:active {
+  transform: translateX(2px) scale(0.98);
+  transition: all 0.1s ease;
+}
+
+.champion-image-wrapper {
+  position: relative;
   display: inline-block;
-  min-width: 33px;
-  text-align: center;
-  font-size: 9px;
-  border-radius: 3px;
-  padding: 1px 4px;
-  background: #303a49;
-  color: #a9b6c9;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
-.tier-1 {
-  color: #edb886;
-  background: #44352a;
+
+.champion-image-wrapper:hover {
+  transform: scale(1.1);
+  filter: brightness(1.2);
 }
-.tier-2 {
-  color: #d0c4f4;
-  background: #3a314c;
+
+.champion-portrait {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
-.tier-3 {
-  color: #9dcbef;
-  background: #293e55;
+
+.champion-portrait:hover {
+  border-color: rgba(99, 102, 241, 0.6);
+  box-shadow: 0 6px 20px rgba(99, 102, 241, 0.4);
 }
-.tier-4 {
-  color: #a1d4be;
-  background: #29453c;
+
+.tier-badge {
+  position: absolute;
+  top: -3px;
+  left: -3px;
+  width: 16px;
+  height: 16px;
 }
-.tier-5 {
-  color: #bec8d6;
-  background: #343e4b;
+
+.honey-badge {
+  position: absolute;
+  bottom: -4px;
+  left: -4px;
+  width: 18px;
+  height: 18px;
 }
-.empty-team {
-  padding: 24px 12px;
-  color: var(--muted);
-  text-align: center;
+
+.op-badge {
+  position: absolute;
+  top: -3px;
+  right: -3px;
+  width: 18px;
+  height: 12px;
 }
-@media (max-width: 600px) {
-  .champion-pick {
-    min-height: 38px;
-  }
-  .pick-refresh {
-    display: none;
-  }
+
+/* 리롤 애니메이션 */
+tr.rerolling {
+  opacity: 0;
+  transform: scale(0.95);
+  transition: opacity 0.05s ease-out, transform 0.05s ease-out;
+}
+
+tr:not(.rerolling) {
+  opacity: 1;
+  transform: scale(1);
+  transition: opacity 0.08s ease-in, transform 0.08s ease-in;
+}
+
+/* 팀 전체 리롤 애니메이션 */
+table.team-rerolling {
+  opacity: 0;
+  transform: translateY(-10px) scale(0.98);
+  transition: opacity 0.08s ease-out, transform 0.08s ease-out;
+}
+
+table:not(.team-rerolling) {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  transition: opacity 0.12s ease-in, transform 0.12s ease-in;
+}
+
+/* 이미지 로딩 중 비활성화 스타일 */
+tr.loading-disabled {
+  pointer-events: none;
+}
+
+tr.loading-disabled:hover {
+  background: rgba(55, 65, 81, 0.3);
+  transform: none;
+  box-shadow: none;
+}
+
+tr.loading-disabled .champion-name:hover {
+  background: transparent;
+  transform: none;
+  box-shadow: none;
+}
+
+tr.loading-disabled .champion-image-wrapper:hover {
+  transform: none;
+  filter: none;
 }

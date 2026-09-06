@@ -1,61 +1,75 @@
-import React from 'react';
-import '../styles/Footer.css';
+import React, { useCallback } from 'react';
+import './../styles/Footer.css';
 
-function Footer({
-  version,
-  rankingFetchedAt,
-  openReleaseNotesModal,
-  openAnnouncementModal,
-}) {
+function Footer({ version }) {
+  const handleEmailClick = useCallback(async e => {
+    e.preventDefault();
+    const email = 'c99@kakao.com';
+
+    try {
+      await navigator.clipboard.writeText(email);
+
+      // 임시 툴팁 표시
+      const target = e.target;
+      const originalText = target.textContent;
+      target.textContent = '복사됨!';
+      target.style.color = '#4caf50';
+
+      setTimeout(() => {
+        target.textContent = originalText;
+        target.style.color = '';
+      }, 1500);
+    } catch (error) {
+      console.error('이메일 복사 실패:', error);
+      // 폴백: 기본 메일 클라이언트 열기
+      window.location.href = `mailto:${email}`;
+    }
+  }, []);
   return (
     <footer className="footer">
-      <div className="footer-top">
-        <span>
-          © c99 <span className="footer-dot">·</span> 칼바람 랜덤 픽
-        </span>
-        <div className="footer-nav">
-          <button onClick={openAnnouncementModal}>공지사항</button>
-          <button onClick={openReleaseNotesModal}>업데이트 내역</button>
-          <a href="mailto:c99@kakao.com">문의 ↗</a>
-        </div>
+      롤 패치 버전:{' '}
+      <a
+        href="https://www.leagueoflegends.com/ko-kr/news/tags/patch-notes/"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="footer-link"
+      >
+        {version.split('.').slice(0, 2).join('.')}
+      </a>{' '}
+      | 오류 및 문의사항:{' '}
+      <a
+        href="mailto:c99@kakao.com"
+        className="footer-link email-link"
+        onClick={handleEmailClick}
+        title="클릭하면 이메일 주소가 복사됩니다"
+      >
+        c99@kakao.com
+      </a>{' '}
+      | 통계 및 아이콘 출처:{' '}
+      <a
+        href="https://lol.ps/aram-statistics/"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="footer-link"
+      >
+        lol.ps
+      </a>
+      ,{' '}
+      <a
+        href="https://developer.riotgames.com/"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="footer-link"
+      >
+        riotgames apis
+      </a>
+      <a> | © c99</a>
+      <div>
+        Riot Games, and all associated properties are trademarks or registered
+        trademarks of Riot Games, Inc.
       </div>
-      <div className="footer-sources">
-        <span>
-          패치{' '}
-          <a
-            href="https://www.leagueoflegends.com/ko-kr/news/tags/patch-notes/"
-            target="_blank"
-            rel="noreferrer"
-          >
-            {version}
-          </a>
-        </span>
-        <span>
-          데이터{' '}
-          <a
-            href="https://developer.riotgames.com/"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Riot Games
-          </a>{' '}
-          · 통계{' '}
-          <a
-            href="https://lol.ps/aram-statistics/"
-            target="_blank"
-            rel="noreferrer"
-          >
-            lol.ps
-          </a>
-          {rankingFetchedAt &&
-            ` (조회 ${new Date(rankingFetchedAt).toLocaleDateString('ko-KR')})`}
-        </span>
-      </div>
-      <p className="legal">
-        Riot Games 및 관련 자산의 상표권은 Riot Games에 있습니다. 이 서비스는
-        Riot Games의 공식 서비스가 아닙니다.
-      </p>
     </footer>
   );
 }
+
 export default React.memo(Footer);

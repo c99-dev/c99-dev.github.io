@@ -23,6 +23,7 @@ function BanModal({
 
   const handleClearBans = useCallback(() => {
     setBannedChampions([]);
+    localStorage.removeItem('lolApp_bannedChampions');
   }, [setBannedChampions]);
 
   const handleSearchChange = useCallback(e => {
@@ -54,10 +55,7 @@ function BanModal({
     champion => {
       const isBanned = bannedChampions.includes(champion.id);
       return (
-        <button
-          type="button"
-          aria-pressed={isBanned}
-          aria-label={`${champion.name} ${isBanned ? '밴 해제' : '밴'}`}
+        <div
           key={champion.id}
           className={`champion-item ${isBanned ? 'banned' : ''}`}
           data-champion-id={champion.id}
@@ -72,7 +70,7 @@ function BanModal({
             <SkeletonLoader type="champion-ban" />
           )}
           <span className={isBanned ? 'banned' : ''}>{champion.name}</span>
-        </button>
+        </div>
       );
     },
     [bannedChampions, championImages],
@@ -92,7 +90,7 @@ function BanModal({
     <BaseModal
       isOpen={isOpen}
       onClose={closeModal}
-      title="챔피언 밴"
+      title="🚫 챔피언 밴 설정"
       maxWidth="900px"
       className="ban-modal"
     >
@@ -100,7 +98,6 @@ function BanModal({
         <div className="search-input-container">
           <input
             type="text"
-            aria-label="챔피언 이름 검색"
             placeholder="챔피언 이름으로 검색..."
             value={searchTerm}
             onChange={handleSearchChange}

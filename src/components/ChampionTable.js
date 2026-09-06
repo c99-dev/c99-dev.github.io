@@ -1,7 +1,6 @@
-import React, { useMemo } from 'react';
-import Icon from './Icon';
-import { sortChampions } from '../utils/utils';
-import '../styles/ChampionTable.css';
+import React, { useMemo, useState, useCallback } from 'react';
+import SkeletonLoader from './SkeletonLoader';
+import './../styles/ChampionTable.css';
 
 function ChampionTable({
   champions,
@@ -10,115 +9,160 @@ function ChampionTable({
   table,
   tableOptions,
   sortOption,
-  tierDisplay,
+  tierDisplay, // 티어표시 옵션 추가
   championImages,
-  championRanking,
-  tierImages,
+  championRanking, // 랭킹 데이터 props 추가
+  tierImages, // 티어 이미지 props 추가
+  isTeamRerolling, // 팀 전체 리롤 상태 추가
+  areDisplayedImagesLoaded, // 화면에 보이는 이미지 로딩 완료 여부
 }) {
-  const sorted = useMemo(
-    () => sortChampions(champions, sortOption, championRanking),
-    [champions, sortOption, championRanking],
+  const [rerollingIndex, setRerollingIndex] = useState(null);
+
+  const sortedChampions = useMemo(() => {
+    const championsCopy = [...champions];
+
+    const getSortedChampions = () => {
+      switch (sortOption) {
+        case 'alphabetical':
+          return championsCopy.sort((a, b) => a.name.localeCompare(b.name));
+        case 'random':
+          return champions;
+        case 'tier':
+        default: // tier를 기본 정렬로 설정
+          return championsCopy.sort((a, b) => {
+            const rankA = championRanking[a.name]?.ranking || 999;
+            const rankB = championRanking[b.name]?.ranking || 999;
+            return rankA - rankB;
+          });
+      }
+    };
+
+    return getSortedChampions();
+  }, [champions, sortOption, championRanking]);
+
+  const handleReRoll = useCallback(
+    async (table, index) => {
+      // 이미지 로딩이 완료되지 않았으면 리롤 방지
+      if (!areDisplayedImagesLoaded) return;
+
+      const originalIndex = champions.findIndex(
+        ch => ch && ch.id === sortedChampions[index].id,
+      );
+
+      setRerollingIndex(index);
+
+      // 애니메이션을 위한 지연
+      setTimeout(() => {
+        reRoll(table, originalIndex);
+        setTimeout(() => {
+          setRerollingIndex(null);
+        }, 80); // 페이드 인 완료 후 상태 리셋
+      }, 50); // 페이드 아웃 시간
+    },
+    [champions, sortedChampions, reRoll, areDisplayedImagesLoaded],
   );
-  const blue = table === 'table1';
+
+  if (!champions || champions.length === 0) {
+    return null;
+  }
+
   return (
-    <section
-      className={`team-panel ${blue ? 'blue-team' : 'red-team'}`}
-      aria-label={teamName}
+    <table
+      className={`${!tableOptions.rank ? 'hide-rank' : ''} ${
+        !tableOptions.winrate ? 'hide-winrate' : ''
+      } ${!tableOptions.tier ? 'hide-tier' : ''} ${
+        isTeamRerolling ? 'team-rerolling' : ''
+      }`}
     >
-      <div className="team-heading">
-        <div>
-          <span className="team-indicator" />
-          <h2>{teamName}</h2>
-        </div>
-        <span className="team-count">
-          {champions.length}
-          <small>명</small>
-        </span>
-      </div>
-      <table className="champion-table" aria-label={`${teamName} 챔피언`}>
-        <thead>
-          <tr>
-            <th scope="col">챔피언</th>
-            {tableOptions.rank && <th scope="col">순위</th>}
-            {tableOptions.winrate && <th scope="col">승률</th>}
-            {tierDisplay && <th scope="col">티어</th>}
-          </tr>
-        </thead>
-        <tbody>
-          {sorted.map((champion, index) => {
-            const rank = championRanking[champion.name];
-            return (
-              <tr key={champion.id}>
-                <td>
-                  <button
-                    className="champion-pick"
-                    onClick={() =>
-                      reRoll(
-                        table,
-                        champions.findIndex(item => item.id === champion.id),
-                      )
-                    }
-                    aria-label={`${champion.name} 다시 뽑기`}
-                  >
-                    <span className="pick-number">
-                      {String(index + 1).padStart(2, '0')}
-                    </span>
-                    <img
-                      className="champion-portrait"
-                      src={
-                        championImages[champion.id]?.url ||
-                        `/image/champion/${champion.id}.png`
-                      }
-                      alt=""
-                      width="26"
-                      height="26"
-                    />
-                    <span className="champion-label">
-                      {champion.name}
-                      {tierDisplay && rank?.isOp && (
-                        <small className="op-label">OP</small>
-                      )}
-                      {tierDisplay && rank?.isHoney && tierImages.honey && (
+      <thead>
+        <tr>
+          <th
+            className={`${teamName === '블루 팀' ? 'blue-team' : 'red-team'}`}
+            colSpan="4"
+          >
+            {teamName}
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        {sortedChampions.map((champion, index) => {
+          if (!champion || !champion.id) return null;
+          const originalIndex = champions.findIndex(
+            ch => ch && ch.id === champion.id,
+          );
+
+          // 랭킹 데이터에서 해당 챔피언 찾기
+          const rankData = championRanking[champion.name];
+
+          return (
+            <tr
+              key={champion.id}
+              onClick={() => handleReRoll(table, index)}
+              className={`${rerollingIndex === index ? 'rerolling' : ''} ${
+                !areDisplayedImagesLoaded ? 'loading-disabled' : ''
+              }`}
+              style={{
+                cursor: !areDisplayedImagesLoaded ? 'not-allowed' : 'pointer',
+                opacity: !areDisplayedImagesLoaded ? 0.6 : 1,
+              }}
+              title={
+                !areDisplayedImagesLoaded ? '챔피언 이미지 로딩 중...' : ''
+              }
+            >
+              <td className="champion">
+                <div className="champion-name">
+                  {championImages[champion.id]?.url ? (
+                    <>
+                      <div className="champion-image-wrapper">
                         <img
-                          className="honey-badge"
-                          src={tierImages.honey}
-                          alt="꿀챔"
+                          src={championImages[champion.id].url}
+                          alt={champion.name}
+                          className="champion-portrait"
+                          data-champion-id={champion.id}
                         />
-                      )}
-                    </span>
-                    <span className="pick-refresh">
-                      <Icon name="refresh" size={14} />
-                    </span>
-                  </button>
-                </td>
-                {tableOptions.rank && (
-                  <td className="stat-cell">
-                    {rank ? `#${rank.ranking}` : '—'}
-                  </td>
-                )}
-                {tableOptions.winrate && (
-                  <td className="stat-cell">
-                    {rank ? `${Number(rank.winRate).toFixed(1)}%` : '—'}
-                  </td>
-                )}
-                {tierDisplay && (
-                  <td className="tier-cell">
-                    <span
-                      className={`tier-pill tier-${rank?.opTier || 'unknown'}`}
-                    >
-                      {rank ? `${rank.opTier} 티어` : '집계 중'}
-                    </span>
-                  </td>
-                )}
-              </tr>
-            );
-          })}
-        </tbody>
-      </table>
-      {!champions.length && (
-        <p className="empty-team">밴을 해제하면 챔피언을 뽑을 수 있어요.</p>
-      )}
-    </section>
+                        {tierDisplay &&
+                          rankData &&
+                          tierImages[rankData.opTier] && (
+                            <img
+                              src={tierImages[rankData.opTier]}
+                              alt={`Tier ${rankData.opTier}`}
+                              className="tier-badge"
+                            />
+                          )}
+                        {tierDisplay &&
+                          rankData &&
+                          rankData.isHoney &&
+                          tierImages['honey'] && (
+                            <img
+                              src={tierImages['honey']}
+                              alt="꿀챔"
+                              className="honey-badge"
+                            />
+                          )}
+                        {tierDisplay &&
+                          rankData &&
+                          rankData.isOp &&
+                          tierImages['op'] && (
+                            <img
+                              src={tierImages['op']}
+                              alt="OP"
+                              className="op-badge"
+                            />
+                          )}
+                      </div>
+                      <span>{champion.name}</span>
+                    </>
+                  ) : (
+                    <SkeletonLoader type="champion" />
+                  )}
+                </div>
+              </td>
+            </tr>
+          );
+        })}
+      </tbody>
+    </table>
   );
 }
+
 export default React.memo(ChampionTable);
