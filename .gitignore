@@ -22,7 +22,9 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-/scripts
+__pycache__/
+*.pyc
+/scripts/test.py
 /.env
 /.vscode
 /sequence-diagram.md

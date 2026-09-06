@@ -25,7 +25,7 @@ https://칼바람랜덤픽.메인.한국
 
 - 챔피언 티어 정보
 - 챔피언 승률 통계
-- 실시간 패치 버전 반영
+- 스크립트로 최신 패치 데이터 갱신
 - Riot Games DDragon API 연동
 
 ## ⚙️ 커스텀 설정
@@ -37,6 +37,18 @@ https://칼바람랜덤픽.메인.한국
 
 ## 🔄 데이터 업데이트
 
-- ~~Python 스크립트로 챔피언/랭킹 데이터 자동 갱신~~
-- 이미지 리소스 자동 다운로드
-- 배포 전 데이터 자동 동기화
+```powershell
+npm ci
+python -m pip install -r scripts/requirements.txt
+npm run fetch-data
+npm run validate-data
+npm run test:data
+npm test -- --watchAll=false --runInBand
+npm run deploy
+```
+
+`fetch-data`는 한국 서버 Data Dragon 버전, 챔피언 JSON, 이미지와 lol.ps ARAM 통계를 임시 폴더에 수집합니다. 모든 다운로드와 검증이 성공해야 기존 데이터를 갱신합니다. 통계 집계 패치는 제공처 기준이며, 수집 시각과 출처는 `version.json`에 기록합니다.
+
+`deploy`는 저장된 데이터를 검증하고 빌드한 결과를 GitHub Pages에 배포합니다. 외부 데이터 갱신은 자동 실행하지 않으므로, 디자인이나 기능만 수정했을 때도 같은 데이터로 재배포할 수 있습니다.
+
+현재 앱은 배포된 로컬 JSON을 사용합니다. 랭킹 조회만 실패하면 티어 정보 없이 추첨을 사용할 수 있습니다. 밴 변경은 다음 추첨부터 적용되며, 후보가 부족하면 기존 결과를 유지하고 안내합니다.

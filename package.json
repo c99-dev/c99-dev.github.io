@@ -7,8 +7,10 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "fetch-data": "python scripts/fetch_ranking_data.py && python scripts/fetch_champion_data.py && python scripts/fetch_champion_image.py",
-    "predeploy": "npm run fetch-data && npm run build",
+    "fetch-data": "python scripts/update_data.py",
+    "validate-data": "python scripts/validate_data.py",
+    "test:data": "python -m unittest discover -s scripts -p test_*.py",
+    "predeploy": "npm run validate-data && npm run build",
     "deploy": "gh-pages -d build"
   },
   "dependencies": {

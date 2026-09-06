@@ -1,4 +1,4 @@
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useRef, useEffect } from 'react';
 
 function useAlert() {
   const [alertState, setAlertState] = useState({
@@ -9,97 +9,68 @@ function useAlert() {
     onConfirm: null,
     customContent: null,
   });
-
-  const showAlert = useCallback((message, type = 'info', title = null) => {
-    return new Promise(resolve => {
-      setAlertState({
-        isOpen: true,
-        title,
-        message,
-        type,
-        onConfirm: () => resolve(true),
-        customContent: null,
-      });
-    });
+  const pending = useRef(null);
+  useEffect(() => () => {
+    pending.current?.(false);
+    pending.current = null;
   }, []);
-
-  const showConfirm = useCallback((message, title = '확인') => {
-    return new Promise(resolve => {
-      setAlertState({
-        isOpen: true,
-        title,
-        message,
-        type: 'confirm',
-        onConfirm: () => resolve(true),
-        customContent: null,
-      });
-    });
+  const settle = useCallback(value => {
+    pending.current?.(value);
+    pending.current = null;
+    setAlertState(previous => ({ ...previous, isOpen: false }));
   }, []);
-
+  const open = useCallback(
+    (message, type, title, customContent = null) => {
+      pending.current?.(false);
+      return new Promise(resolve => {
+        pending.current = resolve;
+        setAlertState({
+          isOpen: true,
+          message,
+          type,
+          title,
+          customContent,
+          onConfirm: () => settle(true),
+        });
+      });
+    },
+    [settle],
+  );
+  const showAlert = useCallback(
+    (message, type = 'info', title = null) => open(message, type, title),
+    [open],
+  );
+  const showConfirm = useCallback(
+    (message, title = '확인') => open(message, 'confirm', title),
+    [open],
+  );
   const showConfirmWithContent = useCallback(
-    (message, title = '확인', customContent = null) => {
-      return new Promise(resolve => {
-        setAlertState({
-          isOpen: true,
-          title,
-          message,
-          type: 'confirm',
-          onConfirm: () => resolve(true),
-          customContent,
-        });
-      });
-    },
-    [],
+    (message, title = '확인', content = null) =>
+      open(message, 'confirm', title, content),
+    [open],
   );
-
   const showInfoWithContent = useCallback(
-    (message, title = '정보', customContent = null) => {
-      return new Promise(resolve => {
-        setAlertState({
-          isOpen: true,
-          title,
-          message,
-          type: 'success',
-          onConfirm: () => resolve(true),
-          customContent,
-        });
-      });
-    },
-    [],
+    (message, title = '정보', content = null) =>
+      open(message, 'success', title, content),
+    [open],
   );
-
   const showSuccess = useCallback(
-    (message, title = '성공') => {
-      return showAlert(message, 'success', title);
-    },
-    [showAlert],
+    (message, title = '완료') => open(message, 'success', title),
+    [open],
   );
-
   const showError = useCallback(
-    (message, title = '오류') => {
-      return showAlert(message, 'error', title);
-    },
-    [showAlert],
+    (message, title = '오류') => open(message, 'error', title),
+    [open],
   );
-
-  const showWarning = useCallback(
-    (message, title = '경고') => {
-      return showAlert(message, 'warning', title);
-    },
-    [showAlert],
-  );
-
   const showInfo = useCallback(
-    (message, title = '정보') => {
-      return showAlert(message, 'info', title);
-    },
-    [showAlert],
+    (message, title = '안내') => open(message, 'info', title),
+    [open],
   );
-
-  const closeAlert = useCallback(() => {
-    setAlertState(prev => ({ ...prev, isOpen: false }));
-  }, []);
-
+  const showWarning = useCallback(
+    (message, title = '안내') => open(message, 'warning', title),
+    [open],
+  );
+  const closeAlert = useCallback(() => settle(false), [settle]);
   return {
     alertState,
     showAlert,
@@ -108,10 +79,9 @@ function useAlert() {
     showInfoWithContent,
     showSuccess,
     showError,
-    showWarning,
     showInfo,
+    showWarning,
     closeAlert,
   };
 }
-
 export default useAlert;

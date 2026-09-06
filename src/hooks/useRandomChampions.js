@@ -20,6 +20,12 @@ function useRandomChampions(
     table2: [],
   });
   const resetCountRef = useRef(0);
+  const requestedCountRef = useRef(null);
+  const rerollPending = useRef(false);
+  const alertsRef = useRef(alerts);
+  alertsRef.current = alerts;
+  const currentChampions = useRef(randomChampions);
+  currentChampions.current = randomChampions;
 
   const availableChampions = useMemo(() => {
     if (!gameData.championData) return [];
@@ -28,7 +34,14 @@ function useRandomChampions(
     );
   }, [gameData.championData, bannedChampions]);
 
+  const currentAvailable = useRef(availableChampions);
+  currentAvailable.current = availableChampions;
+
   const resetRandomChampions = useCallback(() => {
+    if (!Number.isInteger(displayCount) || displayCount < 1 || availableChampions.length < displayCount * 2) {
+      alertsRef.current.showError?.(`팀당 ${displayCount}명을 뽑으려면 ${displayCount * 2}명이 필요합니다. 현재 후보는 ${availableChampions.length}명입니다. 밴을 해제하거나 옵션에서 인원을 줄여주세요.`);
+      return false;
+    }
     const shuffled = shuffleArray(availableChampions);
     setRandomChampions({
       table1: shuffled.slice(0, displayCount),
@@ -41,33 +54,26 @@ function useRandomChampions(
       action: 'Click',
       label: 'Reset Champions',
     });
+    return true;
   }, [availableChampions, displayCount]);
 
-  // displayCount가 변경될 때 자동으로 챔피언 수 업데이트
+  // 처음 로드하거나 인원을 바꿀 때만 추첨합니다. 부족했던 후보가 복구되면 시작합니다.
   useEffect(() => {
-    if (availableChampions.length > 0 && randomChampions.table1.length > 0) {
-      const currentTotal =
-        randomChampions.table1.length + randomChampions.table2.length;
-      const expectedTotal = displayCount * 2;
-
-      if (currentTotal !== expectedTotal) {
-        console.log(
-          `🔄 Display count changed: ${currentTotal / 2} → ${displayCount}`,
-        );
-        resetRandomChampions();
-      }
+    if (!gameData.championData) return;
+    if (requestedCountRef.current !== displayCount ||
+        (randomChampions.table1.length === 0 && availableChampions.length >= displayCount * 2)) {
+      requestedCountRef.current = displayCount;
+      resetRandomChampions();
     }
-  }, [
-    displayCount,
-    availableChampions.length,
-    randomChampions.table1.length,
-    randomChampions.table2.length,
-    resetRandomChampions,
-  ]);
+  }, [gameData.championData, displayCount, availableChampions.length,
+      randomChampions.table1.length, resetRandomChampions]);
 
   const handleReRollChampion = useCallback(
     (table, index) => {
-      const selectedChampion = randomChampions[table][index].name;
+      const selected = currentChampions.current[table]?.[index];
+      if (!selected || rerollPending.current) return Promise.resolve(false);
+      const selectedChampion = selected.name;
+      rerollPending.current = true;
 
       const confirmReRoll = async () => {
         // 1단계: 현재 챔피언 이미지와 함께 확인 요청
@@ -140,12 +146,13 @@ function useRandomChampions(
         }
 
         // 2단계: 리롤 실행
+        if (currentChampions.current[table]?.[index]?.id !== selected.id) return false;
         const currentTableChampions = new Set([
-          ...randomChampions.table1.map(champ => champ.id),
-          ...randomChampions.table2.map(champ => champ.id),
+          ...currentChampions.current.table1.map(champ => champ.id),
+          ...currentChampions.current.table2.map(champ => champ.id),
         ]);
 
-        const availableChampionsForReroll = availableChampions.filter(
+        const availableChampionsForReroll = currentAvailable.current.filter(
           champion => !currentTableChampions.has(champion.id),
         );
 
@@ -161,7 +168,7 @@ function useRandomChampions(
             Math.floor(Math.random() * availableChampionsForReroll.length)
           ];
 
-        const oldChampion = randomChampions[table][index];
+        const oldChampion = selected;
 
         // 3단계: 상태 업데이트
         setRandomChampions(prevChampions => ({
@@ -172,7 +179,7 @@ function useRandomChampions(
         }));
 
         // 4단계: 결과 표시 (이전 챔피언 → 새 챔피언)
-        if (alerts.showConfirmWithContent) {
+        if (alerts.showInfoWithContent) {
           const resultContent = React.createElement(
             'div',
             {
@@ -322,17 +329,16 @@ function useRandomChampions(
             ],
           );
 
-          setTimeout(() => {
-            alerts.showInfoWithContent(
+          alerts.showInfoWithContent(
               `리롤 완료! "${oldChampion.name}"이(가) "${newChampion.name}"으로 변경되었습니다.`,
               '리롤 결과',
               resultContent,
-            );
-          }, 100);
+          );
         }
+        return true;
       };
 
-      confirmReRoll();
+      return confirmReRoll().finally(() => { rerollPending.current = false; });
     },
     [randomChampions, availableChampions, alerts, championImages],
   );

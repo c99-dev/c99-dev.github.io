@@ -1,4 +1,5 @@
 import React, { useMemo, useState, useCallback } from 'react';
+import { sortChampions } from '../utils/utils';
 import SkeletonLoader from './SkeletonLoader';
 import './../styles/ChampionTable.css';
 
@@ -18,27 +19,10 @@ function ChampionTable({
 }) {
   const [rerollingIndex, setRerollingIndex] = useState(null);
 
-  const sortedChampions = useMemo(() => {
-    const championsCopy = [...champions];
-
-    const getSortedChampions = () => {
-      switch (sortOption) {
-        case 'alphabetical':
-          return championsCopy.sort((a, b) => a.name.localeCompare(b.name));
-        case 'random':
-          return champions;
-        case 'tier':
-        default: // tier를 기본 정렬로 설정
-          return championsCopy.sort((a, b) => {
-            const rankA = championRanking[a.name]?.ranking || 999;
-            const rankB = championRanking[b.name]?.ranking || 999;
-            return rankA - rankB;
-          });
-      }
-    };
-
-    return getSortedChampions();
-  }, [champions, sortOption, championRanking]);
+  const sortedChampions = useMemo(
+    () => sortChampions(champions, sortOption, championRanking),
+    [champions, sortOption, championRanking],
+  );
 
   const handleReRoll = useCallback(
     async (table, index) => {
@@ -87,9 +71,6 @@ function ChampionTable({
       <tbody>
         {sortedChampions.map((champion, index) => {
           if (!champion || !champion.id) return null;
-          const originalIndex = champions.findIndex(
-            ch => ch && ch.id === champion.id,
-          );
 
           // 랭킹 데이터에서 해당 챔피언 찾기
           const rankData = championRanking[champion.name];

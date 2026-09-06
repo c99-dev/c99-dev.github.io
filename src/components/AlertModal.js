@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import BaseModal from './BaseModal';
 import '../styles/AlertModal.css';
 
@@ -21,31 +21,6 @@ function AlertModal({
   const handleCancel = () => {
     closeModal();
   };
-
-  // 키보드 이벤트 처리
-  useEffect(() => {
-    if (!isOpen) return;
-
-    const handleKeyDown = event => {
-      if (event.key === 'Enter') {
-        event.preventDefault();
-        handleConfirm();
-      } else if (event.key === 'Escape') {
-        event.preventDefault();
-        if (type === 'confirm') {
-          handleCancel();
-        } else {
-          handleConfirm();
-        }
-      }
-    };
-
-    document.addEventListener('keydown', handleKeyDown);
-
-    return () => {
-      document.removeEventListener('keydown', handleKeyDown);
-    };
-  }, [isOpen, type]);
 
   const getIcon = () => {
     switch (type) {
@@ -72,6 +47,7 @@ function AlertModal({
       onClose={closeModal}
       className={`alert-modal ${getTypeClass()}`}
       showHeader={false}
+      title={title || '알림'}
     >
       <div className="alert-modal-content">
         <div className="alert-modal-icon">{getIcon()}</div>

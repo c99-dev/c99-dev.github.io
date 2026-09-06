@@ -16,8 +16,6 @@ import './App.css';
 import ButtonContainer from './components/ButtonContainer';
 import MainContent from './components/MainContent';
 import Footer from './components/Footer';
-import PatchNotesModal from './components/PatchNotesModal';
-import AnnouncementModal from './components/AnnouncementModal';
 import AlertModal from './components/AlertModal';
 import SkeletonLoader from './components/SkeletonLoader';
 
@@ -51,7 +49,6 @@ function App() {
     error: rankingError,
   } = useChampionRanking();
   const captureRef = useRef();
-  const loggedRef = useRef(false);
 
   const [bannedChampions, setBannedChampions] = useState(() =>
     getFromStorage(STORAGE_KEYS.BANNED_CHAMPIONS, []),
@@ -113,13 +110,11 @@ function App() {
   // 먼저 alert 훅을 초기화
   const {
     alertState,
-    showAlert,
     showConfirm,
     showConfirmWithContent,
     showInfoWithContent,
     showSuccess,
     showError,
-    showWarning,
     showInfo,
     closeAlert,
   } = useAlert();
@@ -144,14 +139,12 @@ function App() {
   );
 
   const resetRandomChampions = useCallback(() => {
-    originalResetRandomChampions();
-    setImagesReadyForCapture(false); // 새로운 챔피언이 뽑히면 캡처 준비 상태를 리셋
+    return originalResetRandomChampions();
   }, [originalResetRandomChampions]);
 
   const handleReRollChampion = useCallback(
     (table, index) => {
-      originalHandleReRollChampion(table, index);
-      setImagesReadyForCapture(false); // 개별 챔피언 리롤 시에도 캡처 준비 상태를 리셋
+      return originalHandleReRollChampion(table, index);
     },
     [originalHandleReRollChampion],
   );
@@ -165,7 +158,7 @@ function App() {
       ...randomChampions.table2.map(champ => champ?.id).filter(Boolean),
     ];
 
-    return displayedChampionIds.every(id => championImages[id]?.url);
+    return displayedChampionIds.every(id => championImages[id]?.loaded);
   }, [randomChampions, championImages]);
 
   const { copyImageToClipboard, copyTextToClipboard } = useClipboard(
@@ -175,25 +168,12 @@ function App() {
     { showSuccess, showError },
     championImages,
     tierImages,
+    sortOption,
+    championRanking,
   );
 
   const banModal = useModal();
   const optionModal = useModal();
-  const patchNotesModal = useModal();
-  const announcementModal = useModal();
-
-  useEffect(() => {
-    if (gameData.championData && !loggedRef.current) {
-      console.log('gameData:', gameData);
-      loggedRef.current = true;
-    }
-  }, [gameData]);
-
-  useEffect(() => {
-    if (championRanking.length > 0) {
-      console.log('championRanking:', championRanking);
-    }
-  }, [championRanking]);
 
   useEffect(() => {
     if (gameDataError) {
@@ -210,11 +190,6 @@ function App() {
       const newBans = isCurrentlyBanned
         ? prevBans.filter(id => id !== championId)
         : [...prevBans, championId];
-
-      // 비동기로 저장하여 UI 블로킹 방지
-      requestIdleCallback(() => {
-        setToStorage(STORAGE_KEYS.BANNED_CHAMPIONS, newBans);
-      });
 
       return newBans;
     });
@@ -239,22 +214,23 @@ function App() {
 
   useEffect(() => {
     if (gameData.championData && !isInitialized) {
-      resetRandomChampions();
       setDataLoaded(true);
       setIsInitialized(true);
     }
-  }, [gameData.championData, resetRandomChampions, isInitialized]);
+  }, [gameData.championData, isInitialized]);
 
   useEffect(() => {
-    ReactGA.initialize(process.env.REACT_APP_GA_TRACKING_ID);
-    ReactGA.send('pageview');
+    if (process.env.REACT_APP_GA_TRACKING_ID) {
+      ReactGA.initialize(process.env.REACT_APP_GA_TRACKING_ID);
+      ReactGA.send('pageview');
+    }
   }, []);
 
   if (isLoadingGameData || isLoadingRanking)
     return <SkeletonLoader type="app-loading" />;
-  if (gameDataError || rankingError)
+  if (gameDataError)
     return (
-      <div>에러 발생: {gameDataError.message || rankingError.message}</div>
+      <div role="alert">에러 발생: {gameDataError.message}</div>
     );
 
   return (
@@ -265,8 +241,6 @@ function App() {
           displayCount={displayCount}
           openBanModal={banModal.openModal}
           openOptionModal={optionModal.openModal}
-          openReleaseNotesModal={patchNotesModal.openModal}
-          openAnnouncementModal={announcementModal.openModal}
           copyImageToClipboard={copyImageToClipboard}
           copyTextToClipboard={copyTextToClipboard}
           imagesReadyForCapture={imagesReadyForCapture}
@@ -303,14 +277,6 @@ function App() {
           imagesReadyForCapture={imagesReadyForCapture}
           setImagesReadyForCapture={setImagesReadyForCapture}
         />
-        <PatchNotesModal
-          isOpen={patchNotesModal.isOpen}
-          closeModal={patchNotesModal.closeModal}
-        />
-        <AnnouncementModal
-          isOpen={announcementModal.isOpen}
-          closeModal={announcementModal.closeModal}
-        />
         <AlertModal
           isOpen={alertState.isOpen}
           closeModal={closeAlert}
@@ -320,7 +286,7 @@ function App() {
           onConfirm={alertState.onConfirm}
           customContent={alertState.customContent}
         />
-        <Footer version={gameData.version} />
+        <Footer version={gameData.patch || gameData.version} />
       </div>
     )
   );

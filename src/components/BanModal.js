@@ -23,7 +23,6 @@ function BanModal({
 
   const handleClearBans = useCallback(() => {
     setBannedChampions([]);
-    localStorage.removeItem('lolApp_bannedChampions');
   }, [setBannedChampions]);
 
   const handleSearchChange = useCallback(e => {

@@ -75,6 +75,7 @@ function MainContent({
         setChampionImages={setChampionImages}
         setTierImages={setTierImages}
         setImagesReadyForCapture={setImagesReadyForCapture}
+        version={gameData.version}
       />
       <div className="tables-container">
         <div className="teams-layout">
@@ -154,8 +155,7 @@ function MainContent({
         sortOption={sortOption}
         setSortOption={setSortOption}
         maxDisplayCount={Math.floor(
-          (Object.keys(gameData.championData.data || {}).length -
-            bannedChampions.length) /
+          champions.filter(champion => !bannedChampions.includes(champion.id)).length /
             2,
         )}
         alerts={alerts}

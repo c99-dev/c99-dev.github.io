@@ -14,18 +14,43 @@ export const DEFAULT_TABLE_OPTIONS = {
 };
 
 export function getFromStorage(key, defaultValue) {
-  const storedValue = localStorage.getItem(key);
-  if (storedValue === null) {
-    return defaultValue;
-  }
   try {
-    return JSON.parse(storedValue);
+    const storedValue = localStorage.getItem(key);
+    if (storedValue === null) return defaultValue;
+    const value = JSON.parse(storedValue);
+    if (key === STORAGE_KEYS.DISPLAY_COUNT) {
+      return Number.isInteger(value) && value > 0 && value <= 100
+        ? value
+        : defaultValue;
+    }
+    if (key === STORAGE_KEYS.SORT_OPTION) {
+      return ['tier', 'alphabetical', 'random'].includes(value)
+        ? value
+        : defaultValue;
+    }
+    if (Array.isArray(defaultValue)) {
+      return Array.isArray(value)
+        ? [...new Set(value.filter(id => typeof id === 'string'))]
+        : defaultValue;
+    }
+    if (typeof defaultValue === 'object') {
+      return Object.fromEntries(
+        Object.entries(defaultValue).map(([name, fallback]) => [
+          name,
+          typeof value?.[name] === 'boolean' ? value[name] : fallback,
+        ]),
+      );
+    }
+    return typeof value === typeof defaultValue ? value : defaultValue;
   } catch (error) {
-    console.error(`Error parsing stored value for key ${key}:`, error);
     return defaultValue;
   }
 }
 
 export function setToStorage(key, value) {
-  localStorage.setItem(key, JSON.stringify(value));
+  try {
+    localStorage.setItem(key, JSON.stringify(value));
+  } catch (error) {
+    // 저장소가 차단된 브라우저에서도 현재 세션은 계속 사용할 수 있습니다.
+  }
 }

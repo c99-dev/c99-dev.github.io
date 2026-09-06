@@ -92,28 +92,6 @@
   box-shadow: 0 8px 25px rgba(255, 152, 0, 0.4);
 }
 
-.announcement-button {
-  background: #4caf50;
-  border: 1px solid rgba(76, 175, 80, 0.3);
-}
-
-.announcement-button:hover {
-  background: #45a049;
-  transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(76, 175, 80, 0.4);
-}
-
-.patch-notes-button {
-  background: #667eea;
-  border: 1px solid rgba(102, 126, 234, 0.3);
-}
-
-.patch-notes-button:hover {
-  background: #5a6fd8;
-  transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
-}
-
 /* 공통 클릭 효과 */
 .button-container button:active {
   transform: translateY(0);

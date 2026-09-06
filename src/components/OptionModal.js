@@ -41,7 +41,7 @@ function OptionModal({
 
   const handleSave = useCallback(() => {
     const numValue = Number(inputValue);
-    if (numValue >= 1 && numValue <= maxDisplayCount) {
+    if (Number.isInteger(numValue) && numValue >= 1 && numValue <= maxDisplayCount) {
       setDisplayCount(numValue);
       setSortOption(sortValue);
       setTierDisplay(tierDisplayValue);
@@ -49,7 +49,9 @@ function OptionModal({
     } else {
       if (alerts && alerts.showError) {
         alerts.showError(
-          `챔피언 수는 1에서 ${maxDisplayCount} 사이의 값이어야 합니다.`,
+          maxDisplayCount < 1
+            ? '챔피언 밴을 해제한 뒤 인원을 설정해주세요.'
+            : `챔피언 수는 1에서 ${maxDisplayCount} 사이의 정수여야 합니다.`,
         );
       }
     }
@@ -69,7 +71,7 @@ function OptionModal({
     setInputValue(String(displayCount));
     setSortValue(sortOption);
     setTierDisplayValue(tierDisplay);
-  }, [displayCount, sortOption, tierDisplay]);
+  }, [isOpen, displayCount, sortOption, tierDisplay]);
 
   return (
     <BaseModal

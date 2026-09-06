@@ -6,8 +6,6 @@ function ButtonContainer({
   displayCount,
   openBanModal,
   openOptionModal,
-  openReleaseNotesModal,
-  openAnnouncementModal,
   copyImageToClipboard,
   copyTextToClipboard,
   imagesReadyForCapture,
@@ -43,12 +41,6 @@ function ButtonContainer({
       </button>
       <button className="option-button" onClick={openOptionModal}>
         ⚙️ 옵션
-      </button>
-      <button className="announcement-button" onClick={openAnnouncementModal}>
-        📢 공지사항
-      </button>
-      <button className="patch-notes-button" onClick={openReleaseNotesModal}>
-        📋 패치 노트
       </button>
     </div>
   );

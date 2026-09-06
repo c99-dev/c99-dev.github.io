@@ -2,6 +2,9 @@ import React, { useEffect, useCallback } from 'react';
 import Modal from 'react-modal';
 import './../styles/BaseModal.css';
 
+let scrollLocks = 0;
+let originalOverflow = '';
+
 function BaseModal({
   isOpen,
   onClose,
@@ -14,30 +17,17 @@ function BaseModal({
   className = '',
   showHeader = true,
 }) {
-  // ESC 키로 모달 닫기
-  const handleKeyDown = useCallback(
-    event => {
-      if (closeOnEsc && event.key === 'Escape' && isOpen) {
-        onClose();
-      }
-    },
-    [closeOnEsc, isOpen, onClose],
-  );
-
   // 모달이 열릴 때 body 스크롤 방지
   useEffect(() => {
-    if (isOpen) {
-      document.body.style.overflow = 'hidden';
-      document.addEventListener('keydown', handleKeyDown);
-    } else {
-      document.body.style.overflow = 'unset';
-    }
-
+    if (!isOpen) return;
+    if (scrollLocks === 0) originalOverflow = document.body.style.overflow;
+    scrollLocks += 1;
+    document.body.style.overflow = 'hidden';
     return () => {
-      document.body.style.overflow = 'unset';
-      document.removeEventListener('keydown', handleKeyDown);
+      scrollLocks -= 1;
+      if (scrollLocks === 0) document.body.style.overflow = originalOverflow;
     };
-  }, [isOpen, handleKeyDown]);
+  }, [isOpen]);
 
   const handleOverlayClick = useCallback(
     event => {
@@ -51,10 +41,10 @@ function BaseModal({
   return (
     <Modal
       isOpen={isOpen}
-      onRequestClose={closeOnOverlayClick ? onClose : undefined}
+      onRequestClose={onClose}
       className="base-modal-content"
       overlayClassName="base-modal-overlay"
-      ariaHideApp={false}
+      contentLabel={title || '설정'}
       shouldCloseOnOverlayClick={closeOnOverlayClick}
       shouldCloseOnEsc={closeOnEsc}
       closeTimeoutMS={0}
