@@ -1,4 +1,5 @@
 import { loadImageAsDataURL, waitForImage } from './images';
+import { afterEach, beforeEach, expect, test, vi } from 'vitest';
 
 const OriginalImage = global.Image;
 let requested;
@@ -9,10 +10,10 @@ beforeEach(() => {
     naturalHeight = 40;
     set src(value) { this.url = value; requested.push(this); }
   };
-  jest.spyOn(HTMLCanvasElement.prototype, 'getContext').mockReturnValue({ drawImage: jest.fn() });
-  jest.spyOn(HTMLCanvasElement.prototype, 'toDataURL').mockReturnValue('data:image/png;base64,ok');
+  vi.spyOn(HTMLCanvasElement.prototype, 'getContext').mockReturnValue({ drawImage: vi.fn() });
+  vi.spyOn(HTMLCanvasElement.prototype, 'toDataURL').mockReturnValue('data:image/png;base64,ok');
 });
-afterEach(() => { global.Image = OriginalImage; jest.restoreAllMocks(); });
+afterEach(() => { global.Image = OriginalImage; vi.restoreAllMocks(); });
 
 test('이미지 실패는 원본 URL을 성공 결과로 반환하지 않고 재시도를 허용한다', async () => {
   const failed = loadImageAsDataURL('/failure.png');

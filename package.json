@@ -3,10 +3,13 @@
   "homepage": "https://c99-dev.github.io/",
   "version": "1.0.0",
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
+    "start": "vite",
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "check": "npm audit && npm test && npm run test:data && npm run validate-data && npm run build",
     "fetch-data": "python scripts/update_data.py",
     "validate-data": "python scripts/validate_data.py",
     "test:data": "python -m unittest discover -s scripts -p test_*.py",
@@ -14,30 +17,20 @@
     "deploy": "gh-pages -d build"
   },
   "dependencies": {
-    "dom-to-image": "^2.6.0",
-    "dotenv": "^16.4.7",
-    "gh-pages": "^6.1.1",
     "html2canvas": "^1.4.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-ga4": "^2.1.0",
-    "react-modal": "^3.16.1",
-    "react-scripts": "^5.0.1",
-    "web-vitals": "^4.0.1"
+    "react-modal": "^3.16.1"
   },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+  "engines": {
+    "node": "^22.13.0 || ^24.0.0 || >=26.0.0"
   },
   "devDependencies": {
-    "@babel/plugin-proposal-private-property-in-object": "^7.21.11"
+    "@vitejs/plugin-react": "^6.1.1",
+    "gh-pages": "^6.1.1",
+    "jsdom": "^29.1.1",
+    "vite": "^8.2.2",
+    "vitest": "^5.0.0"
   }
 }

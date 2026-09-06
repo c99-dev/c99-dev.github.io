@@ -1,4 +1,5 @@
 import React, { act } from 'react';
+import { afterEach, beforeEach, expect, test, vi } from 'vitest';
 import { createRoot } from 'react-dom/client';
 import Modal from 'react-modal';
 import useRandomChampions from './hooks/useRandomChampions';
@@ -11,9 +12,10 @@ import { sortChampions } from './utils/utils';
 import AlertModal from './components/AlertModal';
 import OptionModal from './components/OptionModal';
 import ImageLoader from './components/ImageLoader';
+import { loadImageAsDataURL } from './utils/images';
 
-jest.mock('react-ga4', () => ({ event: jest.fn(), initialize: jest.fn(), send: jest.fn() }));
-jest.mock('./utils/images', () => ({ loadImageAsDataURL: jest.fn(), waitForImage: jest.fn() }));
+vi.mock('react-ga4', () => ({ default: { event: vi.fn(), initialize: vi.fn(), send: vi.fn() } }));
+vi.mock('./utils/images', () => ({ loadImageAsDataURL: vi.fn(), waitForImage: vi.fn() }));
 global.IS_REACT_ACT_ENVIRONMENT = true;
 let container, root, current;
 const originalFetch = global.fetch;
@@ -22,11 +24,11 @@ beforeEach(() => {
   document.body.appendChild(container); root = createRoot(container);
   Modal.setAppElement(container);
   localStorage.clear();
-  require('./utils/images').loadImageAsDataURL.mockImplementation(src => Promise.resolve(`data:${src}`));
+  loadImageAsDataURL.mockImplementation(src => Promise.resolve(`data:${src}`));
 });
 afterEach(() => {
   act(() => root.unmount()); container.remove();
-  jest.restoreAllMocks(); jest.clearAllMocks(); global.fetch = originalFetch;
+  vi.restoreAllMocks(); vi.clearAllMocks(); global.fetch = originalFetch;
 });
 function mountHook(hook, props = {}) {
   function Harness(properties) { current = hook(properties); return null; }
@@ -46,7 +48,7 @@ test('두 팀에 밴을 제외하고 같은 수를 중복 없이 추첨한다', 
   expect(selected().some(c => c.id === 'c0')).toBe(false);
 });
 test('후보 20명으로 30명을 요청하면 기존 결과를 보존하고 안내한다', () => {
-  const showError = jest.fn();
+  const showError = vi.fn();
   const render = mountHook(useSelection, { bans: [], count: 15, alerts: { showError } });
   const previous = current.randomChampions;
   render({ bans: champions.slice(0, 20).map(c => c.id), count: 15, alerts: { showError } });
@@ -103,7 +105,7 @@ test('새 알림과 unmount는 이전 대기를 취소한다', async () => {
   act(() => root.render(null)); await expect(second).resolves.toBe(false);
 });
 test('취소 버튼의 Enter를 문서 단위 확인 처리로 가로채지 않는다', () => {
-  const confirm = jest.fn(), close = jest.fn();
+  const confirm = vi.fn(), close = vi.fn();
   act(() => root.render(<AlertModal isOpen type="confirm" onConfirm={confirm} closeModal={close} message="확인" />));
   const cancel = Array.from(document.querySelectorAll('button')).find(button => button.textContent === '취소');
   cancel.focus();
@@ -120,13 +122,13 @@ test.each([null, -1, 0, 1.5, '15', 999])('잘못된 저장 인원 %p를 복구�
 test('잘못된 밴 목록과 저장소 접근 차단을 처리한다', () => {
   localStorage.setItem(STORAGE_KEYS.BANNED_CHAMPIONS, 'null');
   expect(getFromStorage(STORAGE_KEYS.BANNED_CHAMPIONS, [])).toEqual([]);
-  jest.spyOn(Storage.prototype, 'getItem').mockImplementation(() => { throw Error('차단'); });
-  jest.spyOn(Storage.prototype, 'setItem').mockImplementation(() => { throw Error('차단'); });
+  vi.spyOn(Storage.prototype, 'getItem').mockImplementation(() => { throw Error('차단'); });
+  vi.spyOn(Storage.prototype, 'setItem').mockImplementation(() => { throw Error('차단'); });
   expect(getFromStorage(STORAGE_KEYS.DISPLAY_COUNT, 15)).toBe(15);
   expect(() => setToStorage(STORAGE_KEYS.DISPLAY_COUNT, 15)).not.toThrow();
 });
 test('닫고 다시 연 옵션은 저장된 설정을 표시한다', () => {
-  const props = { isOpen: true, displayCount: 15, sortOption: 'tier', tierDisplay: true, maxDisplayCount: 20, closeModal: jest.fn() };
+  const props = { isOpen: true, displayCount: 15, sortOption: 'tier', tierDisplay: true, maxDisplayCount: 20, closeModal: vi.fn() };
   act(() => root.render(<OptionModal {...props} />));
   const select = document.querySelector('select');
   act(() => { select.value = 'random'; select.dispatchEvent(new Event('change', { bubbles: true })); });
@@ -138,7 +140,7 @@ test('화면 정렬과 텍스트 복사 순서가 일치하고 원본을 보존�
   const source = [{ name: '나' }, { name: '가' }, { name: '다' }];
   const ranking = { 가: { ranking: 1 }, 나: { ranking: 2 } };
   expect(sortChampions(source, 'tier', ranking).map(c => c.name)).toEqual(['가', '나', '다']);
-  const writeText = jest.fn().mockResolvedValue();
+  const writeText = vi.fn().mockResolvedValue();
   Object.defineProperty(navigator, 'clipboard', { value: { writeText }, configurable: true });
   mountHook(() => useClipboard({}, 3, { table1: source, table2: [] }, {}, {}, {}, 'tier', ranking));
   await act(async () => current.copyTextToClipboard());
@@ -147,14 +149,14 @@ test('화면 정렬과 텍스트 복사 순서가 일치하고 원본을 보존�
 });
 test('클립보드 API가 없어도 오류를 안내한다', async () => {
   Object.defineProperty(navigator, 'clipboard', { value: undefined, configurable: true });
-  jest.spyOn(console, 'error').mockImplementation(() => {});
-  const showError = jest.fn();
+  vi.spyOn(console, 'error').mockImplementation(() => {});
+  const showError = vi.fn();
   mountHook(() => useClipboard({}, 1, { table1: [], table2: [] }, { showError }));
   await act(async () => current.copyTextToClipboard());
   expect(showError).toHaveBeenCalledTimes(1);
 });
 function mockDataFetch(version = '16.17.1') {
-  global.fetch = jest.fn(async url => ({ ok: true, json: async () => url.includes('version')
+  global.fetch = vi.fn(async url => ({ ok: true, json: async () => url.includes('version')
     ? { version: '16.17.1', patch: '26.17' }
     : { version, data: gameData.championData.data } }));
 }
@@ -170,26 +172,25 @@ test('파일 버전이 다르면 섞어서 사용하지 않는다', async () => 
   expect(current.error.message).toContain('업데이트 중');
 });
 test('랭킹 실패는 빈 통계와 오류 객체로 반환한다', async () => {
-  global.fetch = jest.fn().mockResolvedValue({ ok: false });
+  global.fetch = vi.fn().mockResolvedValue({ ok: false });
   await act(async () => { mountHook(() => useChampionRanking()); });
   expect(current.championRanking).toEqual({}); expect(current.error).toBeInstanceOf(Error);
   expect(current.isLoading).toBe(false);
 });
 test('이미지 또는 마크가 준비되기 전에 복사를 활성화하지 않는다', async () => {
-  const { loadImageAsDataURL } = require('./utils/images');
-  const ready = jest.fn(); let resolvePortrait;
+  const ready = vi.fn(); let resolvePortrait;
   loadImageAsDataURL.mockImplementation(src => src.includes('/champion/')
     ? new Promise(resolve => { resolvePortrait = resolve; }) : Promise.resolve(`data:${src}`));
-  const props = { champions, displayedChampions: [champions[0]], setChampionImages: jest.fn(), setTierImages: jest.fn(), setImagesReadyForCapture: ready, version: '16.17.1' };
+  const props = { champions, displayedChampions: [champions[0]], setChampionImages: vi.fn(), setTierImages: vi.fn(), setImagesReadyForCapture: ready, version: '16.17.1' };
   await act(async () => root.render(<ImageLoader {...props} />));
   expect(ready).not.toHaveBeenCalledWith(true);
   await act(async () => resolvePortrait('data:image/png;base64,test'));
   expect(ready).toHaveBeenLastCalledWith(true);
 });
 test('랭킹만 실패해도 앱은 15명씩 표시하며 제거한 버튼을 만들지 않는다', async () => {
-  const App = require('./App').default;
-  jest.spyOn(console, 'error').mockImplementation(() => {});
-  global.fetch = jest.fn(async url => ({ ok: !url.includes('Ranking'), json: async () =>
+  const { default: App } = await import('./App');
+  vi.spyOn(console, 'error').mockImplementation(() => {});
+  global.fetch = vi.fn(async url => ({ ok: !url.includes('Ranking'), json: async () =>
     url.includes('version') ? { version: '16.17.1', patch: '26.17' } : { version: '16.17.1', data: gameData.championData.data } }));
   await act(async () => root.render(<App />));
   expect(container.querySelectorAll('tbody tr')).toHaveLength(30);

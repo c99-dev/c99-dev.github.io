@@ -220,8 +220,8 @@ function App() {
   }, [gameData.championData, isInitialized]);
 
   useEffect(() => {
-    if (process.env.REACT_APP_GA_TRACKING_ID) {
-      ReactGA.initialize(process.env.REACT_APP_GA_TRACKING_ID);
+    if (import.meta.env.REACT_APP_GA_TRACKING_ID) {
+      ReactGA.initialize(import.meta.env.REACT_APP_GA_TRACKING_ID);
       ReactGA.send('pageview');
     }
   }, []);
