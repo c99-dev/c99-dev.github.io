@@ -22,7 +22,16 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-/scripts
+/scripts/*
+!/scripts/fetch_champion_data.py
+!/scripts/fetch_champion_image.py
+!/scripts/fetch_ranking_data.py
+!/scripts/data_common.py
+!/scripts/update_data.py
+!/scripts/validate_data.py
+!/scripts/requirements.txt
+!/scripts/test_update_data.py
+__pycache__/
 /.env
 /.vscode
 /sequence-diagram.md

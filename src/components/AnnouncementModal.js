@@ -11,6 +11,7 @@ function AnnouncementModal({ isOpen, closeModal }) {
     const fetchAnnouncement = async () => {
       try {
         setLoading(true);
+        setError(null);
         const response = await fetch('/json/announcement.json');
         if (!response.ok) {
           throw new Error('공지사항을 불러올 수 없습니다.');

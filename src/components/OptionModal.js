@@ -13,10 +13,13 @@ function OptionModal({
   closeModal,
   maxDisplayCount,
   alerts,
+  tableOptions,
+  setTableOptions,
 }) {
   const [inputValue, setInputValue] = useState(String(displayCount));
   const [sortValue, setSortValue] = useState(sortOption);
   const [tierDisplayValue, setTierDisplayValue] = useState(tierDisplay);
+  const [tableValue, setTableValue] = useState(tableOptions);
 
   const handleInputChange = useCallback(
     e => {
@@ -41,10 +44,15 @@ function OptionModal({
 
   const handleSave = useCallback(() => {
     const numValue = Number(inputValue);
-    if (numValue >= 1 && numValue <= maxDisplayCount) {
+    if (
+      Number.isInteger(numValue) &&
+      numValue >= 1 &&
+      numValue <= maxDisplayCount
+    ) {
       setDisplayCount(numValue);
       setSortOption(sortValue);
       setTierDisplay(tierDisplayValue);
+      setTableOptions(tableValue);
       closeModal();
     } else {
       if (alerts && alerts.showError) {
@@ -63,25 +71,28 @@ function OptionModal({
     setTierDisplay,
     closeModal,
     alerts,
+    tableValue,
+    setTableOptions,
   ]);
 
   useEffect(() => {
     setInputValue(String(displayCount));
     setSortValue(sortOption);
     setTierDisplayValue(tierDisplay);
-  }, [displayCount, sortOption, tierDisplay]);
+    setTableValue(tableOptions);
+  }, [isOpen, displayCount, sortOption, tierDisplay, tableOptions]);
 
   return (
     <BaseModal
       isOpen={isOpen}
       onClose={closeModal}
-      title="⚙️ 옵션 설정"
+      title="추첨 옵션"
       maxWidth="500px"
       className="option-modal"
     >
       <div className="option-section">
         <label className="option-label" htmlFor="displayCount">
-          챔피언 수:
+          팀당 챔피언 수
         </label>
         <input
           type="number"
@@ -93,7 +104,7 @@ function OptionModal({
           max={maxDisplayCount}
         />
         <div className="option-help-text">
-          ※ 이미지 캡처는 15명까지만 지원됩니다 (16명 이상 선택 시 캡처 불가)
+          최대 {maxDisplayCount}명 · 이미지 복사는 팀당 15명까지 지원됩니다.
         </div>
       </div>
 
@@ -122,7 +133,33 @@ function OptionModal({
             onChange={handleTierDisplayChange}
             className="option-checkbox"
           />
-          티어표시 (티어, 꿀벌, OP 표시)
+          티어와 추천 표시 (꿀챔, OP)
+        </label>
+        <label className="option-label checkbox-label">
+          <input
+            type="checkbox"
+            checked={tableValue.winrate}
+            onChange={event =>
+              setTableValue(previous => ({
+                ...previous,
+                winrate: event.target.checked,
+              }))
+            }
+          />
+          승률 표시
+        </label>
+        <label className="option-label checkbox-label">
+          <input
+            type="checkbox"
+            checked={tableValue.rank}
+            onChange={event =>
+              setTableValue(previous => ({
+                ...previous,
+                rank: event.target.checked,
+              }))
+            }
+          />
+          전체 순위 표시
         </label>
       </div>
 

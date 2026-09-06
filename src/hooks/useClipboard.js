@@ -1,6 +1,6 @@
-import { useCallback, useEffect } from 'react';
+import { useCallback } from 'react';
 import html2canvas from 'html2canvas';
-import ReactGA from 'react-ga4';
+import { sortChampions } from '../utils/utils';
 
 function useClipboard(
   captureRef,
@@ -9,214 +9,85 @@ function useClipboard(
   alerts = {},
   championImages = {},
   tierImages = {},
+  sortOption = 'random',
+  ranking = {},
 ) {
-  // DOM 이미지 강제 교체 함수
-  const forceReplaceImages = () => {
-    const imgElements = captureRef.current.querySelectorAll('img');
-
-    imgElements.forEach(img => {
-      const originalSrc = img.src;
-
-      // 챔피언 이미지 교체
-      const championMatch = originalSrc.match(/\/image\/champion\/(.+)\.png/);
-      if (championMatch) {
-        const championId = championMatch[1];
-        const championData = championImages[championId];
-        if (championData) {
-          let targetSrc = null;
-          if (championData.url && championData.url.startsWith('data:')) {
-            targetSrc = championData.url;
-          } else if (championData.dataUrl) {
-            targetSrc = championData.dataUrl;
-          }
-          if (targetSrc) {
-            img.src = targetSrc;
-          }
-        }
-      }
-
-      // 티어 이미지 교체
-      const tierMatch = originalSrc.match(
-        /\/image\/asset\/(tier_\d+|bee_honey|is_op)\.(svg|png)/,
-      );
-      if (tierMatch) {
-        const tierKey =
-          tierMatch[1] === 'bee_honey'
-            ? 'honey'
-            : tierMatch[1] === 'is_op'
-            ? 'op'
-            : tierMatch[1];
-
-        const tierData = tierImages[tierKey];
-        if (tierData && tierData.startsWith('data:')) {
-          img.src = tierData;
-        }
-      }
-    });
-  };
-
   const copyImageToClipboard = async () => {
     try {
-      // 이미지 캡처는 15명까지만 지원
-      if (displayCount > 15) {
-        if (alerts.showError) {
-          alerts.showError(
-            '이미지 캡처는 최대 15명까지만 지원됩니다.\n옵션에서 챔피언 수를 15 이하로 설정해주세요.',
-          );
-        }
-        return;
-      }
-
-      const marginX = 32;
-      const marginTop = 16;
-      const marginBottom = 0;
-      const scale = 1;
-
-      // 실제 테이블들 찾기
-      const tables = captureRef.current.querySelectorAll('table');
-
-      if (tables.length === 0) {
-        if (alerts.showError) {
-          alerts.showError('캡처할 챔피언 테이블을 찾을 수 없습니다.');
-        }
-        return;
-      }
-
-      // DOM 내 이미지 상태 확인 및 필요시 교체
-      const allImages = captureRef.current.querySelectorAll('img');
-      let dataUrlCount = 0;
-
-      allImages.forEach(img => {
-        if (img.src.startsWith('data:')) {
-          dataUrlCount++;
-        }
-      });
-
-      if (dataUrlCount === 0) {
-        forceReplaceImages();
-      }
-
-      // 모든 테이블의 경계를 계산
-      const containerRect = captureRef.current.getBoundingClientRect();
-      let minX = Infinity,
-        minY = Infinity,
-        maxX = -Infinity,
-        maxY = -Infinity;
-
-      tables.forEach(table => {
-        const tableRect = table.getBoundingClientRect();
-        const relativeX =
-          tableRect.left - containerRect.left + captureRef.current.scrollLeft;
-        const relativeY =
-          tableRect.top - containerRect.top + captureRef.current.scrollTop;
-
-        minX = Math.min(minX, relativeX);
-        minY = Math.min(minY, relativeY);
-        maxX = Math.max(maxX, relativeX + tableRect.width);
-        maxY = Math.max(maxY, relativeY + tableRect.height);
-      });
-
-      // 캡처 영역 계산
-      const captureX = Math.max(0, Math.floor(minX - marginX));
-      const captureY = Math.max(0, Math.floor(minY - marginTop));
-      const captureWidth = Math.ceil(maxX - minX + marginX * 2);
-      const captureHeight = Math.ceil(maxY - minY + marginTop + marginBottom);
-
-      // html2canvas 옵션 설정
-      const html2canvasOptions = {
-        foreignObjectRendering: true,
-        allowTaint: true,
-        useCORS: true,
-        scale: scale,
-        logging: false,
-      };
-
-      // DOM 강제 업데이트 대기
-      await new Promise(resolve => setTimeout(resolve, 100));
-
-      // 교체 후 대기
-      await new Promise(resolve => setTimeout(resolve, 100));
-
-      // 전체 컨테이너 캡처
-      const canvas = await html2canvas(captureRef.current, html2canvasOptions);
-
-      // 스케일 적용된 좌표로 변환
-      const scaledX = captureX * scale;
-      const scaledY = captureY * scale;
-      const scaledWidth = captureWidth * scale;
-      const scaledHeight = captureHeight * scale;
-
-      // 크롭된 캔버스 생성
-      const croppedCanvas = document.createElement('canvas');
-      croppedCanvas.width = scaledWidth;
-      croppedCanvas.height = scaledHeight;
-      const ctx = croppedCanvas.getContext('2d');
-
-      ctx.drawImage(
-        canvas,
-        scaledX,
-        scaledY,
-        scaledWidth,
-        scaledHeight,
-        0,
-        0,
-        scaledWidth,
-        scaledHeight,
-      );
-
-      // 캔버스를 blob으로 변환
-      const blob = await new Promise(resolve =>
-        croppedCanvas.toBlob(resolve, 'image/png'),
-      );
-
-      // 클립보드에 복사
-      await navigator.clipboard.write([
-        new ClipboardItem({ 'image/png': blob }),
-      ]);
-
-      if (alerts.showSuccess) {
-        alerts.showSuccess(
-          '클립보드에 이미지가 복사되었습니다.\n붙여넣기(Ctrl+V)로 사용하세요.',
+      if (displayCount > 15)
+        throw new Error('이미지 복사는 팀당 15명까지 지원됩니다.');
+      if (!navigator.clipboard?.write || typeof ClipboardItem === 'undefined') {
+        throw new Error(
+          '이 브라우저는 이미지 복사를 지원하지 않습니다. 텍스트 복사를 이용해주세요.',
         );
       }
+      const capture = captureRef.current;
+      if (!capture || !capture.querySelector('.champion-pick'))
+        throw new Error('복사할 챔피언이 없습니다.');
+      // 복사 요청을 클릭 이벤트 안에서 시작해 Safari의 사용자 동작 조건을 지킵니다.
+      const blobPromise = html2canvas(capture, {
+        backgroundColor: '#0d1118',
+        scale: 2,
+        logging: false,
+        useCORS: true,
+        windowWidth: 1200,
+        onclone: (_document, element) => {
+          element.style.width = '1000px';
+          element.style.padding = '16px';
+          element.querySelector('.teams-layout').style.gridTemplateColumns =
+            'repeat(2, minmax(0, 1fr))';
+        },
+      }).then(
+        canvas =>
+          new Promise((resolve, reject) => {
+            canvas.toBlob(
+              blob =>
+                blob
+                  ? resolve(blob)
+                  : reject(new Error('이미지를 만들지 못했습니다.')),
+              'image/png',
+            );
+          }),
+      );
+      // 클립보드 권한이 먼저 거절되더라도 이미지 생성 실패가 처리되지 않은 Promise로 남지 않습니다.
+      blobPromise.catch(() => {});
+      await navigator.clipboard.write([
+        new ClipboardItem({ 'image/png': blobPromise }),
+      ]);
+      alerts.showSuccess?.(
+        '이미지가 복사되었습니다. 대화창에 붙여넣어 공유하세요.',
+      );
     } catch (error) {
-      console.error('이미지 복사 중 오류 발생:', error);
-      if (alerts.showError) {
-        alerts.showError('이미지 복사 중 오류가 발생했습니다.');
-      }
+      alerts.showError?.(
+        error.name === 'NotAllowedError'
+          ? '클립보드 권한이 필요합니다. 브라우저 권한을 확인한 뒤 다시 시도해주세요.'
+          : error.message || '이미지 복사에 실패했습니다.',
+      );
     }
   };
 
-  const copyTextToClipboard = useCallback(() => {
-    const blueTeam = randomChampions.table1.map(champ => champ.name).join(', ');
-    const redTeam = randomChampions.table2.map(champ => champ.name).join(', ');
-
-    const text = `블루 팀(${randomChampions.table1.length}): ${blueTeam}\n레드 팀(${randomChampions.table2.length}): ${redTeam}`;
-
-    navigator.clipboard.writeText(text).then(
-      () => {
-        if (alerts.showSuccess) {
-          alerts.showSuccess(
-            '클립보드에 텍스트가 복사되었습니다.\n붙여넣기(Ctrl+V)로 사용하세요.',
-          );
-        }
-      },
-      err => {
-        console.error('텍스트 복사 중 오류 발생:', err);
-        if (alerts.showError) {
-          alerts.showError('텍스트 복사 중 오류가 발생했습니다.');
-        }
-      },
-    );
-
-    ReactGA.event({
-      category: 'Button',
-      action: 'Click',
-      label: 'Copy Text',
-    });
-  }, [randomChampions, alerts]);
-
+  const copyTextToClipboard = useCallback(async () => {
+    try {
+      if (!navigator.clipboard?.writeText)
+        throw new Error('이 브라우저는 클립보드 복사를 지원하지 않습니다.');
+      const blue = sortChampions(randomChampions.table1, sortOption, ranking)
+        .map(champion => champion.name)
+        .join(', ');
+      const red = sortChampions(randomChampions.table2, sortOption, ranking)
+        .map(champion => champion.name)
+        .join(', ');
+      await navigator.clipboard.writeText(
+        `블루 팀(${randomChampions.table1.length}): ${blue}\n레드 팀(${randomChampions.table2.length}): ${red}`,
+      );
+      alerts.showSuccess?.(
+        '텍스트가 복사되었습니다. 대화창에 붙여넣어 공유하세요.',
+      );
+    } catch (error) {
+      alerts.showError?.(
+        '텍스트를 복사하지 못했습니다. 브라우저의 클립보드 권한을 확인해주세요.',
+      );
+    }
+  }, [randomChampions, sortOption, ranking, alerts]);
   return { copyImageToClipboard, copyTextToClipboard };
 }
-
 export default useClipboard;

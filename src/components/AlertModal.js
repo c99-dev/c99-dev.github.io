@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import BaseModal from './BaseModal';
 import '../styles/AlertModal.css';
 
@@ -22,31 +22,6 @@ function AlertModal({
     closeModal();
   };
 
-  // 키보드 이벤트 처리
-  useEffect(() => {
-    if (!isOpen) return;
-
-    const handleKeyDown = event => {
-      if (event.key === 'Enter') {
-        event.preventDefault();
-        handleConfirm();
-      } else if (event.key === 'Escape') {
-        event.preventDefault();
-        if (type === 'confirm') {
-          handleCancel();
-        } else {
-          handleConfirm();
-        }
-      }
-    };
-
-    document.addEventListener('keydown', handleKeyDown);
-
-    return () => {
-      document.removeEventListener('keydown', handleKeyDown);
-    };
-  }, [isOpen, type]);
-
   const getIcon = () => {
     switch (type) {
       case 'success':
@@ -69,6 +44,7 @@ function AlertModal({
   return (
     <BaseModal
       isOpen={isOpen}
+      title={title}
       onClose={closeModal}
       className={`alert-modal ${getTypeClass()}`}
       showHeader={false}

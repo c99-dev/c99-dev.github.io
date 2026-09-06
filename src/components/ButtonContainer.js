@@ -1,57 +1,55 @@
 import React from 'react';
-import './../styles/ButtonContainer.css';
+import Icon from './Icon';
+import '../styles/ButtonContainer.css';
 
 function ButtonContainer({
   bannedChampionsCount,
   displayCount,
   openBanModal,
   openOptionModal,
-  openReleaseNotesModal,
-  openAnnouncementModal,
   copyImageToClipboard,
   copyTextToClipboard,
   imagesReadyForCapture,
 }) {
   return (
-    <div className="button-container">
-      <button
-        className={`ban-button ${
-          bannedChampionsCount === 0 ? 'ban-button-empty' : ''
-        }`}
-        onClick={openBanModal}
-      >
-        🚫 챔피언 밴 ({bannedChampionsCount})
-      </button>
-      <button
-        className={`copy-button ${
-          displayCount > 15 || !imagesReadyForCapture ? 'disabled' : ''
-        }`}
-        onClick={copyImageToClipboard}
-        disabled={displayCount > 15 || !imagesReadyForCapture}
-        title={
-          displayCount > 15
-            ? '이미지 캡처는 15명까지만 지원됩니다'
-            : !imagesReadyForCapture
-            ? '이미지 캡처 준비 중...'
-            : ''
-        }
-      >
-        🖼️ 이미지 복사
-      </button>
-      <button className="copy-text-button" onClick={copyTextToClipboard}>
-        📝 텍스트 복사
-      </button>
-      <button className="option-button" onClick={openOptionModal}>
-        ⚙️ 옵션
-      </button>
-      <button className="announcement-button" onClick={openAnnouncementModal}>
-        📢 공지사항
-      </button>
-      <button className="patch-notes-button" onClick={openReleaseNotesModal}>
-        📋 패치 노트
-      </button>
-    </div>
+    <nav className="button-container" aria-label="추첨 도구">
+      <div className="toolbar-group">
+        <button
+          className={
+            bannedChampionsCount ? 'ban-button has-bans' : 'ban-button'
+          }
+          onClick={openBanModal}
+        >
+          <Icon name="ban" />
+          챔피언 밴<span className="button-count">{bannedChampionsCount}</span>
+        </button>
+        <button onClick={openOptionModal}>
+          <Icon name="settings" />
+          옵션<span className="toolbar-detail">팀당 {displayCount}명</span>
+        </button>
+      </div>
+      <div className="toolbar-group share-tools">
+        <span className="toolbar-label">결과 공유</span>
+        <button onClick={copyTextToClipboard}>
+          <Icon name="copy" />
+          텍스트 복사
+        </button>
+        <button
+          onClick={copyImageToClipboard}
+          disabled={displayCount > 15 || !imagesReadyForCapture}
+          title={
+            displayCount > 15
+              ? '이미지 캡처는 팀당 15명까지 지원됩니다'
+              : !imagesReadyForCapture
+                ? '이미지를 준비하고 있습니다'
+                : '두 팀의 챔피언을 이미지로 복사'
+          }
+        >
+          <Icon name="image" />
+          이미지 복사
+        </button>
+      </div>
+    </nav>
   );
 }
-
 export default React.memo(ButtonContainer);

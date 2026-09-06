@@ -1,50 +1,61 @@
 .footer {
-  background-color: #333333;
-  color: #cfcfcf;
-  padding: 15px 20px;
-  text-align: center;
-  font-size: 14px;
-  line-height: 1.5;
-  border-top: 1px solid #555;
-  flex-shrink: 0;
-  width: 100%;
-  box-sizing: border-box;
+  width: min(1120px, calc(100% - 48px));
+  margin: 0 auto;
+  padding: 22px 0 26px;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 11px;
 }
-
-.footer-link {
+.footer-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+.footer-dot {
+  margin: 0 8px;
+  color: #4b5768;
+}
+.footer-nav {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.footer-nav button {
+  background: transparent;
+  border: 0;
+  padding: 0;
+  font-size: 11px;
+  color: var(--muted);
+}
+.footer a:hover,
+.footer button:hover {
+  color: var(--accent);
+}
+.footer-sources {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 14px;
+  font-size: 10px;
+}
+.footer-sources a {
   text-decoration: underline;
-  color: #61dafb;
-  transition: color 0.3s ease;
+  text-underline-offset: 3px;
 }
-
-.footer-link:hover {
-  text-decoration: none;
-  color: #21a6d6;
+.legal {
+  margin-top: 8px;
+  font-size: 10px;
+  color: #8290a3;
+  line-height: 1.7;
 }
-
-.email-link {
-  cursor: pointer;
-}
-
-/* 반응형 디자인 */
-@media (max-width: 1200px) {
+@media (max-width: 740px) {
   .footer {
-    font-size: 13px;
-    padding: 12px 15px;
+    width: calc(100% - 32px);
   }
-}
-
-@media (max-width: 768px) {
-  .footer {
-    font-size: 12px;
-    padding: 10px;
-    line-height: 1.4;
-  }
-}
-
-@media (max-width: 480px) {
-  .footer {
-    font-size: 11px;
-    padding: 8px;
+  .footer-top {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 16px;
   }
 }

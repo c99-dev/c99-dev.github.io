@@ -24,6 +24,7 @@ function PatchNotesModal({ isOpen, closeModal }) {
     const fetchPatchNotes = async () => {
       try {
         setLoading(true);
+        setError(null);
         const response = await fetch('/json/patchNotes.json');
         if (!response.ok) {
           throw new Error('패치 노트를 불러올 수 없습니다.');

@@ -28,11 +28,16 @@ function useRandomChampions(
     );
   }, [gameData.championData, bannedChampions]);
 
+  const effectiveCount = Math.min(
+    displayCount,
+    Math.floor(availableChampions.length / 2),
+  );
+
   const resetRandomChampions = useCallback(() => {
     const shuffled = shuffleArray(availableChampions);
     setRandomChampions({
-      table1: shuffled.slice(0, displayCount),
-      table2: shuffled.slice(displayCount, displayCount * 2),
+      table1: shuffled.slice(0, effectiveCount),
+      table2: shuffled.slice(effectiveCount, effectiveCount * 2),
     });
     resetCountRef.current += 1;
 
@@ -41,32 +46,34 @@ function useRandomChampions(
       action: 'Click',
       label: 'Reset Champions',
     });
-  }, [availableChampions, displayCount]);
+  }, [availableChampions, effectiveCount]);
 
   // displayCount가 변경될 때 자동으로 챔피언 수 업데이트
   useEffect(() => {
-    if (availableChampions.length > 0 && randomChampions.table1.length > 0) {
+    if (gameData.championData) {
       const currentTotal =
         randomChampions.table1.length + randomChampions.table2.length;
-      const expectedTotal = displayCount * 2;
+      const expectedTotal = effectiveCount * 2;
+      const hasBannedChampion = [
+        ...randomChampions.table1,
+        ...randomChampions.table2,
+      ].some(champion => bannedChampions.includes(champion.id));
 
-      if (currentTotal !== expectedTotal) {
-        console.log(
-          `🔄 Display count changed: ${currentTotal / 2} → ${displayCount}`,
-        );
+      if (currentTotal !== expectedTotal || hasBannedChampion) {
         resetRandomChampions();
       }
     }
   }, [
-    displayCount,
-    availableChampions.length,
-    randomChampions.table1.length,
-    randomChampions.table2.length,
+    effectiveCount,
+    gameData.championData,
+    bannedChampions,
+    randomChampions,
     resetRandomChampions,
   ]);
 
   const handleReRollChampion = useCallback(
     (table, index) => {
+      if (!randomChampions[table]?.[index]) return;
       const selectedChampion = randomChampions[table][index].name;
 
       const confirmReRoll = async () => {
@@ -199,7 +206,7 @@ function useRandomChampions(
                       style: {
                         fontSize: '14px',
                         marginBottom: '8px',
-                        color: '#666',
+                        color: '#929eaf',
                       },
                     },
                     '이전 챔피언',
