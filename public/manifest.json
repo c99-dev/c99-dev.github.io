@@ -1,24 +1,18 @@
 {
   "short_name": "칼바람 랜덤 픽",
-  "name": "칼바람 챔피언 랜덤",
+  "name": "칼바람 랜덤 픽",
+  "lang": "ko-KR",
+  "description": "롤 칼바람 나락 챔피언을 두 팀에 무작위로 배정하는 무료 선택기",
   "icons": [
     {
-      "src": "favicon.ico",
-      "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/x-icon"
-    },
-    {
-      "src": "favicon.ico",
+      "src": "/favicon.png",
       "type": "image/png",
-      "sizes": "192x192"
-    },
-    {
-      "src": "favicon.ico",
-      "type": "image/png",
-      "sizes": "512x512"
+      "sizes": "256x256"
     }
   ],
-  "start_url": ".",
+  "id": "/",
+  "start_url": "/",
+  "scope": "/",
   "display": "standalone",
   "theme_color": "#000000",
   "background_color": "#ffffff"

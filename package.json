@@ -5,8 +5,9 @@
   "scripts": {
     "start": "vite",
     "dev": "vite",
-    "build": "vite build",
-    "build:production": "node scripts/check-production-env.mjs && vite build",
+    "build": "vite build && npm run check:seo",
+    "build:production": "node scripts/check-production-env.mjs && npm run build",
+    "check:seo": "node scripts/check-seo.mjs",
     "preview": "vite preview",
     "test": "vitest run",
     "test:watch": "vitest",

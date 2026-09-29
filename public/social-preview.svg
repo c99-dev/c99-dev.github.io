@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <title>칼바람 랜덤 픽</title>
+  <desc>블루팀과 레드팀의 챔피언을 랜덤으로 추첨하는 ARAM 선택기</desc>
+  <rect width="1200" height="630" fill="#282c34"/>
+  <rect x="64" y="70" width="6" height="62" rx="3" fill="#61dafb"/>
+  <g font-family="Arial, Malgun Gothic, sans-serif">
+    <text x="94" y="110" fill="#9bb0c4" font-size="24" letter-spacing="3">LEAGUE OF LEGENDS · ARAM</text>
+    <text x="64" y="219" fill="#ffffff" font-size="64" font-weight="700">칼바람 랜덤 픽</text>
+    <text x="68" y="282" fill="#d5dbe3" font-size="29">블루 팀과 레드 팀, 챔피언 선택을 간편하게</text>
+    <rect x="64" y="333" width="506" height="120" rx="18" fill="#303644" stroke="#4d64ed" stroke-width="2"/>
+    <rect x="598" y="333" width="538" height="120" rx="18" fill="#35323b" stroke="#ed5563" stroke-width="2"/>
+    <text x="92" y="379" fill="#a7b3ff" font-size="24" font-weight="700">블루 팀</text>
+    <text x="92" y="421" fill="#ffffff" font-size="28">15명 랜덤 추첨</text>
+    <text x="628" y="379" fill="#ff9da6" font-size="24" font-weight="700">레드 팀</text>
+    <text x="628" y="421" fill="#ffffff" font-size="28">15명 랜덤 추첨</text>
+    <text x="68" y="512" fill="#c2cad5" font-size="23">챔피언 밴 · 다시 뽑기 · 인원 설정 · 결과 공유</text>
+    <text x="68" y="578" fill="#61dafb" font-size="22">aram.c99-dev.com</text>
+    <text x="1136" y="578" fill="#8795a5" font-size="18" text-anchor="end">기본 팀당 15명 · 무료 웹 도구</text>
+  </g>
+</svg>

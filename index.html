@@ -2,50 +2,83 @@
 <html lang="ko-KR">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="256x256" href="/favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="application-name" content="칼바람 랜덤 픽" />
     <meta
       name="description"
-      content="리그 오브 레전드 칼바람 나락(ARAM) 모드를 위한 랜덤 챔피언 선택기입니다. 블루팀과 레드팀을 위한 챔피언을 무작위로 선택하고, 챔피언 밴, 재선택 기능 등을 제공합니다."
+      content="롤 칼바람 나락(ARAM) 챔피언을 블루팀과 레드팀에 기본 15명씩 무작위로 배정합니다. 챔피언 밴, 개별·전체 다시 뽑기, 팀당 인원 설정, 이미지·텍스트 복사를 지원합니다."
     />
-    <meta property="og:title" content="칼바람 랜덤 픽" />
+    <meta property="og:title" content="칼바람 랜덤 픽 | 롤 ARAM 챔피언 뽑기" />
     <meta
       property="og:description"
-      content="리그 오브 레전드 칼바람 나락(ARAM) 모드를 위한 랜덤 챔피언 선택기입니다."
+      content="블루팀과 레드팀에 기본 15명씩 챔피언을 랜덤으로 배정하세요. 챔피언 밴, 다시 뽑기, 이미지·텍스트 공유를 지원합니다."
     />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://aram.c99-dev.com/" />
-    <meta property="og:image" content="/favicon.ico" />
+    <meta property="og:image" content="https://aram.c99-dev.com/social-preview-v1.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="칼바람 랜덤 픽 — 블루팀과 레드팀의 챔피언 랜덤 추첨" />
     <meta property="og:site_name" content="칼바람 랜덤 픽" />
+    <meta property="og:locale" content="ko_KR" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="칼바람 랜덤 픽" />
+    <meta name="twitter:title" content="칼바람 랜덤 픽 | 롤 ARAM 챔피언 뽑기" />
     <meta
       name="twitter:description"
-      content="리그 오브 레전드 칼바람 나락(ARAM) 모드를 위한 랜덤 챔피언 선택기입니다."
+      content="블루팀과 레드팀에 기본 15명씩 챔피언을 랜덤으로 배정하세요. 챔피언 밴, 다시 뽑기, 이미지·텍스트 공유를 지원합니다."
     />
-    <meta name="twitter:image" content="/favicon.ico" />
+    <meta name="twitter:image" content="https://aram.c99-dev.com/social-preview-v1.png" />
+    <meta name="twitter:image:alt" content="칼바람 랜덤 픽 — 블루팀과 레드팀의 챔피언 랜덤 추첨" />
     <link rel="canonical" href="https://aram.c99-dev.com/" />
-    <link rel="apple-touch-icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="256x256" href="/favicon.png" />
     <link rel="manifest" href="/manifest.json" />
 
-    <!-- 성능 최적화: 이미지 리소스 preconnect -->
-    <link rel="preconnect" href="/image" />
-    <link rel="dns-prefetch" href="/image" />
-
-    <!-- 핵심 리소스 prefetch -->
-    <link rel="prefetch" href="/json/championData.json" />
-    <link rel="prefetch" href="/json/championRanking.json" />
-    <title>칼바람 랜덤 픽 - 리그 오브 레전드 ARAM 챔피언 선택기</title>
+    <title>칼바람 랜덤 픽 | 롤 ARAM 챔피언 뽑기</title>
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "WebApplication",
-        "name": "칼바람 랜덤 픽",
-        "description": "리그 오브 레전드 칼바람 나락(ARAM) 모드를 위한 랜덤 챔피언 선택기",
-        "url": "https://aram.c99-dev.com/",
-        "applicationCategory": "GameApplication",
-        "operatingSystem": "Web"
+        "@graph": [
+          {
+            "@type": "WebSite",
+            "@id": "https://aram.c99-dev.com/#website",
+            "url": "https://aram.c99-dev.com/",
+            "name": "칼바람 랜덤 픽",
+            "alternateName": "칼바람 랜덤픽",
+            "inLanguage": "ko-KR"
+          },
+          {
+            "@type": "WebPage",
+            "@id": "https://aram.c99-dev.com/#webpage",
+            "url": "https://aram.c99-dev.com/",
+            "name": "칼바람 랜덤 픽 | 롤 ARAM 챔피언 뽑기",
+            "inLanguage": "ko-KR",
+            "isPartOf": { "@id": "https://aram.c99-dev.com/#website" },
+            "mainEntity": { "@id": "https://aram.c99-dev.com/#app" },
+            "primaryImageOfPage": {
+              "@type": "ImageObject",
+              "url": "https://aram.c99-dev.com/social-preview-v1.png",
+              "width": 1200,
+              "height": 630
+            }
+          },
+          {
+            "@type": "WebApplication",
+            "@id": "https://aram.c99-dev.com/#app",
+            "name": "칼바람 랜덤 픽",
+            "description": "롤 칼바람 나락(ARAM) 챔피언을 두 팀에 무작위로 배정하는 무료 챔피언 선택기입니다.",
+            "url": "https://aram.c99-dev.com/",
+            "applicationCategory": "GameApplication",
+            "operatingSystem": "Any",
+            "browserRequirements": "JavaScript를 지원하는 웹 브라우저",
+            "inLanguage": "ko-KR",
+            "isAccessibleForFree": true,
+            "featureList": ["기본 팀당 15명 랜덤 추첨", "챔피언 밴", "개별·전체 다시 뽑기", "팀당 챔피언 수 설정", "이미지·텍스트 복사"]
+          }
+        ]
       }
     </script>
   </head>
