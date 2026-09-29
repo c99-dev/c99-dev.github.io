@@ -1,6 +1,6 @@
 # 칼바람 랜덤 픽 - 롤 ARAM 챔피언 선택기
 
-https://칼바람랜덤픽.메인.한국
+https://aram.c99-dev.com/
 
 ![image](https://github.com/user-attachments/assets/b4cbbde8-f60d-44f7-a9eb-5a1d673632f7)
 
@@ -12,7 +12,7 @@ https://칼바람랜덤픽.메인.한국
 - Vite / Vitest
 - React Modal
 - React GA4
-- GitHub Pages
+- OCI nginx / GitHub Actions
 
 ## 🎲 주요 기능
 
@@ -45,12 +45,13 @@ npm run fetch-data
 npm run validate-data
 npm run test:data
 npm test
-npm run deploy
+# 변경된 데이터를 검토하고 커밋한 뒤 배포합니다.
+git push origin main
 ```
 
 `fetch-data`는 한국 서버 Data Dragon 버전, 챔피언 JSON, 이미지와 lol.ps ARAM 통계를 임시 폴더에 수집합니다. 모든 다운로드와 검증이 성공해야 기존 데이터를 갱신합니다. 통계 집계 패치는 제공처 기준이며, 수집 시각과 출처는 `version.json`에 기록합니다.
 
-`deploy`는 저장된 데이터를 검증하고 빌드한 결과를 GitHub Pages에 배포합니다. 외부 데이터 갱신은 자동 실행하지 않으므로, 디자인이나 기능만 수정했을 때도 같은 데이터로 재배포할 수 있습니다.
+`main`에 푸시하면 GitHub Actions에서 테스트, 데이터 검증, 운영 빌드를 통과한 결과를 OCI에 배포합니다. Actions 화면의 수동 실행도 가능합니다. 외부 데이터 갱신은 자동 실행하지 않으므로, 디자인이나 기능만 수정했을 때도 같은 데이터로 재배포할 수 있습니다.
 
 현재 앱은 배포된 로컬 JSON을 사용합니다. 랭킹 조회만 실패하면 티어 정보 없이 추첨을 사용할 수 있습니다. 밴 변경은 다음 추첨부터 적용되며, 후보가 부족하면 기존 결과를 유지하고 안내합니다.
 
@@ -58,6 +59,6 @@ npm run deploy
 
 Node.js 22.13 이상인 22 LTS 또는 24 LTS를 사용합니다. `npm ci`로 잠긴 의존성을 설치하고, `npm start`로 개발 서버를 실행합니다. `npm test`는 전체 회귀 테스트를 한 번 실행하며, 작업 중에는 `npm run test:watch`를 사용할 수 있습니다.
 
-`npm run check`는 의존성 보안 검사, JavaScript/Python 테스트, 데이터 검증, 배포 빌드를 순서대로 실행합니다. `npm run preview`로 `build` 결과를 미리 확인할 수 있으며, 기존 `npm run deploy` 명령과 GitHub Pages 경로는 동일합니다.
+`npm run check`는 의존성 보안 검사, JavaScript/Python 테스트, 데이터 검증, 빌드를 순서대로 실행합니다. `npm run preview`로 `build` 결과를 미리 확인할 수 있습니다. 운영 빌드는 `npm run build:production`이며, 기존 GA4 측정 ID가 없거나 다르면 중단됩니다.
 
-기존 `.env`의 `REACT_APP_GA_TRACKING_ID`를 그대로 사용합니다. CSS와 데이터 파일은 빌드 도구 교체로 변경하지 않습니다.
+기존 `.env`의 `REACT_APP_GA_TRACKING_ID`를 그대로 사용합니다. GitHub Actions에는 동일한 이름의 Repository variable로 지정합니다. 배포 구성과 복구 절차는 [운영 배포](docs/배포.md)를 참고하세요.
