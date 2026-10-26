@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://c99-dev.github.io/sitemap.xml
