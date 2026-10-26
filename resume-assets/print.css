@@ -3,6 +3,18 @@
   size: A4;
   margin: 13mm 14mm 16mm;
 
+  @top-left {
+    content: "";
+  }
+
+  @top-center {
+    content: "";
+  }
+
+  @top-right {
+    content: "";
+  }
+
   @bottom-left {
     content: "최성호 · Python 백엔드 개발자";
     font-family: SUIT, sans-serif;
