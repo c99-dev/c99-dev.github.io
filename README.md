@@ -1,6 +1,6 @@
 # 최성호 웹 이력서
 
-Python 백엔드 개발 경력과 팀 프로젝트를 정리한 개인 웹 이력서입니다.
+Python 백엔드 개발 경력과 개인·커뮤니티·교육 팀 프로젝트를 정리한 웹 이력서입니다.
 
 - 웹 이력서: https://c99-dev.github.io/
 - 칼바람 서비스 소스: https://github.com/c99-dev/aram-random-pick
