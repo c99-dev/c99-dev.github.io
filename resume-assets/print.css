@@ -1,0 +1,525 @@
+/* 웹 화면과 독립적으로 A4 문서의 흐름과 페이지 경계를 구성합니다. */
+@page {
+  size: A4;
+  margin: 13mm 14mm 16mm;
+
+  @bottom-left {
+    content: "최성호 · Python 백엔드 개발자";
+    font-family: SUIT, sans-serif;
+    font-size: 7.5pt;
+    color: #596579;
+  }
+
+  @bottom-right {
+    content: counter(page) " / " counter(pages);
+    font-family: SUIT, sans-serif;
+    font-size: 7.5pt;
+    color: #596579;
+  }
+}
+
+:root,
+:root[data-theme="dark"] {
+  --bg: #fff;
+  --ink: #17233a;
+  --body: #2f3b4e;
+  --muted: #566276;
+  --accent: #275bdc;
+  --line: #d4dce6;
+  --soft: #f4f6f9;
+  --blue-soft: #fff;
+}
+
+html {
+  scroll-behavior: auto;
+  scroll-padding-top: 0;
+}
+
+body {
+  background: #fff;
+  color: var(--body);
+  font-size: 9.5pt;
+  line-height: 1.55;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+body * {
+  box-shadow: none !important;
+}
+
+p,
+li {
+  orphans: 2;
+  widows: 2;
+}
+
+h2,
+h3,
+h4,
+.section-heading,
+.project-group-title {
+  break-after: avoid;
+  page-break-after: avoid;
+}
+
+a {
+  color: var(--accent);
+}
+
+.site-header,
+.section-rail,
+.skip-link,
+.print-button,
+.expand-symbol,
+.page-footer,
+.portrait figcaption,
+.strengths svg,
+.primary-link svg,
+.project-link svg {
+  display: none !important;
+}
+
+.page-shell {
+  max-width: none;
+  margin: 0;
+}
+
+.hero {
+  grid-template-columns: minmax(0, 1fr) 78px;
+  align-items: start;
+  gap: 22px;
+  padding: 0 0 4mm;
+}
+
+.hero-copy {
+  max-width: none;
+}
+
+.role-line {
+  font-size: 9pt;
+  margin-bottom: 1.5mm;
+}
+
+.hero h1 {
+  font-size: 26pt;
+  letter-spacing: -1pt;
+  line-height: 1.15;
+  gap: 12px;
+  margin-bottom: 3mm;
+}
+
+.hero h1 span {
+  font-size: 10pt;
+}
+
+.hero-lead {
+  font-size: 12pt;
+  line-height: 1.35;
+  letter-spacing: -.3pt;
+  margin-bottom: 2.5mm;
+}
+
+.hero-description {
+  max-width: none;
+  font-size: 9.2pt;
+  line-height: 1.55;
+}
+
+.hero-description + .hero-description {
+  margin-top: 1.5mm;
+}
+
+.hero-links {
+  gap: 4mm;
+  margin-top: 2.5mm;
+}
+
+.primary-link,
+.print-link {
+  display: inline;
+  min-height: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--accent);
+  font-size: 8pt;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.portrait {
+  align-self: start;
+  margin-top: 1mm;
+}
+
+.portrait img {
+  border-radius: 6px;
+}
+
+.resume-layout {
+  display: block;
+  padding-top: 4mm;
+}
+
+.resume-section {
+  scroll-margin-top: 0;
+}
+
+.resume-section + .resume-section {
+  margin-top: 5mm;
+}
+
+.resume-section h2 {
+  font-size: 13pt;
+  line-height: 1.3;
+  margin-bottom: 2.5mm;
+}
+
+.section-heading {
+  gap: 12px;
+  margin-bottom: 3mm;
+}
+
+.section-heading h2 {
+  margin-bottom: 2mm;
+}
+
+.section-heading > span {
+  font-size: 7.5pt;
+}
+
+.strengths {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  border-radius: 0;
+  background: none;
+  padding: 0;
+  break-inside: avoid;
+}
+
+.strengths > div {
+  padding: 0 12px;
+}
+
+.strengths > div:first-child {
+  padding-left: 0;
+}
+
+.strengths > div:last-child {
+  padding-right: 0;
+}
+
+.strengths > div + div {
+  border-left: 1px solid var(--line);
+}
+
+.strengths h3 {
+  font-size: 8.5pt;
+  line-height: 1.4;
+  margin-bottom: 1mm;
+}
+
+.strengths p {
+  font-size: 8.2pt;
+  line-height: 1.5;
+}
+
+.experience-entry {
+  display: block;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.experience-entry::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.experience-entry + .experience-entry {
+  margin-top: 3.5mm;
+  padding-top: 3mm;
+}
+
+.entry-period {
+  float: right;
+  max-width: 44%;
+  padding-top: 1px;
+  text-align: right;
+  white-space: normal;
+  font-size: 8pt;
+  line-height: 1.5;
+}
+
+.entry-period > span {
+  margin-top: 1mm;
+  font-size: 7.5pt;
+  letter-spacing: 0;
+}
+
+.entry-title {
+  display: block;
+  max-width: 54%;
+  margin-bottom: 2mm;
+}
+
+.entry-title h3 {
+  font-size: 12pt;
+  line-height: 1.3;
+}
+
+.job-type {
+  display: block;
+  font-size: 8pt;
+  margin-top: 1mm;
+}
+
+.entry-body > p:first-of-type {
+  clear: both;
+}
+
+.entry-intro {
+  font-size: 9.5pt;
+  margin: 2mm 0 1.5mm;
+}
+
+.entry-body > p:not(.tech-line):not(.entry-intro),
+.achievement-list {
+  font-size: 9.2pt;
+  line-height: 1.55;
+}
+
+.achievement-list {
+  padding-left: 15px;
+  margin-top: 2mm;
+}
+
+.achievement-list li + li {
+  margin-top: 1.2mm;
+}
+
+.tech-line {
+  font-size: 7.8pt;
+  line-height: 1.45;
+  margin-top: 2mm;
+}
+
+details {
+  border: 0;
+  border-left: 2px solid var(--line);
+  border-radius: 0;
+  margin-top: 2.5mm;
+  padding-left: 10px;
+}
+
+summary {
+  padding: 0;
+  margin-bottom: 1mm;
+  font-size: 8.5pt;
+  line-height: 1.4;
+}
+
+.detail-body {
+  padding: 0;
+  font-size: 8.8pt;
+  line-height: 1.5;
+}
+
+.detail-body h4 {
+  font-size: 8.8pt;
+  margin: 1.5mm 0 1mm;
+}
+
+.detail-body p + p {
+  margin-top: 1mm;
+}
+
+.project-group-title {
+  font-size: 10pt;
+  line-height: 1.3;
+  margin-bottom: 3mm;
+}
+
+.project-group + .project-group {
+  margin-top: 5mm;
+  padding-top: 4mm;
+}
+
+.project-entry {
+  display: block;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.project-entry + .project-entry {
+  margin-top: 3mm;
+  padding-top: 2.5mm;
+}
+
+.project-summary {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 1mm 4mm;
+  padding-top: 0;
+  margin-bottom: 1mm;
+}
+
+.project-summary h4 {
+  font-size: 12pt;
+  line-height: 1.3;
+}
+
+.project-period,
+.project-status {
+  max-width: none;
+  font-size: 7.8pt;
+  line-height: 1.45;
+  margin-top: 0;
+}
+
+.project-status {
+  margin-left: auto;
+  text-align: right;
+}
+
+.project-body {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  column-gap: 4mm;
+}
+
+.project-body > :not(.tech-line):not(.project-links):not(.project-link) {
+  grid-column: 1 / -1;
+}
+
+.project-body > .tech-line {
+  grid-column: 1;
+}
+
+.project-links,
+.project-body > .project-link {
+  grid-column: 2;
+  align-self: end;
+}
+
+.project-body > .project-subtitle {
+  font-size: 9.5pt;
+  line-height: 1.4;
+  margin-top: 0;
+}
+
+.project-context {
+  font-size: 8pt;
+  line-height: 1.45;
+  margin-top: 1mm;
+}
+
+.project-body .achievement-list {
+  font-size: 9.2pt;
+  line-height: 1.55;
+  margin-top: 2mm;
+}
+
+.project-body .achievement-list li + li {
+  margin-top: 1mm;
+}
+
+.project-body .tech-line {
+  margin-top: 2mm;
+}
+
+.project-links {
+  gap: 5mm;
+}
+
+.project-link {
+  font-size: 8pt;
+  line-height: 1.4;
+  margin-top: 2mm;
+}
+
+.section-intro {
+  font-size: 8.5pt;
+  line-height: 1.5;
+  margin: -1mm 0 2mm;
+}
+
+.skills-list > div {
+  grid-template-columns: 125px minmax(0, 1fr);
+  gap: 12px;
+  padding: 2.2mm 0;
+}
+
+.skills-list dt,
+.skills-list dd {
+  font-size: 8.8pt;
+  line-height: 1.5;
+}
+
+.skills-list dd span {
+  font-size: 8.2pt;
+  margin-top: 0;
+}
+
+.skills-list dd strong,
+.skills-list dd span {
+  display: inline;
+}
+
+.skills-list dd span::before {
+  content: " · ";
+}
+
+.education-list article {
+  padding: 2mm 0;
+  break-inside: avoid;
+}
+
+.education-list h3 {
+  font-size: 9.2pt;
+  line-height: 1.4;
+}
+
+.education-list p {
+  font-size: 8.5pt;
+  line-height: 1.4;
+  margin-top: .5mm;
+}
+
+.education-list article > span {
+  font-size: 8pt;
+  padding-top: 0;
+}
+
+.certificates-title {
+  font-size: 10pt;
+  margin: 3mm 0 2mm;
+}
+
+.certificates {
+  gap: 15px;
+  break-inside: avoid;
+}
+
+.certificates strong {
+  font-size: 8.8pt;
+}
+
+.certificates span {
+  font-size: 8pt;
+}
+
+#skills,
+#education {
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.print-page-start {
+  break-before: page;
+  page-break-before: always;
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+  border-top: 0 !important;
+}

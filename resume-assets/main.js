@@ -39,5 +39,8 @@
   window.addEventListener('afterprint', () => {
     detailsBeforePrint.forEach(item => { item.detail.open = item.open; });
   });
-  document.querySelector('.print-button').addEventListener('click', () => window.print());
+  document.querySelector('.print-button').addEventListener('click', async () => {
+    await document.fonts.ready;
+    window.print();
+  });
 })();

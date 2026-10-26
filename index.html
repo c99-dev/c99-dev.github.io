@@ -17,8 +17,9 @@
   <meta name="twitter:card" content="summary">
   <link rel="icon" href="./resume-assets/favicon.svg" type="image/svg+xml">
   <link rel="preload" href="./resume-assets/fonts/SUIT-Variable.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="./resume-assets/style.css">
-  <script src="./resume-assets/main.js" defer></script>
+  <link rel="stylesheet" href="./resume-assets/style.css?v=20261027-print">
+  <link rel="stylesheet" href="./resume-assets/print.css?v=20261027-print" media="print">
+  <script src="./resume-assets/main.js?v=20261027-print" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">본문으로 바로가기</a>
@@ -41,6 +42,8 @@
         <p class="hero-description">이전에는 보안 제품 시스템 엔지니어로 고객별 DLP 정책, 클라우드 운영, HA 구성과 설치 자동화를 담당했습니다. 지금은 이 경험을 Python 백엔드 개발에 이어가고 있습니다.</p>
         <div class="hero-links">
           <a class="primary-link" href="mailto:c99@kakao.com"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 6 9 7 9-7"/></svg>c99@kakao.com</a>
+          <a class="print-link" href="https://github.com/c99-dev">github.com/c99-dev</a>
+          <a class="print-link" href="https://c99-dev.github.io/">c99-dev.github.io</a>
           <button class="print-button" type="button"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 8V3h10v5M7 17H4V9h16v8h-3M7 14h10v7H7zM17 11h.01"/></svg>인쇄 · PDF 저장</button>
         </div>
       </div>
@@ -85,7 +88,7 @@
               <p class="tech-line">Python, Flask, FastAPI, MariaDB, PostgreSQL, SQLAlchemy, Docker, Socket.IO</p>
             </div>
           </article>
-          <article class="experience-entry compact-entry">
+          <article class="experience-entry compact-entry print-page-start">
             <div class="entry-period"><time datetime="2025-07-01">2025.07</time><span>2025.07.01 ~ 2025.07.31</span></div>
             <div class="entry-body"><div class="entry-title"><h3>다인리더스</h3><span class="job-type">프론트엔드 개발 인턴</span></div><p>React·TypeScript 기반 위성 디지털 트윈 프론트엔드를 개발했습니다. WebRTC 영상 미송출을 해결해 영상 출력을 복구하고 고객 시연을 지원했습니다. 브라우저에서 코드를 편집하고 비교하는 웹 IDE와 코드 비교 기능을 개발했습니다.</p><p class="tech-line">React, TypeScript, WebRTC</p></div>
           </article>
@@ -109,7 +112,7 @@
           <article class="project-entry" id="aissue"><header class="project-summary"><h4>AIssue</h4><p class="project-period">2025.04 — 2025.06</p></header><div class="project-body"><p class="project-subtitle">GitHub 코드·이슈 분석 AI 서비스</p><p class="project-context">SPC 생성형 AI 기반 실용 웹서비스 개발자 양성과정 · 팀 프로젝트</p><ul class="achievement-list"><li>GitHub 코드를 수집·분할하고, Gemini 임베딩과 FAISS 검색 결과를 모델에 전달하는 Flask 분석 기능을 구현했습니다.</li><li>인덱싱을 백그라운드 thread로 분리하고 작업 상태를 먼저 반환하도록 변경했습니다.</li><li>Express API와 Flask 분석 기능을 연동하고, React·Express·Flask에 GitHub Actions 배포 workflow를 추가했습니다.</li></ul><p class="tech-line">Python, Flask, Express, React, Gemini API, FAISS, GitHub Actions</p><a class="project-link" href="https://github.com/c99-dev/AIssue-Overview" target="_blank" rel="noopener noreferrer">프로젝트와 코드 보기<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3h7v7M10 14 21 3M21 14v7H3V3h7"/></svg></a></div></article>
           <article class="project-entry" id="japari"><header class="project-summary"><h4>Japari</h4><p class="project-period">2022.11 — 2022.12</p></header><div class="project-body"><p class="project-subtitle">실시간 화상 게임 서비스</p><p class="project-context">네이버 부스트캠프 웹·모바일 7기 · 4인 팀 프로젝트</p><ul class="achievement-list"><li>소켓 상태와 송수신 모듈을 분리하고 채팅 송신·진행 중 게임방 입장 제한을 구현했습니다.</li><li>참여 인원이 부족하면 Redis 데이터를 삭제한 뒤 게임 종료 이벤트를 보내도록 순서를 보완했습니다.</li><li>팀원과 WebRTC/mediasoup 화상·음성 연결을 구현하고, 배포 환경의 연동·설정 문제 대응에 참여했습니다.</li></ul><p class="tech-line">TypeScript, React, NestJS, Socket.IO, Redis, WebRTC, mediasoup</p><div class="project-links"><a class="project-link" href="https://github.com/boostcampwm-2022/web36-Japari" target="_blank" rel="noopener noreferrer">프로젝트와 코드 보기<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3h7v7M10 14 21 3M21 14v7H3V3h7"/></svg></a><a class="project-link" href="https://github.com/boostcampwm-2022/web36-Japari/wiki" target="_blank" rel="noopener noreferrer">개발 기록<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3h7v7M10 14 21 3M21 14v7H3V3h7"/></svg></a></div></div></article>
           </div>
-          <div class="project-group" aria-labelledby="personal-projects-title">
+          <div class="project-group print-page-start" aria-labelledby="personal-projects-title">
             <h3 class="project-group-title" id="personal-projects-title">개인·커뮤니티 프로젝트</h3>
             <article class="project-entry personal-project" id="tft-combination"><header class="project-summary"><h4>TFT 조합 탐색기</h4><p class="project-status">개인 프로젝트 · 공개 서비스 · 소스 비공개</p></header><div class="project-body"><p class="project-subtitle">입력한 조건으로 찾는 TFT 특성 조합</p><ul class="achievement-list"><li>필수·제외 기물, 상징과 팀 슬롯 조건을 입력하면 후보 조합을 탐색하고 비교하도록 구현했습니다. 조건 공유와 게임 팀 코드 복사를 제공합니다.</li><li>Rust WebAssembly 엔진과 Web Workers로 탐색을 분산하고, 조건 가지치기와 상위 후보 공유를 적용했습니다. 특성 구성을 평가하며 실제 전투력·승률을 예측하지는 않습니다.</li></ul><p class="tech-line">React, TypeScript, Rust, WebAssembly, Web Workers</p><div class="project-links"><a class="project-link" href="https://tft.c99-dev.com/" target="_blank" rel="noopener noreferrer">서비스 보기<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3h7v7M10 14 21 3M21 14v7H3V3h7"/></svg></a></div></div></article>
             <article class="project-entry personal-project" id="aram-random-pick"><header class="project-summary"><h4>칼바람 랜덤픽</h4><p class="project-status">개인 프로젝트 · 공개 서비스</p></header><div class="project-body"><p class="project-subtitle">LoL ARAM 챔피언 선택 도구</p><ul class="achievement-list"><li>두 팀의 챔피언 무작위 추첨, 밴·개별 리롤과 옵션 저장, 이미지·텍스트 공유를 구현하고 사용자 피드백을 반영했습니다.</li><li>외부 챔피언·통계 데이터의 수집·검증 절차를 정리하고, 테스트와 운영 빌드를 통과한 정적 파일을 GitHub Actions에서 OCI로 배포하도록 구성했습니다.</li></ul><p class="tech-line">React, Vite, Python, GitHub Actions, Nginx, Oracle Cloud</p><div class="project-links"><a class="project-link" href="https://aram.c99-dev.com/" target="_blank" rel="noopener noreferrer">서비스 보기<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3h7v7M10 14 21 3M21 14v7H3V3h7"/></svg></a><a class="project-link" href="https://github.com/c99-dev/aram-random-pick" target="_blank" rel="noopener noreferrer">코드 보기<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3h7v7M10 14 21 3M21 14v7H3V3h7"/></svg></a></div></div></article>
