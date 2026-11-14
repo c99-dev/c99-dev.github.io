@@ -1,7 +1,7 @@
-/* 웹 화면과 독립적으로 A4 문서의 흐름과 페이지 경계를 구성합니다. */
+/* 웹 화면과 독립적으로 A4 2쪽 문서의 흐름과 페이지 경계를 구성합니다. */
 @page {
   size: A4;
-  margin: 13mm 14mm 16mm;
+  margin: 12mm 15mm 13mm;
 
   @top-left {
     content: "";
@@ -18,14 +18,14 @@
   @bottom-left {
     content: "최성호 · Python 백엔드 개발자";
     font-family: SUIT, sans-serif;
-    font-size: 7.5pt;
+    font-size: 8pt;
     color: #596579;
   }
 
   @bottom-right {
     content: counter(page) " / " counter(pages);
     font-family: SUIT, sans-serif;
-    font-size: 7.5pt;
+    font-size: 8pt;
     color: #596579;
   }
 }
@@ -34,10 +34,11 @@
 :root[data-theme="dark"] {
   --bg: #fff;
   --ink: #17233a;
-  --body: #2f3b4e;
+  --body: #2a3547;
   --muted: #566276;
   --accent: #275bdc;
   --line: #d4dce6;
+  --rule: #8a96a8;
   --soft: #f4f6f9;
   --blue-soft: #fff;
 }
@@ -50,8 +51,8 @@ html {
 body {
   background: #fff;
   color: var(--body);
-  font-size: 9.5pt;
-  line-height: 1.55;
+  font-size: 9.3pt;
+  line-height: 1.5;
   -webkit-print-color-adjust: exact;
   print-color-adjust: exact;
 }
@@ -79,14 +80,14 @@ a {
   color: var(--accent);
 }
 
+/* 접힌 상세는 웹에서만 보여 주고 인쇄본은 2쪽에 맞춥니다. */
 .site-header,
 .section-rail,
 .skip-link,
 .print-button,
 .expand-symbol,
 .page-footer,
-.portrait figcaption,
-.strengths svg,
+details,
 .primary-link svg,
 .project-link svg {
   display: none !important;
@@ -97,54 +98,75 @@ a {
   margin: 0;
 }
 
+/* 머리: 이름과 직무, 문구, 사실 네 가지, 핵심 기술 */
 .hero {
   grid-template-columns: minmax(0, 1fr) 78px;
   align-items: start;
-  gap: 22px;
-  padding: 0 0 4mm;
+  gap: 18px;
+  padding: 0 0 3.4mm;
 }
 
 .hero-copy {
   max-width: none;
 }
 
-.role-line {
-  font-size: 9pt;
-  margin-bottom: 1.5mm;
-}
-
 .hero h1 {
-  font-size: 26pt;
-  letter-spacing: -1pt;
+  font-size: 23pt;
+  letter-spacing: -.8pt;
   line-height: 1.15;
-  gap: 12px;
-  margin-bottom: 3mm;
+  gap: 10px;
+  margin-bottom: 1.4mm;
 }
 
 .hero h1 span {
-  font-size: 10pt;
+  font-size: 10.5pt;
 }
 
 .hero-lead {
+  font-size: 10pt;
+  line-height: 1.4;
+  letter-spacing: -.2pt;
+  margin-bottom: 3mm;
+}
+
+.facts {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0 5mm;
+  margin: 0 0 2.6mm;
+  max-width: none;
+}
+
+.facts > div {
+  padding-top: 1.6mm;
+}
+
+.facts dt {
   font-size: 12pt;
-  line-height: 1.35;
+  line-height: 1.3;
   letter-spacing: -.3pt;
-  margin-bottom: 2.5mm;
+}
+
+.facts dd {
+  font-size: 8.5pt;
+  line-height: 1.45;
+  margin-top: .6mm;
+}
+
+.hero-stack {
+  font-size: 9pt;
+  line-height: 1.45;
+  margin-bottom: 1.2mm;
 }
 
 .hero-description {
   max-width: none;
-  font-size: 9.2pt;
-  line-height: 1.55;
-}
-
-.hero-description + .hero-description {
-  margin-top: 1.5mm;
+  font-size: 9.3pt;
+  line-height: 1.5;
 }
 
 .hero-links {
   gap: 4mm;
-  margin-top: 2.5mm;
+  margin-top: 2mm;
 }
 
 .primary-link,
@@ -155,23 +177,23 @@ a {
   border: 0;
   background: none;
   color: var(--accent);
-  font-size: 8pt;
+  font-size: 8.8pt;
   font-weight: 600;
   line-height: 1.5;
 }
 
 .portrait {
   align-self: start;
-  margin-top: 1mm;
+  margin-top: .5mm;
 }
 
 .portrait img {
-  border-radius: 6px;
+  border-radius: 5px;
 }
 
 .resume-layout {
   display: block;
-  padding-top: 4mm;
+  padding-top: 3.4mm;
 }
 
 .resume-section {
@@ -179,63 +201,25 @@ a {
 }
 
 .resume-section + .resume-section {
-  margin-top: 5mm;
+  margin-top: 3.4mm;
 }
 
 .resume-section h2 {
-  font-size: 13pt;
+  font-size: 12.5pt;
   line-height: 1.3;
-  margin-bottom: 2.5mm;
+  margin-bottom: 1.2mm;
 }
 
 .section-heading {
-  gap: 12px;
-  margin-bottom: 3mm;
+  margin-bottom: 2mm;
+  border-bottom: .8pt solid var(--rule);
 }
 
 .section-heading h2 {
-  margin-bottom: 2mm;
+  margin-bottom: 1.2mm;
 }
 
-.section-heading > span {
-  font-size: 7.5pt;
-}
-
-.strengths {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  border-radius: 0;
-  background: none;
-  padding: 0;
-  break-inside: avoid;
-}
-
-.strengths > div {
-  padding: 0 12px;
-}
-
-.strengths > div:first-child {
-  padding-left: 0;
-}
-
-.strengths > div:last-child {
-  padding-right: 0;
-}
-
-.strengths > div + div {
-  border-left: 1px solid var(--line);
-}
-
-.strengths h3 {
-  font-size: 8.5pt;
-  line-height: 1.4;
-  margin-bottom: 1mm;
-}
-
-.strengths p {
-  font-size: 8.2pt;
-  line-height: 1.5;
-}
-
+/* 경력: 제목 줄 오른쪽 끝에 기간을 둡니다. 쪽 머리에 선만 남지 않도록 항목 사이 선은 쓰지 않습니다. */
 .experience-entry {
   display: block;
   break-inside: avoid;
@@ -249,150 +233,117 @@ a {
 }
 
 .experience-entry + .experience-entry {
-  margin-top: 3.5mm;
-  padding-top: 3mm;
+  margin-top: 3.2mm;
+  padding-top: 0;
+  border-top: 0;
 }
 
 .entry-period {
   float: right;
-  max-width: 44%;
-  padding-top: 1px;
+  padding-top: .7mm;
   text-align: right;
-  white-space: normal;
-  font-size: 8pt;
+  white-space: nowrap;
+  font-size: 8.8pt;
   line-height: 1.5;
 }
 
-.entry-period > span {
-  margin-top: 1mm;
-  font-size: 7.5pt;
-  letter-spacing: 0;
-}
-
 .entry-title {
-  display: block;
-  max-width: 54%;
-  margin-bottom: 2mm;
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  gap: 3mm;
+  margin-bottom: 1mm;
 }
 
 .entry-title h3 {
-  font-size: 12pt;
+  font-size: 11.5pt;
   line-height: 1.3;
 }
 
 .job-type {
-  display: block;
-  font-size: 8pt;
-  margin-top: 1mm;
-}
-
-.entry-body > p:first-of-type {
-  clear: both;
+  font-size: 8.8pt;
 }
 
 .entry-intro {
-  font-size: 9.5pt;
-  margin: 2mm 0 1.5mm;
+  font-size: 9.3pt;
+  margin: 1mm 0 .8mm;
 }
 
 .entry-body > p:not(.tech-line):not(.entry-intro),
 .achievement-list {
-  font-size: 9.2pt;
-  line-height: 1.55;
+  font-size: 9.3pt;
+  line-height: 1.5;
+  max-width: none;
 }
 
 .achievement-list {
-  padding-left: 15px;
-  margin-top: 2mm;
+  padding-left: 13px;
+  margin-top: 1.3mm;
 }
 
 .achievement-list li + li {
-  margin-top: 1.2mm;
+  margin-top: .8mm;
 }
 
 .tech-line {
-  font-size: 7.8pt;
-  line-height: 1.45;
-  margin-top: 2mm;
-}
-
-details {
-  border: 0;
-  border-left: 2px solid var(--line);
-  border-radius: 0;
-  margin-top: 2.5mm;
-  padding-left: 10px;
-}
-
-summary {
-  padding: 0;
-  margin-bottom: 1mm;
   font-size: 8.5pt;
   line-height: 1.4;
+  margin-top: 1.3mm;
+  max-width: none;
 }
 
-.detail-body {
-  padding: 0;
-  font-size: 8.8pt;
-  line-height: 1.5;
+code {
+  font-size: .9em;
 }
 
-.detail-body h4 {
-  font-size: 8.8pt;
-  margin: 1.5mm 0 1mm;
-}
-
-.detail-body p + p {
-  margin-top: 1mm;
-}
-
+/* 프로젝트 */
 .project-group-title {
-  font-size: 10pt;
+  font-size: 9.5pt;
   line-height: 1.3;
-  margin-bottom: 3mm;
+  margin-bottom: 1.4mm;
 }
 
 .project-group + .project-group {
-  margin-top: 5mm;
-  padding-top: 4mm;
+  margin-top: 3mm;
+  padding-top: 0;
+  border-top: 0;
 }
 
 .project-entry {
   display: block;
+  position: relative;
   break-inside: avoid;
   page-break-inside: avoid;
 }
 
 .project-entry + .project-entry {
-  margin-top: 3mm;
-  padding-top: 2.5mm;
+  margin-top: 2.5mm;
+  padding-top: 0;
+  border-top: 0;
 }
 
 .project-summary {
+  position: absolute;
+  top: .7mm;
+  right: 0;
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: row-reverse;
   align-items: baseline;
-  gap: 1mm 4mm;
+  gap: 1.5mm;
   padding-top: 0;
-  margin-bottom: 1mm;
-}
-
-.project-summary h4 {
-  font-size: 12pt;
-  line-height: 1.3;
 }
 
 .project-period,
 .project-status {
   max-width: none;
-  font-size: 7.8pt;
-  line-height: 1.45;
+  font-size: 8.8pt;
+  line-height: 1.5;
   margin-top: 0;
+  white-space: nowrap;
 }
 
-.project-status {
-  margin-left: auto;
-  text-align: right;
+.project-status::after {
+  content: " ·";
 }
 
 .project-body {
@@ -401,7 +352,7 @@ summary {
   column-gap: 4mm;
 }
 
-.project-body > :not(.tech-line):not(.project-links):not(.project-link) {
+.project-body > :not(.tech-line):not(.project-links) {
   grid-column: 1 / -1;
 }
 
@@ -409,68 +360,73 @@ summary {
   grid-column: 1;
 }
 
-.project-links,
-.project-body > .project-link {
+.project-links {
   grid-column: 2;
   align-self: end;
+  gap: 4mm;
 }
 
-.project-body > .project-subtitle {
-  font-size: 9.5pt;
+.project-head {
+  display: flex;
+  align-items: baseline;
+  gap: 3mm;
+}
+
+.project-body h4 {
+  font-size: 11.5pt;
+  line-height: 1.3;
+}
+
+.project-body .project-subtitle {
+  font-size: 9.3pt;
+  font-weight: 600;
   line-height: 1.4;
   margin-top: 0;
 }
 
-.project-context {
-  font-size: 8pt;
+.project-scale {
+  font-size: 9.3pt;
   line-height: 1.45;
   margin-top: 1mm;
+  max-width: none;
 }
 
 .project-body .achievement-list {
-  font-size: 9.2pt;
-  line-height: 1.55;
-  margin-top: 2mm;
+  font-size: 9.3pt;
+  line-height: 1.5;
+  margin-top: 1.3mm;
 }
 
 .project-body .achievement-list li + li {
-  margin-top: 1mm;
+  margin-top: .8mm;
 }
 
 .project-body .tech-line {
-  margin-top: 2mm;
-}
-
-.project-links {
-  gap: 5mm;
+  margin-top: 1.3mm;
 }
 
 .project-link {
-  font-size: 8pt;
-  line-height: 1.4;
-  margin-top: 2mm;
-}
-
-.section-intro {
   font-size: 8.5pt;
-  line-height: 1.5;
-  margin: -1mm 0 2mm;
+  line-height: 1.4;
+  min-height: 0;
+  margin-top: 1.3mm;
 }
 
+/* 기술, 학력, 자격은 한 줄씩 */
 .skills-list > div {
-  grid-template-columns: 125px minmax(0, 1fr);
-  gap: 12px;
-  padding: 2.2mm 0;
+  grid-template-columns: 30mm minmax(0, 1fr);
+  gap: 4mm;
+  padding: 1mm 0;
 }
 
 .skills-list dt,
-.skills-list dd {
-  font-size: 8.8pt;
-  line-height: 1.5;
+.skills-list dd,
+.skills-list dd span {
+  font-size: 9pt;
+  line-height: 1.45;
 }
 
 .skills-list dd span {
-  font-size: 8.2pt;
   margin-top: 0;
 }
 
@@ -484,42 +440,41 @@ summary {
 }
 
 .education-list article {
-  padding: 2mm 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 6mm;
+  padding: .3mm 0;
+  border-bottom: 0;
   break-inside: avoid;
 }
 
+.education-list article > span {
+  order: 2;
+  font-size: 8.8pt;
+  white-space: nowrap;
+}
+
+.education-list article > div {
+  display: flex;
+  align-items: baseline;
+  gap: 3mm;
+  min-width: 0;
+}
+
 .education-list h3 {
-  font-size: 9.2pt;
+  font-size: 9.3pt;
   line-height: 1.4;
 }
 
 .education-list p {
-  font-size: 8.5pt;
+  font-size: 8.8pt;
   line-height: 1.4;
-  margin-top: .5mm;
-}
-
-.education-list article > span {
-  font-size: 8pt;
-  padding-top: 0;
+  margin-top: 0;
 }
 
 .certificates-title {
-  font-size: 10pt;
-  margin: 3mm 0 2mm;
-}
-
-.certificates {
-  gap: 15px;
-  break-inside: avoid;
-}
-
-.certificates strong {
-  font-size: 8.8pt;
-}
-
-.certificates span {
-  font-size: 8pt;
+  margin: 1.6mm 0 .5mm;
 }
 
 #skills,
@@ -528,10 +483,37 @@ summary {
   page-break-inside: avoid;
 }
 
-.print-page-start {
-  break-before: page;
-  page-break-before: always;
-  margin-top: 0 !important;
-  padding-top: 0 !important;
-  border-top: 0 !important;
+/* 한 회사 안의 프로젝트: 제목과 한 줄 설명을 같은 줄에 둡니다. */
+.work {
+  margin-top: 2mm;
+  max-width: none;
+  break-inside: avoid;
+}
+
+.work-head {
+  display: flex;
+  align-items: baseline;
+  gap: 3mm;
+}
+
+.work-head h4 {
+  font-size: 10.2pt;
+  line-height: 1.35;
+  letter-spacing: -.1pt;
+}
+
+.work-head p {
+  font-size: 8.8pt;
+  line-height: 1.4;
+  margin-top: 0;
+}
+
+.work > p {
+  font-size: 9.3pt;
+  line-height: 1.5;
+  margin-top: .8mm;
+}
+
+.work .achievement-list {
+  margin-top: 1mm;
 }
